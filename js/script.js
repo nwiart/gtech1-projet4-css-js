@@ -9,6 +9,7 @@ rb_desc = [
 
 $(document).ready(function() {
     $('.sidenav').sidenav();
+    $('#message').characterCounter();
     $('.carousel').carousel({
         dist: 0,
         padding: 0,
