@@ -3471,7 +3471,7 @@ table span.badge {
 .row {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .row:after {
@@ -4531,7 +4531,8 @@ h1 {
 h2 {
   font-size: 3.56rem;
   line-height: 110%;
-  margin: 2.3733333333rem 0 1.424rem 0;
+  /*margin: 2.3733333333rem 0 1.424rem 0;*/
+  margin: 0px;
 }
 
 h3 {
