@@ -25,4 +25,4 @@ Revision 1.0
 ## Platformer Game
 
 - [ ] Ajouter une description
-- [ ] Faire des screenshots et les intégrer
+- [x] Faire des screenshots et les intégrer
