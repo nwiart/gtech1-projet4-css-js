@@ -7,7 +7,7 @@ Revision 1.0
 - [ ] Une présentation de l’équipe/de vous-même
 - [ ] Un « carrousel » avec des images de vos projets
 - [ ] Une partie par projet avec une description et une ou plusieurs images
-- [ ] Une « modal » avec un formulaire de contact
+- [x] Une « modal » avec un formulaire de contact
 - [ ] Un événement changeant l’apparence d’un élément de votre site (easter egg)
 
 # Projets
