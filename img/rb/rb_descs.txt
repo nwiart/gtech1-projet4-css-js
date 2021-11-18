@@ -1,5 +1,0 @@
-rb_splash: Splashscreen
-rb_mainmenu: The game's main menu
-rb_levels: Level select menu, with a simplified 3D representation of the selected level.
-rb_island: The floating island level
-rb_freakout: Speed display turning red and field of view increasing at high speeds.

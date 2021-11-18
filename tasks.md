@@ -3,7 +3,7 @@
 Revision 1.0
 
 - [x] Vous choisirez 3 de vos [projets](#projets) à afficher sur le site
-- [ ] Un menu de navigation entre les différents projets sur le site
+- [x] Un menu de navigation entre les différents projets sur le site
 - [ ] Une présentation de l’équipe/de vous-même
 - [ ] Un « carrousel » avec des images de vos projets
 - [ ] Une partie par projet avec une description et une ou plusieurs images
@@ -20,9 +20,9 @@ Revision 1.0
 ## UGE Editor
 
 - [ ] Ajouter une description
-- [ ] Faire des screenshots et les intégrer
+- [x] Faire des screenshots et les intégrer
 
 ## Platformer Game
 
-- [ ] Ajouter une description
+- [x] Ajouter une description
 - [x] Faire des screenshots et les intégrer
