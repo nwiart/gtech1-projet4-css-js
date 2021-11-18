@@ -2,6 +2,10 @@ body {
 	/*background-color: gray;*/
 }
 
+h3 {
+	font-size: 2rem;
+}
+
 .title-block {
 
 	font-weight: bold;
