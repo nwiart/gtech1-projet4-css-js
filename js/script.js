@@ -30,3 +30,10 @@ $(document).ready(function() {
         }
     });
 });
+
+function sendbtn() {
+
+	let phone = document.getElementById("phone-number").value;
+	if (phone == "173")
+		window.location.href = "zbie.html";
+}

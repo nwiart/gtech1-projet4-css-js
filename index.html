@@ -91,18 +91,26 @@
 						</div>
 
 						<div class="input-field">
+							<i class="material-icons prefix red-text text-darken-2">phone</i>
+							<input id="phone-number" type="text" />
+							<label for="phone-number">Phone number (optional)</label>
+						</div>
+
+						<div class="input-field">
 							<i class="material-icons prefix red-text text-darken-2">chat</i>
 							<textarea id="message" class="materialize-textarea" data-length="450" required="" aria-required="true"></textarea>
 							<label for="message">Message</label>
 						</div>
 
 						<div class="center">
-							<button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">send</i>Send</button>
+							<button type="submit" onclick="sendbtn()" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">send</i>Send</button>
 						</div>
 					</div>
+
 					<div class="col l3 m2 hide-on-small-only"></div>
 				</div>
 			</form>
+			<button onclick="sendbtn()" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">send</i>Send</button>
 		</div>
 
 
