@@ -17,6 +17,7 @@ ed_desc = [
 
 $(document).ready(function() {
     $('.sidenav').sidenav();
+    $('.parallax').parallax();
     $('#message').characterCounter();
     $('.carousel').carousel({
         dist: 0,

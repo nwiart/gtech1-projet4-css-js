@@ -1,7 +1,10 @@
+body {
+	/*background-color: gray;*/
+}
+
 .title-block {
 
 	font-weight: bold;
-	vertical-align: middle;
 	font-size: 24pt;
 	padding-top: 10px;
 	padding-bottom: 10px;
