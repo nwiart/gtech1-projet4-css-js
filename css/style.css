@@ -16,19 +16,20 @@
 	text-shadow: 0px 0px 2px black, 0 0 8px black;
 }
 
-#presentation_ethan {
+.presentation-name {
+
+	font-size: 32pt;
+	text-decoration: underline;
+}
+
+.presentation-box {
 
 	margin-top: 3%;
 }
 
-#presentation_ethan .image_ethan img {
+.presentation-image {
 
 	margin-top: 5%;
 	border-radius: 10px;
 	width: 20%;
-}
-
-#presentation_noah {
-
-	margin-top: 3%;
 }
