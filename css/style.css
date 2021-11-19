@@ -1,5 +1,6 @@
-body {
-	/*background-color: gray;*/
+h1 {
+	font-size: inherit;
+	margin: inherit;
 }
 
 h3 {
@@ -24,6 +25,7 @@ h3 {
 
 	margin-top: 2%;
 	margin-bottom: 2%;
+	font-family: "Times New Roman";
 }
 
 .presentation-image {
@@ -45,6 +47,13 @@ h3 {
 
 #hiddenbtn {
 	float: right;
+}
+
+/* Carousel stuff (screenshots and arrow buttons). */
+
+.carousel-arrow-btn {
+	position: absolute;
+	top: 50%;
 }
 
 .screenshot-desc {
