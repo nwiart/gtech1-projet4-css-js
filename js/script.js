@@ -37,8 +37,17 @@ $(document).ready(function() {
             $('#eddesc').html(ed_desc[$(data).index()]);
         }
     });
+
+    // Carousel left & right arrows.
+    $('.carousel-move-prev').click(function() {
+        $('.carousel').carousel('prev');
+    });
+    $('.carousel-move-next').click(function() {
+        $('.carousel').carousel('next');
+    });
 });
 
+// Easter egg stuff.
 function reveal() {
     document.getElementById("phone-number-field").style.display = "block";
 }

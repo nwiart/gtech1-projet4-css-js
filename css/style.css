@@ -42,6 +42,13 @@ h3 {
 	float: right;
 }
 
+/* Carousel stuff (screenshots and arrow buttons). */
+
+.carousel-arrow-btn {
+	position: absolute;
+	top: 50%;
+}
+
 .screenshot-desc {
 	position: absolute;
 	top: 0px;
