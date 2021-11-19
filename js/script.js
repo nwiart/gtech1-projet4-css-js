@@ -15,6 +15,13 @@ ed_desc = [
     "About window featuring a banner showing a scene from Roll-A-Ball"
 ];
 
+// Pong screenshot descriptions.
+pong_descs = [
+    "Pong window",
+    "Pong on launch (scores are initialized at 0)",
+    "Score display can hold 2 digits"
+];
+
 let revealSound = new Audio("sound/20.wav");
 
 $(document).ready(function() {
@@ -33,8 +40,14 @@ $(document).ready(function() {
         fullWidth: true,
         indicators: true,
         onCycleTo: function(data) {
-            $('#rbdesc').html(rb_desc[$(data).index()]);
-            $('#eddesc').html(ed_desc[$(data).index()]);
+            let desc = $('#rbdesc');
+            if (desc != undefined) { desc.html(rb_desc[$(data).index()]); return; }
+
+            desc = $('#eddesc');
+            if (desc != undefined) { desc.html(ed_desc[$(data).index()]); return; }
+
+            desc = $('#pongdesc');
+            if (desc != undefined) { desc.html(pong_desc[$(data).index()]); return; }
         }
     });
 
