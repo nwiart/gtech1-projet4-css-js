@@ -1,0 +1,23 @@
+body {
+	color: white;
+	background: black;
+	font-size: 1.5rem;
+}
+
+.banner-173 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	height: 400px;
+}
+
+h1 {
+	font-size: 3rem;
+	text-align: center;
+}
+
+a {
+	text-align: center;
+	text-decoration: none;
+	color: #C00000;
+}

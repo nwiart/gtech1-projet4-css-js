@@ -58,6 +58,8 @@
 				J'ai travaillé sur plusieurs projets personnels durant ma scolarité, notamment le jeu "Roll-A-Ball!". Ce jeu tourne d'ailleurs sur un moteur de jeu que j'ai crée moi-même. Ce sont ces projets personnels qui m'ont permis de découvrir le développement de jeux-vidéos et d'approfondir mes connaissances sur les logiciels et langages utilisés. J'ai également acquis de l'expérience sur le logiciel de version Git et sur le moteur Unreal Engine 4.<br />
 				<a href="https://www.linkedin.com/in/noah-wiart-182a6a221/" target="blank" rel="nofollow" class="red-text text-darken-2">Mon profil LinkedIn</a></Font></p>
 			</div>
+
+			<a href="#contact-us" onclick="reveal()" id="hiddenbtn" class="grey-text text-lighten-2">Click here!</a>
 		</div>
 
 		<!-- Contact form. -->
@@ -65,7 +67,7 @@
 			<div class="parallax"><img src="img/ug-editor/ed_mainwindow.png" alt="gdshjdfgj" /></div>
 		</div>
 
-		<h2 class="black white-text center title-block">CONTACT US</h2>
+		<h2 id="contact-us" class="black white-text center title-block">CONTACT US</h2>
 		<div class="white row">
 			<form class="col s12">
 				<div class="row">
@@ -90,10 +92,12 @@
 							<span class="helper-text" data-error="wrong" data-success="right"></span>
 						</div>
 
-						<div class="input-field">
+						<div class="input-field" id="phone-number-field">
 							<i class="material-icons prefix red-text text-darken-2">phone</i>
 							<input id="phone-number" type="text" />
-							<label for="phone-number">Phone number (optional)</label>
+							<label for="phone-number">Phone number or Easter Egg (optional)</label>
+
+							<button onclick="sendbtn()" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">phone</i>Call</button>
 						</div>
 
 						<div class="input-field">
@@ -103,14 +107,13 @@
 						</div>
 
 						<div class="center">
-							<button type="submit" onclick="sendbtn()" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">send</i>Send</button>
+							<button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">send</i>Send</button>
 						</div>
 					</div>
 
 					<div class="col l3 m2 hide-on-small-only"></div>
 				</div>
 			</form>
-			<button onclick="sendbtn()" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">send</i>Send</button>
 		</div>
 
 

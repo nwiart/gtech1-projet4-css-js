@@ -15,7 +15,15 @@ ed_desc = [
     "About window featuring a banner showing a scene from Roll-A-Ball"
 ];
 
+let revealSound = new Audio("sound/20.wav");
+
 $(document).ready(function() {
+
+    // Hide easter egg.
+    let phoneNum = document.getElementById("phone-number-field");
+    if (phoneNum != undefined)
+        phoneNum.style.display = "none";
+
     $('.sidenav').sidenav();
     $('.parallax').parallax();
     $('#message').characterCounter();
@@ -31,9 +39,13 @@ $(document).ready(function() {
     });
 });
 
+function reveal() {
+    document.getElementById("phone-number-field").style.display = "block";
+}
+
 function sendbtn() {
 
-	let phone = document.getElementById("phone-number").value;
-	if (phone == "173")
-		window.location.href = "zbie.html";
+    let phone = document.getElementById("phone-number").value;
+    if (phone == "173")
+        window.location.href = "zbie.html";
 }
