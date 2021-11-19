@@ -1,63 +1,58 @@
 // Roll-A-Ball screenshot descriptions for carousel.
 rb_desc = [
-    "Splashscreen",
-    "The game's main menu",
-    "Level select menu, with a simplified 3D representation of the selected level",
-    "The floating island level",
-    "The fire-themed level, with flying enemies",
-    "Speed display turning red and field of view increasing at high speeds"
+	"Splashscreen",
+	"The game's main menu",
+	"Level select menu, with a simplified 3D representation of the selected level",
+	"The floating island level",
+	"The fire-themed level, with flying enemies",
+	"Speed display turning red and field of view increasing at high speeds"
 ];
 
 // UGE Editor screenshot descriptions.
 ed_desc = [
-    "The main window with the level editor",
-    "Open project dialog",
-    "About window featuring a banner showing a scene from Roll-A-Ball"
+	"The main window with the level editor",
+	"Open project dialog",
+	"About window featuring a banner showing a scene from Roll-A-Ball"
 ];
 
 // Pong screenshot descriptions.
-pong_descs = [
-    "Pong window",
-    "Pong on launch (scores are initialized at 0)",
-    "Score display can hold 2 digits"
+pong_desc = [
+	"Pong window",
+	"Pong on launch (scores are initialized at 0)",
+	"Score display can hold 2 digits"
 ];
 
 let revealSound = new Audio("sound/20.wav");
 
 $(document).ready(function() {
 
-    // Hide easter egg.
-    let phoneNum = document.getElementById("phone-number-field");
-    if (phoneNum != undefined)
-        phoneNum.style.display = "none";
+	// Hide easter egg.
+	let phoneNum = document.getElementById("phone-number-field");
+	if (phoneNum != undefined)
+		phoneNum.style.display = "none";
 
-    $('.sidenav').sidenav();
-    $('.parallax').parallax();
-    $('#message').characterCounter();
-    $('.carousel').carousel({
-        dist: 0,
-        padding: 0,
-        fullWidth: true,
-        indicators: true,
-        onCycleTo: function(data) {
-            let desc = $('#rbdesc');
-            if (desc != undefined) { desc.html(rb_desc[$(data).index()]); return; }
+	$('.sidenav').sidenav();
+	$('.parallax').parallax();
+	$('#message').characterCounter();
+	$('.carousel').carousel({
+		dist: 0,
+		padding: 0,
+		fullWidth: true,
+		indicators: true,
+		onCycleTo: function(data) {
+			$('#rbdesc').html(rb_desc[$(data).index() - 1]);
+			$('#eddesc').html(ed_desc[$(data).index() - 1]);
+			$('#pongdesc').html(pong_desc[$(data).index() - 1]);
+		}
+	});
 
-            desc = $('#eddesc');
-            if (desc != undefined) { desc.html(ed_desc[$(data).index()]); return; }
-
-            desc = $('#pongdesc');
-            if (desc != undefined) { desc.html(pong_desc[$(data).index()]); return; }
-        }
-    });
-
-    // Carousel left & right arrows.
-    $('.carousel-move-prev').click(function() {
-        $('.carousel').carousel('prev');
-    });
-    $('.carousel-move-next').click(function() {
-        $('.carousel').carousel('next');
-    });
+	// Carousel left & right arrows.
+	$('.carousel-move-prev').click(function() {
+		$('.carousel').carousel('prev');
+	});
+	$('.carousel-move-next').click(function() {
+		$('.carousel').carousel('next');
+	});
 });
 
 // Easter egg stuff.
