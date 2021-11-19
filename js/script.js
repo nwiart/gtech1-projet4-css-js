@@ -62,25 +62,22 @@ function reveal() {
 
 function sendbtn() {
 
-	let phone = document.getElementById("phone-number").value;
-	if (phone == "173")
-		window.location.href = "zbie.html";
-	else if (phone == "666")
-		window.location.href = "https://thesatanictemple.com/"
-	else if (phone == "118 218")
-		window.location.href = "https://www.118218.fr/"
-	else if (phone == "1789")
-		window.location.href = "https://fr.memedroid.com/memes/tag/bastille"
-	else if (phone == "3630")
-		window.location.href = "https://www.youtube.com/embed/7G6xeJqh_fI?autoplay=1"
-	else if (phone == "3640")
-		window.location.href = "https://www.youtube.com/embed/R9AOOcJ8vh4?autoplay=1"
-	else if (phone == "1917")
-		window.location.href = "https://www.youtube.com/embed/Rm6q_3WGy9M?autoplay=1"
-	else if (phone == "0")
-		window.location.href = "https://ahseeit.com/french/?qa=381/jesus-quand-respawn-jours-qpres-mort-quil-juda-lavait-balance"
-	else if (phone == "7")
-		window.location.href = "https://fr.wikipedia.org/wiki/Les_Sept_P%C3%A9ch%C3%A9s_capitaux_et_les_Quatre_Derni%C3%A8res_%C3%89tapes_humaines"
-	else if (phone == "420")
-		window.location.href = "https://www.youtube.com/watch?v=cccxMrZtYoo&autoplay=1"
+	let phone = parseInt(document.getElementById("phone-number").value, 10);
+	let newLocation = "";
+
+	switch (phone) {
+	case 173:    newLocation = "zbie.html"; break;
+	case 666:    newLocation = "https://thesatanictemple.com/"; break;
+	case 118218: newLocation = "https://www.118218.fr/"; break;
+	case 1789:   newLocation = "https://images3.memedroid.com/images/UPLOADED366/5e4083c6b6eeb.jpeg"; break;
+	case 3630:   newLocation = "https://www.youtube.com/embed/7G6xeJqh_fI?autoplay=1"; break;
+	case 3640:   newLocation = "https://www.youtube.com/embed/R9AOOcJ8vh4?autoplay=1"; break;
+	case 1917:   newLocation = "https://www.youtube.com/embed/Rm6q_3WGy9M?autoplay=1"; break;
+	case 0:      newLocation = "https://ahseeit.com/french/?qa=381/jesus-quand-respawn-jours-qpres-mort-quil-juda-lavait-balance"; break;
+	case 7:      newLocation = "https://fr.wikipedia.org/wiki/Les_Sept_P%C3%A9ch%C3%A9s_capitaux_et_les_Quatre_Derni%C3%A8res_%C3%89tapes_humaines"; break;
+	case 420:    newLocation = "https://www.youtube.com/watch?v=cccxMrZtYoo&autoplay=1"; break;
+	}
+
+	if (newLocation != "")
+		window.location.href = newLocation;
 }
