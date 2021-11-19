@@ -48,4 +48,28 @@ function sendbtn() {
     let phone = document.getElementById("phone-number").value;
     if (phone == "173")
         window.location.href = "zbie.html";
+
+    else if (phone == "666")
+        window.location.href = "https://thesatanictemple.com/"
+
+    else if (phone == "118 218")
+        window.location.href = "https://www.118218.fr/"
+
+    else if (phone == "1789")
+        window.location.href = "https://fr.memedroid.com/memes/tag/bastille"
+
+    else if (phone == "3630")
+        window.location.href = "https://www.youtube.com/embed/7G6xeJqh_fI?autoplay=1"
+
+    else if (phone == "3640")
+        window.location.href = "https://www.youtube.com/embed/R9AOOcJ8vh4?autoplay=1"
+
+    else if (phone == "1917")
+        window.location.href = "https://www.youtube.com/embed/Rm6q_3WGy9M?autoplay=1"
+
+    else if (phone == "0")
+        window.location.href = "https://ahseeit.com/french/?qa=381/jesus-quand-respawn-jours-qpres-mort-quil-juda-lavait-balance"
+
+    else if (phone == "420")
+        window.location.href = "https://www.youtube.com/watch?v=5QCaaAyz-yA"
 }

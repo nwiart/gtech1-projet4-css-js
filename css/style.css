@@ -33,7 +33,12 @@ h3 {
 	width: 18%;
 }
 
-#contact_bloc {
+.linkedin_profile {
+
+	font-weight: bold;
+}
+
+#contact-block {
 	margin-top: 5%;
 	margin-bottom: 5%;
 }
