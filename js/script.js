@@ -79,6 +79,9 @@ function sendbtn() {
     else if (phone == "0")
         window.location.href = "https://ahseeit.com/french/?qa=381/jesus-quand-respawn-jours-qpres-mort-quil-juda-lavait-balance"
 
+    else if (phone == "7")
+        window.location.href = "https://fr.wikipedia.org/wiki/Les_Sept_P%C3%A9ch%C3%A9s_capitaux_et_les_Quatre_Derni%C3%A8res_%C3%89tapes_humaines"
+
     else if (phone == "420")
-        window.location.href = "https://www.youtube.com/watch?v=5QCaaAyz-yA"
+        window.location.href = "https://www.youtube.com/watch?v=cccxMrZtYoo&autoplay=1"
 }
