@@ -33,6 +33,7 @@ $(document).ready(function() {
 
 	$('.sidenav').sidenav();
 	$('.parallax').parallax();
+	$('.modal').modal();
 	$('#message').characterCounter();
 	$('.carousel').carousel({
 		dist: 0,
