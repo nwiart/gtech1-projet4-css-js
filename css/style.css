@@ -61,6 +61,15 @@ h3 {
 	float: right;
 }
 
+.custom-list {
+	list-style-type: circle !important;
+}
+
+.custom-list li {
+	list-style-type: circle !important;
+	padding-left: 10px;
+}
+
 /* Project presentation (paragraph justify and title centering). */
 .project-presentation h3 {
 	text-align: center;
@@ -71,7 +80,6 @@ h3 {
 }
 
 /* Carousel stuff (screenshots and arrow buttons). */
-
 .carousel-arrow-btn {
 	position: absolute;
 	top: 50%;
