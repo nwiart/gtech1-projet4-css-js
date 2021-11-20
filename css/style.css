@@ -58,6 +58,10 @@ h3 {
 	padding-bottom: 5%;
 }
 
+#footer-content a:not(.btn) {
+	margin-left: 20px;
+}
+
 #contact-block {
 	margin-top: 5%;
 	margin-bottom: 5%;
