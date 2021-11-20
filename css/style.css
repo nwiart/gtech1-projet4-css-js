@@ -61,6 +61,15 @@ h3 {
 	float: right;
 }
 
+/* Project presentation (paragraph justify and title centering). */
+.project-presentation h3 {
+	text-align: center;
+}
+
+.project-presentation p {
+	text-align: justify;
+}
+
 /* Carousel stuff (screenshots and arrow buttons). */
 
 .carousel-arrow-btn {
