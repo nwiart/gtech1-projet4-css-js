@@ -9,9 +9,16 @@ h3 {
 	font-size: 2rem;
 }
 
+/*
+ * The two directives below help show the full width of an image in a parallax container.
+ * Because on small screen sizes, the images overflow as they are not resized correctly.
+ */
 .parallax-container {
 
 	height: 30vw;
+}
+.parallax img {
+	width: 100%;
 }
 
 .title-block {
