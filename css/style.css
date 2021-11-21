@@ -90,16 +90,31 @@ h3 {
 }
 
 /* Carousel stuff (screenshots and arrow buttons). */
-.carousel-arrow-btn {
+.carousel .carousel-arrow-btn {
 	position: absolute;
 	top: 50%;
 }
+.carousel .carousel-arrow-btn .carousel-move-prev {
+	left: 2em;
+}
+.carousel .carousel-arrow-btn .carousel-move-next {
+	right: 2em;
+}
 
 .screenshot-desc {
-	position: absolute;
-	top: 0px;
-	left: auto;
-	right: auto;
-	width: auto;
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin: 0.5em 0px;
 	text-shadow: 0px 0px 2px black, 0 0 8px black;
 }
+
+/*.screenshot-desc {
+	position: absolute;
+	top: 0px;
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-top: 1em;
+	text-shadow: 0px 0px 2px black, 0 0 8px black;
+}*/
