@@ -1,3 +1,5 @@
+<?php if (!isset($_SESSION)) session_start(); ?>
+
 <!-- Navbar and mobile sidenav. -->
 <nav>
 	<div class="nav-wrapper black">
@@ -5,27 +7,37 @@
 		<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
 		<ul class="right hide-on-med-and-down">
-			<li><a href="pong.php" class="btn waves-effect waves-light red darken-2">Pong</a></li>
-			<li><a href="ug-editor.php" class="btn waves-effect waves-light red darken-2">UGE Editor</a></li>
-			<li><a href="rb.php" class="btn waves-effect waves-light red darken-2">Roll-A-Ball!</a></li>
-		</ul>
-		<ul class="left hide-on-med-and-down">
-		<?php
-			if (isset($_SESSION["user"]))
-			{?>
-				<li><a href="disconnect.php" class="btn waves-effect waves-light">Disconnect</a></li>
-		<?php
-			}
-			else
-			{?>
-				<li><a href="#modal-signup" class="btn waves-effect waves-light modal-trigger">Sign Up</a></li>
-				<li><a href="#modal-signin" class="btn waves-effect waves-light modal-trigger">Sign In</a></li>
-		<?php
-			}?>
+			<li><a href="#dropdown-projects" class="btn waves-effect waves-light red darken-2 dropdown-trigger"><i class="material-icons right">expand_more</i>Projects</a></li>
+			<li><a href="#dropdown-users"    class="btn waves-effect waves-light dropdown-trigger"><i class="material-icons right">expand_more</i>User <?php if (isset($_SESSION["user"])) echo "(".$_SESSION["user"]["name"].")"; ?></a></li>
 		</ul>
 	</div>
 </nav>
 
+<!-- Projects dropdown menu. -->
+<ul id="dropdown-projects" class="dropdown-content">
+	<li><a href="pong.php"      class="red-text text-darken-2">Pong</a></li>
+	<li><a href="ug-editor.php" class="red-text text-darken-2">UGE Editor</a></li>
+	<li><a href="rb.php"        class="red-text text-darken-2">Roll-A-Ball!</a></li>
+</ul>
+
+<!-- User dropdown menu. -->
+<ul id="dropdown-users" class="dropdown-content">
+	<?php
+		if (isset($_SESSION["user"]))
+		{?>
+			<li><a href="disconnect.php">Disconnect</a></li>
+	<?php
+		}
+		else
+		{?>
+			<li><a href="#modal-signup" class="modal-trigger">Sign Up</a></li>
+			<li><a href="#modal-signin" class="modal-trigger">Sign In</a></li>
+	<?php
+		}
+	?>
+</ul>
+
+<!-- Mobile menu. -->
 <ul class="sidenav grey darken-3" id="mobile-demo">
 	<li><a href="pong.php" class="btn red darken-2">Pong</a></li>
 	<li><a href="ug-editor.php" class="btn red darken-2">UGE Editor</a></li>

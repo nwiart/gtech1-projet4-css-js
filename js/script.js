@@ -34,6 +34,7 @@ $(document).ready(function() {
 	$('.sidenav').sidenav();
 	$('.parallax').parallax();
 	$('.modal').modal();
+	$('.dropdown-trigger').dropdown({coverTrigger: false});
 	$('#message').characterCounter();
 	$('.carousel').carousel({
 		dist: 0,

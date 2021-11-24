@@ -19,7 +19,7 @@
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<title>Admin Panel</title>
@@ -88,5 +88,12 @@
 		</div>
 
 		<?php /*require "php/footer.php";*/ ?>
+
+
+
+		<!--JavaScript at end of body for optimized loading-->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
 	</body>
 </html>
