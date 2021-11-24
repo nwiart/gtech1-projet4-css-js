@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
+	<?php session_start(); ?>
+
 	<head>
 		<meta charset="utf-8" />
 		<title>Portfolio Ethan & Noah</title>
@@ -21,6 +24,20 @@
 	<body>
 
 		<?php require "php/menu.php"; ?>
+
+		<!-- Login response. -->
+		<?php
+			if (isset($_SESSION["signin-result"]))
+			{
+				if ($_SESSION["signin-result"]) {
+					echo "<p>Welcome back, " . $_SESSION["user"]["name"] . "!</p>";
+					if ($_SESSION["user"]["isAdmin"])
+						echo "<p>You have administrator rights on this website.</p>";
+				}
+				else
+					echo "<p>Incorrect login or password.</p>";
+			}
+		?>
 
 		<!-- Presentation section. -->
 		<div class="parallax-container">

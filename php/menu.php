@@ -10,8 +10,18 @@
 			<li><a href="rb.php" class="btn waves-effect waves-light red darken-2">Roll-A-Ball!</a></li>
 		</ul>
 		<ul class="left hide-on-med-and-down">
-			<li><a href="#modal-signup" class="btn waves-effect waves-light modal-trigger">Sign Up</a></li>
-			<li><a href="#modal-signin" class="btn waves-effect waves-light modal-trigger">Sign In</a></li>
+		<?php
+			if (isset($_SESSION["user"]))
+			{?>
+				<li><a href="disconnect.php" class="btn waves-effect waves-light">Disconnect</a></li>
+		<?php
+			}
+			else
+			{?>
+				<li><a href="#modal-signup" class="btn waves-effect waves-light modal-trigger">Sign Up</a></li>
+				<li><a href="#modal-signin" class="btn waves-effect waves-light modal-trigger">Sign In</a></li>
+		<?php
+			}?>
 		</ul>
 	</div>
 </nav>
@@ -21,8 +31,18 @@
 	<li><a href="ug-editor.php" class="btn red darken-2">UGE Editor</a></li>
 	<li><a href="rb.php" class="btn red darken-2">Roll-A-Ball!</a></li>
 
-	<li><a href="#modal-signup" class="btn waves-effect waves-light modal-trigger">Sign Up</a></li>
-	<li><a href="#modal-signin" class="btn waves-effect waves-light modal-trigger">Sign In</a></li>
+	<?php
+		if (isset($_SESSION["user"]))
+		{?>
+			<li><a href="disconnect.php" class="btn waves-effect waves-light">Disconnect</a></li>
+	<?php
+		}
+		else
+		{?>
+			<li><a href="#modal-signup" class="btn waves-effect waves-light modal-trigger">Sign Up</a></li>
+			<li><a href="#modal-signin" class="btn waves-effect waves-light modal-trigger">Sign In</a></li>
+	<?php
+		}?>
 </ul>
 
 
