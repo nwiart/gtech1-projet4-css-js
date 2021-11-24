@@ -31,11 +31,13 @@
 			{
 				if ($_SESSION["signin-result"]) {
 					echo "<p>Welcome back, " . $_SESSION["user"]["name"] . "!</p>";
-					if ($_SESSION["user"]["isAdmin"])
-						echo "<p>You have administrator rights on this website.</p>";
+					if ($_SESSION["user"]["isAdmin"]) {
+						echo "<p>You have <a href=\"admin-panel.php\">administrator rights</a> on this website.</p>";
+					}
 				}
-				else
+				else {
 					echo "<p>Incorrect login or password.</p>";
+				}
 			}
 		?>
 
@@ -45,7 +47,7 @@
 		</div>
 
 		<div class="z-depth-5">
-			<h2 class="black center grey darken-2 white-text title-block">PRESENTATION</h2>
+			<h2 class="center grey darken-2 white-text title-block">PRESENTATION</h2>
 			<div class="section white row">
 
 				<!-- Ethan presentation. -->

@@ -3,7 +3,10 @@
 Revision 1.0
 
 - [ ] Une base de données
-- [ ] Une interface de connexion au site
+  - [x] Utilisateurs
+  - [ ] Pages projet
+  - [ ] Contenu page principale
+- [x] Une interface de connexion au site
 - [ ] Une interface d'inscription au site
 - [ ] Un système de droit d'accès
 - [ ] Un panel admin (réservé uniquement aux utilisateurs ayants les droits administrateurs) qui permet de :
