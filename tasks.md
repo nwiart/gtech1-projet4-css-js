@@ -2,27 +2,14 @@
 
 Revision 1.0
 
-- [x] Vous choisirez 3 de vos [projets](#projets) à afficher sur le site
-- [x] Un menu de navigation entre les différents projets sur le site
-- [x] Une présentation de l’équipe/de vous-même
-- [x] Un « carrousel » avec des images de vos projets
-- [x] Une partie par projet avec une description et une ou plusieurs images
-- [x] Une « modal » avec un formulaire de contact
-- [x] Un événement changeant l’apparence d’un élément de votre site (easter egg)
-
-# Projets
-
-## Pong!
-
-- [x] Ajouter une description
-- [x] Faire des screenshots et les intégrer
-
-## UGE Editor
-
-- [x] Ajouter une description
-- [x] Faire des screenshots et les intégrer
-
-## Platformer Game
-
-- [x] Ajouter une description
-- [x] Faire des screenshots et les intégrer
+- [ ] Une base de données
+- [ ] Une interface de connexion au site
+- [ ] Une interface d'inscription au site
+- [ ] Un système de droit d'accès
+- [ ] Un panel admin (réservé uniquement aux utilisateurs ayants les droits administrateurs) qui permet de :
+  - [ ] Gérer les projets : insertion, modification, suppression
+  - [ ] Voir/Modifier/Supprimer les utilisateurs
+  - [ ] Modifier le contenu (textes et images) de la page d'accueil (pas le positionnement des éléments)
+- [ ] La page d'accueil doit être entièrement automatisée et gérable via le panel admin
+- [ ] Envoi de mail à la validation du formulaire de contact
+- [ ] Vous devez également me fournir le MCD de votre base de données.
