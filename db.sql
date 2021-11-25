@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 25, 2021 at 01:15 PM
+-- Generation Time: Nov 25, 2021 at 01:51 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `projet5-db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `deleted_users`
+--
+
+DROP TABLE IF EXISTS `deleted_users`;
+CREATE TABLE IF NOT EXISTS `deleted_users` (
+  `login` varchar(64) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `password` varchar(256) NOT NULL,
+  `is_admin` tinyint(4) NOT NULL,
+  PRIMARY KEY (`login`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `deleted_users`
+--
+
+INSERT INTO `deleted_users` (`login`, `email`, `password`, `is_admin`) VALUES
+('ducon', 'du@con.fr', 'd9089f056712e0471d5338a63710330b3958920d', 0);
 
 -- --------------------------------------------------------
 

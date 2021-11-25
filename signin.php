@@ -36,8 +36,6 @@
 			"name" => $_POST["login"],
 			"isAdmin" => $isAdmin
 		);
-
-		//print_r( $result );
 	}
 
 	header("Location: index.php");

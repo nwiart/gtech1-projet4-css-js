@@ -33,7 +33,7 @@
 	{
 		$pdo = createPDO();
 
-		$maRequete = "SELECT login, email FROM user WHERE login = :login";
+		$maRequete = "SELECT * FROM user WHERE login = :login";
 		$data = array(
 			":login" => $login
 		);
@@ -64,11 +64,31 @@
 	/*
 	 * Delete the user with the specified login.
 	 * Does nothing if user does not exist.
+	 * 
+	 * Actually does not delete the user, but moves their data to a "deleted_users" table.
 	 */
 	function deleteUserByLogin($login)
 	{
 		$pdo = createPDO();
 
+		// Get user data.
+		$userToDelete = getUserByLogin($login);
+		if (sizeof($userToDelete) == 0) {
+			return;
+		}
+
+		// Move user data to "deleted_users" table.
+		$maRequete = "INSERT INTO deleted_users VALUES (:login, :email, :password, :is_admin);";
+		$data = array(
+			":login" => $login,
+			":email" => $userToDelete[0]["email"],
+			":password" => $userToDelete[0]["password"],
+			":is_admin" => $userToDelete[0]["is_admin"]
+		);
+		$pre = $pdo->prepare($maRequete);
+		$pre->execute($data);
+
+		// Delete record from "user" table.
 		$maRequete = "DELETE FROM user WHERE login = :login";
 		$data = array(
 			":login" => $login
