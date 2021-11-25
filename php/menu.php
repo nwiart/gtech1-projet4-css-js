@@ -64,8 +64,7 @@
     <div class="modal-content">
         <h3>Sign In</h3>
         <p>
-            Please fill in the form below if you wish to send us a message. <br />
-            Note : Be on the lookout for any strange detail on the main page. If you find it, be sure to come back here!
+            Sign in to your account on our website.
         </p>
 
         <!-- Contact form. -->
