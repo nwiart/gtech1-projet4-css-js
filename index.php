@@ -27,13 +27,13 @@
 			if (isset($_SESSION["signin-result"]))
 			{
 				if ($_SESSION["signin-result"]) {
-					echo "<p>Welcome back, " . $_SESSION["user"]["name"] . "!</p>";
+					echo "<p class=\"center\">Welcome back, " . $_SESSION["user"]["name"] . "!</p>";
 					if ($_SESSION["user"]["isAdmin"]) {
-						echo "<p>You have <a href=\"admin-panel.php\">administrator rights</a> on this website.</p>";
+						echo "<p class=\"center\">You have <a href=\"admin-panel.php\">administrator rights</a> on this website.</p>";
 					}
 				}
 				else {
-					echo "<p>Incorrect login or password.</p>";
+					echo "<p class=\"center\">Incorrect login or password.</p>";
 				}
 			}
 		?>
