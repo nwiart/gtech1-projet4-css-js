@@ -67,7 +67,7 @@
 						foreach ($result as $user)
 						{?>
 							<tr>
-							<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" id="<?php echo $user["login"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
+							<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
 							<td><?php echo $user["login"]; ?></td>
 							<td><?php echo $user["email"]; ?></td>
 							</tr>
@@ -76,6 +76,42 @@
 					?>
 				</tbody>
 			</table>
+
+			<!-- Projects table. -->
+			<h3>Projects</h3>
+			<a href="#modal-new-project" class="btn waves-effect waves-light red darken-2 modal-trigger">New Project</a>
+			<table>
+				<thead>
+					<tr>
+						<th>Modify</th>
+						<th>Name (id)</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<?php
+						$projects = getProjects();
+
+						foreach ($projects as $p)
+						{?>
+							<tr>
+							<td><a href="admin-modif-project.php?pr=<?php echo $p["id"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
+							<td><?php echo $p["name"] . " (" . $p["id"] . ")"; ?></td>
+							</tr>
+						<?php
+						}
+					?>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="modal-new-project" class="modal">
+			<div class="modal-content">
+				<h3>Fack</h3>
+			</div>
+
+			<div class="modal-footer">
+			</div>
 		</div>
 
 		<?php /*require "php/footer.php";*/ ?>

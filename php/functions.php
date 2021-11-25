@@ -12,6 +12,14 @@
 		return $pdo;
 	}
 
+	function executeSQL($pdo, $request, $data)
+	{
+		$pre = $pdo->prepare($request);
+		$pre->execute($data);
+
+		return $pre->fetchAll(PDO::FETCH_ASSOC);
+	}
+
 	/*
 	 * Query the database for all users.
 	 */
@@ -95,6 +103,45 @@
 		);
 		$pre = $pdo->prepare($maRequete);
 		$pre->execute($data);
+	}
+
+
+
+	function getProjects()
+	{
+		$pdo = createPDO();
+		return executeSQL($pdo, "SELECT * FROM projects", array());
+	}
+
+	/*
+	 * 
+	 */
+	function getProjectById($id)
+	{
+		$pdo = createPDO();
+
+		$maRequete = "SELECT * FROM projects WHERE id = :id";
+		$data = array(
+			":id" => $id,
+		);
+		$pre = $pdo->prepare($maRequete);
+		$pre->execute($data);
+
+		return $pre->fetchAll(PDO::FETCH_ASSOC);
+	}
+
+	function getProjectParagraphs($id)
+	{
+		$pdo = createPDO();
+
+		$maRequete = "SELECT * FROM project_paragraphs WHERE project_id = :id ORDER BY placement";
+		$data = array(
+			":id" => $id,
+		);
+		$pre = $pdo->prepare($maRequete);
+		$pre->execute($data);
+
+		return $pre->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 
