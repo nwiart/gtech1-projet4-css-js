@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 24, 2021 at 11:19 AM
+-- Generation Time: Nov 25, 2021 at 01:15 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -35,6 +35,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `is_admin` tinyint(4) NOT NULL,
   PRIMARY KEY (`login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`login`, `email`, `password`, `is_admin`) VALUES
+('admin', 'random.dude@example.com', 'b80ac32edc1a3cdc9483d522be3f010f0e3f5b2f', 1),
+('david73', 'nwiart@gaming.tech', '85f8e5ee55ed8f4ecab2fe9ba99109a1ae5ec4dd', 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
