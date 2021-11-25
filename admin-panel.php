@@ -1,21 +1,8 @@
 <?php
 	// Small PHP script to deny access to anyone who does not have
 	// administrator rights / are not logged in.
-	session_start();
-
-	if (!isset($_SESSION["user"]))
-	{
-		echo "[ERROR] : You are not currently logged in.";
-		exit();
-	}
-	else
-	{
-		if (!$_SESSION["user"]["isAdmin"])
-		{
-			echo "[ERROR] : You do not have administration rights.";
-			exit();
-		}
-	}
+	require_once "php/functions.php";
+	checkCurrentUserAdmin();
 ?>
 
 <!DOCTYPE html>
@@ -47,20 +34,23 @@
 		<div class="container">
 			<h3>Registered Users</h3>
 
-			<!-- List users in a table. -->
+			<!-- Search bar (uses URL parameters). -->
 			<form method="get" action="admin-panel.php">
 				<div class="row">
-					<div class="col s2">
-						<button type="submit" class="btn"><i class="material-icons">search</i></button>
-					</div>
-					<div class="col s10">
+					<div class="col s11">
 						<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
+					</div>
+					<div class="col s1">
+						<button type="submit" class="btn right"><i class="material-icons">search</i></button>
 					</div>
 				</div>
 			</form>
+
+			<!-- List users in a table. -->
 			<table>
 				<thead>
 					<tr>
+						<th>Modify</th>
 						<th>Login / Name</th>
 						<th>Email Address</th>
 					</tr>
@@ -77,6 +67,7 @@
 						foreach ($result as $user)
 						{?>
 							<tr>
+							<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" id="<?php echo $user["login"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
 							<td><?php echo $user["login"]; ?></td>
 							<td><?php echo $user["email"]; ?></td>
 							</tr>
