@@ -15,9 +15,16 @@
 
 <!-- Projects dropdown menu. -->
 <ul id="dropdown-projects" class="dropdown-content">
-	<li><a href="pong.php"      class="red-text text-darken-2">Pong</a></li>
-	<li><a href="ug-editor.php" class="red-text text-darken-2">UGE Editor</a></li>
-	<li><a href="rb.php"        class="red-text text-darken-2">Roll-A-Ball!</a></li>
+	<?php
+		require_once "php/functions.php";
+		$projects = getProjects();
+
+		foreach ($projects as $prj) {
+	?>
+			<li><a href="project.php?pr=<?php echo $prj["id"]; ?>" class="red-text text-darken-2"><?php echo $prj["name"]; ?></a></li>
+	<?php
+		}
+	?>
 </ul>
 
 <!-- User dropdown menu. -->
@@ -39,9 +46,13 @@
 
 <!-- Mobile menu. -->
 <ul class="sidenav grey darken-3" id="mobile-demo">
-	<li><a href="pong.php" class="btn red darken-2">Pong</a></li>
-	<li><a href="ug-editor.php" class="btn red darken-2">UGE Editor</a></li>
-	<li><a href="rb.php" class="btn red darken-2">Roll-A-Ball!</a></li>
+	<?php
+		foreach ($projects as $prj) {
+	?>
+			<li><a href="project.php?pr=<?php echo $prj["id"]; ?>" class="btn red darken-2"><?php echo $prj["name"]; ?></a></li>
+	<?php
+		}
+	?>
 
 	<?php
 		if (isset($_SESSION["user"]))
@@ -61,46 +72,46 @@
 
 <!-- Sign In form. -->
 <div id="modal-signin" class="modal">
-    <div class="modal-content">
-        <h3>Sign In</h3>
-        <p>
-            Sign in to your account on our website.
-        </p>
+	<div class="modal-content">
+		<h3>Sign In</h3>
+		<p>
+			Sign in to your account on our website.
+		</p>
 
-        <!-- Contact form. -->
-        <form method="post" action="signin.php" class="col s12">
-            <div class="row" id="contact-block">
+		<!-- Contact form. -->
+		<form method="post" action="signin.php" class="col s12">
+			<div class="row" id="contact-block">
 
-                <!-- Form layout. A certain number of columns are taken on either side depending on the screen width. -->
-                <div class="col l2 m1 hide-on-small-only"></div>
-                <div class="col s12 m10 l8">
+				<!-- Form layout. A certain number of columns are taken on either side depending on the screen width. -->
+				<div class="col l2 m1 hide-on-small-only"></div>
+				<div class="col s12 m10 l8">
 
 					<!-- Login. -->
-                    <div class="input-field">
-                        <i class="material-icons prefix red-text text-darken-2">account_circle</i>
-                        <input name="login" id="login" type="text" required="" aria-required="true" />
-                        <label for="login">Login</label>
-                    </div>
+					<div class="input-field">
+						<i class="material-icons prefix red-text text-darken-2">account_circle</i>
+						<input name="login" id="login" type="text" required="" aria-required="true" />
+						<label for="login">Login</label>
+					</div>
 
 					<!-- Password. -->
-                    <div class="input-field">
-                        <i class="material-icons prefix red-text text-darken-2">lock</i>
-                        <input name="password" id="password" type="password" required="" aria-required="true" />
-                        <label for="password">Password</label>
-                    </div>
+					<div class="input-field">
+						<i class="material-icons prefix red-text text-darken-2">lock</i>
+						<input name="password" id="password" type="password" required="" aria-required="true" />
+						<label for="password">Password</label>
+					</div>
 
-                    <div class="center">
-                        <button type="submit" class="btn waves-effect waves-light red darken-2">Sign In</button>
-                    </div>
-                </div>
-                <div class="col l2 m1 hide-on-small-only"></div>
+					<div class="center">
+						<button type="submit" class="btn waves-effect waves-light red darken-2">Sign In</button>
+					</div>
+				</div>
+				<div class="col l2 m1 hide-on-small-only"></div>
 
-            </div>
-        </form>
-    </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-close btn waves-effect waves-green red darken-2">Close</a>
-    </div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close btn waves-effect waves-green red darken-2">Close</a>
+	</div>
 </div>
 
 <!-- Sign Up form. -->

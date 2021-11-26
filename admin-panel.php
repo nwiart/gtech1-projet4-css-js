@@ -32,85 +32,117 @@
 		<h2 class="grey darken-2 center white-text title-block">Admin Panel</h2>
 
 		<div class="container">
-			<h3>Registered Users</h3>
+			<div class="section">
+				<h3>Registered Users</h3>
 
-			<!-- Search bar (uses URL parameters). -->
-			<form method="get" action="admin-panel.php">
-				<div class="row">
-					<div class="col s11">
-						<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
+				<!-- Search bar (uses URL parameters). -->
+				<form method="get" action="admin-panel.php">
+					<div class="row">
+						<div class="col s11">
+							<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
+						</div>
+						<div class="col s1">
+							<button type="submit" class="btn right"><i class="material-icons">search</i></button>
+						</div>
 					</div>
-					<div class="col s1">
-						<button type="submit" class="btn right"><i class="material-icons">search</i></button>
-					</div>
-				</div>
-			</form>
+				</form>
 
-			<!-- List users in a table. -->
-			<table>
-				<thead>
-					<tr>
-						<th>Modify</th>
-						<th>Login / Name</th>
-						<th>Email Address</th>
-					</tr>
-				</thead>
+				<!-- List users in a table. -->
+				<table id="admin-user-table">
+					<thead>
+						<tr>
+							<th>Modify</th>
+							<th>Login / Name</th>
+							<th>Email Address</th>
+						</tr>
+					</thead>
 
-				<tbody>
-					<?php
-						// Get user list.
-						if (isset($_GET["search-users"]))
-							$result = searchUsers($_GET["search-users"]);
-						else
-							$result = getUsers();
-
-						foreach ($result as $user)
-						{?>
-							<tr>
-							<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
-							<td><?php echo $user["login"]; ?></td>
-							<td><?php echo $user["email"]; ?></td>
-							</tr>
+					<tbody>
 						<?php
-						}
-					?>
-				</tbody>
-			</table>
+							// Get user list.
+							if (isset($_GET["search-users"]))
+								$result = searchUsers($_GET["search-users"]);
+							else
+								$result = getUsers();
+
+							foreach ($result as $user)
+							{?>
+								<tr>
+								<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
+								<td><?php echo $user["login"]; ?></td>
+								<td><?php echo $user["email"]; ?></td>
+								</tr>
+							<?php
+							}
+						?>
+					</tbody>
+				</table>
+			</div>
 
 			<!-- Projects table. -->
-			<h3>Projects</h3>
-			<a href="#modal-new-project" class="btn waves-effect waves-light red darken-2 modal-trigger">New Project</a>
-			<table>
-				<thead>
-					<tr>
-						<th>Modify</th>
-						<th>Name (id)</th>
-					</tr>
-				</thead>
+			<div class="section">
+				<h3>Projects</h3>
+				<a href="#modal-new-project" class="btn waves-effect waves-light modal-trigger">New Project</a>
+				<table>
+					<thead>
+						<tr>
+							<th>Modify</th>
+							<th>Name (id)</th>
+						</tr>
+					</thead>
 
-				<tbody>
-					<?php
-						$projects = getProjects();
-
-						foreach ($projects as $p)
-						{?>
-							<tr>
-							<td><a href="admin-modif-project.php?pr=<?php echo $p["id"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
-							<td><?php echo $p["name"] . " (" . $p["id"] . ")"; ?></td>
-							</tr>
+					<tbody>
 						<?php
-						}
-					?>
-				</tbody>
-			</table>
+							$projects = getProjects();
+
+							foreach ($projects as $p)
+							{?>
+								<tr>
+								<td><a href="admin-modif-project.php?pr=<?php echo $p["id"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
+								<td><?php echo $p["name"] . " (" . $p["id"] . ")"; ?></td>
+								</tr>
+							<?php
+							}
+						?>
+					</tbody>
+				</table>
+			</div>
 		</div>
 
+
+
+		<!-- New project modal. -->
 		<div id="modal-new-project" class="modal">
 			<div class="modal-content">
-				<h3>Fack</h3>
+				<h3>New Project</h3>
+				<p>Create a new project here by specifying its name and ID.</p>
+				<p>The ID corresponds to a simplified version of the project's name. It should contain only lowercase letters and dashes.</p>
+
+				<div class="row">
+					<div class="col l2 m1 hide-on-small-only"></div>
+					<div class="col s12 m10 l8">
+						<form method="post" action="admin-new-project.php">
+							<div class="input-field">
+								<input name="id" id="id" type="text" required="" aria-required="true" />
+								<label for="id">ID</id>
+							</div>
+
+							<div class="input-field">
+								<input name="name" id="name" type="text" required="" aria-required="true" />
+								<label for="name">Name</id>
+							</div>
+
+							<div class="center">
+								<button type="submit" class="btn waves-effect waves-light red darken-2">Create project</button>
+							</div>
+						</form>
+					</div>
+					<div class="col l2 m1 hide-on-small-only"></div>
+				</div>
 			</div>
 
 			<div class="modal-footer">
+				<a href="#!" class="modal-close btn waves-effect waves-light red darken-2">Close</a>
 			</div>
 		</div>
 

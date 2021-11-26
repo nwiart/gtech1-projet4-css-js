@@ -1,4 +1,8 @@
 <?php
+
+	/*
+	 * Helper functions for executing SQL requests.
+	 */
 	function createPDO()
 	{
 		$pdo = new PDO(
@@ -20,18 +24,15 @@
 		return $pre->fetchAll(PDO::FETCH_ASSOC);
 	}
 
+
+
 	/*
 	 * Query the database for all users.
 	 */
 	function getUsers()
 	{
 		$pdo = createPDO();
-
-		$maRequete = "SELECT login, email FROM user";
-		$pre = $pdo->prepare($maRequete);
-		$pre->execute();
-
-		return $pre->fetchAll(PDO::FETCH_ASSOC);
+		return executeSQL($pdo, "SELECT * FROM user", array());
 	}
 
 	/*
@@ -40,15 +41,7 @@
 	function getUserByLogin($login)
 	{
 		$pdo = createPDO();
-
-		$maRequete = "SELECT * FROM user WHERE login = :login";
-		$data = array(
-			":login" => $login
-		);
-		$pre = $pdo->prepare($maRequete);
-		$pre->execute($data);
-
-		return $pre->fetchAll(PDO::FETCH_ASSOC);
+		return executeSQL($pdo, "SELECT * FROM user WHERE login = :login", array( ":login" => $login ));
 	}
 
 	/*
@@ -57,16 +50,7 @@
 	function searchUsers($loginBeginsWith)
 	{
 		$pdo = createPDO();
-
-		$maRequete = "SELECT login, email FROM user WHERE login LIKE :log";
-		$data = array(
-			":log" => ($loginBeginsWith . "%")
-		);
-
-		$pre = $pdo->prepare($maRequete);
-		$pre->execute($data);
-
-		return $pre->fetchAll(PDO::FETCH_ASSOC);
+		return executeSQL($pdo, "SELECT login, email FROM user WHERE login LIKE :log", array( ":log" => ($loginBeginsWith . "%") ) );
 	}
 
 	/*
@@ -86,23 +70,17 @@
 		}
 
 		// Move user data to "deleted_users" table.
-		$maRequete = "INSERT INTO deleted_users VALUES (:login, :email, :password, :is_admin);";
-		$data = array(
+		executeSQL($pdo, "INSERT INTO deleted_users VALUES (:login, :email, :password, :is_admin);", array(
 			":login" => $login,
 			":email" => $userToDelete[0]["email"],
 			":password" => $userToDelete[0]["password"],
 			":is_admin" => $userToDelete[0]["is_admin"]
-		);
-		$pre = $pdo->prepare($maRequete);
-		$pre->execute($data);
+		) );
 
 		// Delete record from "user" table.
-		$maRequete = "DELETE FROM user WHERE login = :login";
-		$data = array(
+		executeSQL($pso, "DELETE FROM user WHERE login = :login", array(
 			":login" => $login
-		);
-		$pre = $pdo->prepare($maRequete);
-		$pre->execute($data);
+		) );
 	}
 
 
@@ -119,29 +97,35 @@
 	function getProjectById($id)
 	{
 		$pdo = createPDO();
-
-		$maRequete = "SELECT * FROM projects WHERE id = :id";
-		$data = array(
-			":id" => $id,
-		);
-		$pre = $pdo->prepare($maRequete);
-		$pre->execute($data);
-
-		return $pre->fetchAll(PDO::FETCH_ASSOC);
+		return executeSQL($pdo, "SELECT * FROM projects WHERE id = :id", array( ":id" => $id ));
 	}
 
 	function getProjectParagraphs($id)
 	{
 		$pdo = createPDO();
+		return executeSQL($pdo, "SELECT * FROM project_paragraphs WHERE project_id = :id ORDER BY placement", array( ":id" => $id ));
+	}
 
-		$maRequete = "SELECT * FROM project_paragraphs WHERE project_id = :id ORDER BY placement";
-		$data = array(
-			":id" => $id,
-		);
-		$pre = $pdo->prepare($maRequete);
-		$pre->execute($data);
+	function getProjectCarouselImages($id)
+	{
+		$pdo = createPDO();
+		return executeSQL($pdo, "SELECT * FROM project_images WHERE project_id = :id ORDER BY placement", array( ":id" => $id ));
+	}
 
-		return $pre->fetchAll(PDO::FETCH_ASSOC);
+	function deleteProjectById($id)
+	{
+		$pdo = createPDO();
+
+		// Get project data.
+		$projectToDelete = getProjectById($id);
+		if (sizeof($projectToDelete) == 0) {
+			return;
+		}
+
+		// Delete record from "projects" table.
+		executeSQL($pdo, "DELETE FROM projects WHERE id = :id", array(
+			":id" => $id
+		) );
 	}
 
 

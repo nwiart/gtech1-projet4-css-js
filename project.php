@@ -22,25 +22,50 @@
 			require_once "php/functions.php";
 
 			// Get project name and description paragraphs.
-			$prj = getProjectById($_GET["pr"]);
-			$prjDesc = getProjectParagraphs($_GET["pr"]);
+			$projectId = $_GET["pr"];
+			$prj = getProjectById($projectId);
+			$prjDesc = getProjectParagraphs($projectId);
+			$prjImgs = getProjectCarouselImages($projectId);
 		?>
 
 		<h2 class="title-block grey darken-2 white-text center"><?php echo $prj[0]["name"]; ?></h2>
 		<div class="grey darken-1">
-			<div class="project-presentation container z-depth-5 white black-text">
-				<?php
-					foreach ($prjDesc as $para)
-					{
-				?>
-					<div class="section">
-						<h3><?php echo $para["title"]; ?></h3>
-						<?php echo $para["content"]; ?>
-					</div>
+			<div class="container z-depth-5">
+				<div class="container">
+					<div class="carousel carousel-slider">
 
-				<?php
-					}
-				?>
+						<!-- Carousel left and right buttons. -->
+						<div class="carousel-fixed-item center carousel-arrow-btn">
+							<div class="left"><button class="btn-floating btn-large waves-effect waves-light carousel-move-prev"><i class="material-icons left white-text red darken-2">chevron_left</i></button></div>
+							<div class="right"><button class="btn-floating btn-large waves-effect waves-light carousel-move-next"><i class="material-icons right white-text red darken-2">chevron_right</i></button></div>
+						</div>
+
+						<!-- Carousel images. -->
+						<?php
+							foreach ($prjImgs as $image) {
+						?>
+								<a class="carousel-item" href="#one!"><img src="<?php echo $image["path"] ?>" alt="<?php echo $image["description"]; ?>"></a>
+						<?php
+							}
+						?>
+					</div>
+				</div>
+				<p class="screenshot-desc white-text" id="rbdesc"></p>
+
+				<div class="project-presentation white black-text">
+					<?php
+						foreach ($prjDesc as $para)
+						{
+					?>
+						<div class="section">
+							<h3><?php echo $para["title"]; ?></h3>
+							<?php echo $para["content"]; ?>
+						</div>
+
+					<?php
+						}
+					?>
+				</div>
 			</div>
 		</div>
 
