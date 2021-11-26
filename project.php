@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<title>Portfolio Ethan & Noah</title>
-
-		<!--Import Google Icon Font-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-		<!--Import materialize.css-->
-		<link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
-		<link rel="stylesheet" href="css/style.css" />
-
-		<!--Let browser know website is optimized for mobile-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<?php
+			$pageTitle = "";
+			$pageDesc  = "";
+			require "php/head.php";
+		?>
 	</head>
 
 	<body>
@@ -28,8 +20,40 @@
 			$prjImgs = getProjectCarouselImages($projectId);
 		?>
 
-		<h2 class="title-block grey darken-2 white-text center"><?php echo $prj[0]["name"]; ?></h2>
+		<h1 class="title-block grey darken-2 white-text center"><?php echo $prj[0]["name"]; ?></h2>
 		<div class="grey darken-1">
+			<div class="project-presentation black-text">
+				<?php
+					$b = true;
+					foreach ($prjDesc as $para)
+					{ ?>
+						<div class="white">
+							<div class="container">
+								<div class="section row valign-wrapper">
+									<?php if ($b) {
+										echo "<img src=\"img/" . $projectId . "/" . $para["id"] . ".jpg\" class=\"col s4 m4 l3 left responsive-img\" width=\"260\" height=\"260\"/>";
+									} ?>
+									<div class="col s8 m8 l9">
+										<h2><?php echo $para["title"]; ?></h2>
+										<?php echo $para["content"]; ?>
+									</div>
+									<?php if (!$b) {
+										echo "<img src=\"img/" . $projectId . "/" . $para["id"] . ".jpg\" class=\"col s4 m4 l3 right responsive-img\" width=\"260\" height=\"260\"/>";
+									} ?>
+								</div>
+							</div>
+						</div>
+
+						<div class="parallax-container">
+							<div class="parallax"><img></div>
+						</div>
+				<?php
+						$b = !$b;
+					}
+				?>
+			</div>
+
+			<h2 class="white black-text center title-block">In-Game Images</h2>
 			<div class="container z-depth-5">
 				<div class="container">
 					<div class="carousel carousel-slider">
@@ -42,30 +66,18 @@
 
 						<!-- Carousel images. -->
 						<?php
+							$materializeThings = array("#one!", "#two!", "#three!", "#four!", "#five!", "#six!");
+							$index = 0;
 							foreach ($prjImgs as $image) {
 						?>
-								<a class="carousel-item" href="#one!"><img src="<?php echo $image["path"] ?>" alt="<?php echo $image["description"]; ?>"></a>
+								<a class="carousel-item" href="#"><img src="<?php echo $image["path"] ?>" alt="<?php echo $image["description"]; ?>"></a>
 						<?php
+								$index++;
 							}
 						?>
 					</div>
 				</div>
 				<p class="screenshot-desc white-text" id="rbdesc"></p>
-
-				<div class="project-presentation white black-text">
-					<?php
-						foreach ($prjDesc as $para)
-						{
-					?>
-						<div class="section">
-							<h3><?php echo $para["title"]; ?></h3>
-							<?php echo $para["content"]; ?>
-						</div>
-
-					<?php
-						}
-					?>
-				</div>
 			</div>
 		</div>
 

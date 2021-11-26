@@ -21,7 +21,10 @@
 
 		foreach ($projects as $prj) {
 	?>
-			<li><a href="project.php?pr=<?php echo $prj["id"]; ?>" class="red-text text-darken-2"><?php echo $prj["name"]; ?></a></li>
+			<li><a href="project.php?pr=<?php echo $prj["id"]; ?>" class="red-text text-darken-2 valign-wrapper">
+				<img src="img/<?php echo $prj["id"] ?>/icon.png" alt="Icon" class="left" width="32" height="32" />
+				<?php echo $prj["name"]; ?>
+			</a></li>
 	<?php
 		}
 	?>
@@ -46,26 +49,14 @@
 
 <!-- Mobile menu. -->
 <ul class="sidenav grey darken-3" id="mobile-demo">
-	<?php
-		foreach ($projects as $prj) {
-	?>
-			<li><a href="project.php?pr=<?php echo $prj["id"]; ?>" class="btn red darken-2"><?php echo $prj["name"]; ?></a></li>
-	<?php
-		}
-	?>
 
-	<?php
-		if (isset($_SESSION["user"]))
-		{?>
-			<li><a href="disconnect.php" class="btn waves-effect waves-light">Disconnect</a></li>
-	<?php
-		}
-		else
-		{?>
-			<li><a href="#modal-signup" class="btn waves-effect waves-light modal-trigger">Sign Up</a></li>
-			<li><a href="#modal-signin" class="btn waves-effect waves-light modal-trigger">Sign In</a></li>
-	<?php
-		}?>
+	<li><a href="#dropdown-projects" class="white-text red darken-2 dropdown-trigger">
+		Projects<i class="material-icons right white-text">chevron_right</i>
+	</a></li>
+
+	<li><a href="#dropdown-users" class="white-text teal lighten-2 dropdown-trigger">
+		User<i class="material-icons right white-text">chevron_right</i>
+	</a></li>
 </ul>
 
 

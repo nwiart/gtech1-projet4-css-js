@@ -1,41 +1,48 @@
 <!-- Footer section. -->
 <footer class="z-depth-5">
-    <h2 id="contact-us" class="black grey darken-2 white-text center title-block">CONTACT & LINKS</h2>
+    <h2 id="contact-us" class="grey darken-2 white-text center title-block">CONTACT & LINKS</h2>
 
     <!-- Layout. -->
-    <div id="footer-content" class="row">
-        <div class="col l1 m1 hide-on-small-only"></div>
-        <div class="col l4 m4 s12">
-            <h3>Contact Us</h3>
-            <p>If you wish to leave us a message, use the contact form by clicking on the button below :</p>
-            <a href="#modal-contact-us" class="btn waves-effect waves-light modal-trigger red darken-2">Open contact form</a>
-        </div>
-        <div class="col l2 m2 hide-on-small-only"></div>
-        <div class="col l4 m4 s12">
-            <h3>Links</h3>
-            <div class="row">
-                <div class="col s4 m6 l4">
-                    <p>Ethan :</p>
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/ethan-joachim-gabin-a32199226/" target="blank" rel="nofollow"><i class="fa fa-linkedin"></i> My LinkedIn</a></li>
-                        <li><a href="https://github.com/joachim-gabin" target="blank" rel="nofollow"><i class="fa fa-github"></i> My GitHub</a></li>
-                    </ul>
-                </div>
-                <div class="col s4 m6 l4">
-                    <p>Noah :</p>
-                    <ul>
-                        <li><a href="https://www.linkedin.com/in/noah-wiart-182a6a221/" target="blank" rel="nofollow"><i class="fa fa-linkedin"></i> My LinkedIn</a></li>
-                        <li><a href="https://github.com/nwiart" target="blank" rel="nofollow"><i class="fa fa-github"></i> My GitHub</a></li>
-                    </ul>
-                </div>
-                <div class="col s4 m12 l4">
-                    <p>Gaming Campus :</p>
-                    <a href="https://gamingcampus.fr/" target="blank" rel="nofollow">Official Website</a>
-                </div>
-            </div>
-        </div>
-        <div class="col l1 m1 hide-on-small-only"></div>
-    </div>
+    <div id="footer-content">
+		<div class="row">
+			<div class="container">
+				<div class="col l5 s12">
+					<h3>Contact Us</h3>
+					<p>If you wish to leave us a message, use the contact form by clicking on the button below :</p>
+					<a href="#modal-contact-us" class="btn waves-effect waves-light modal-trigger red darken-2">Open contact form</a>
+				</div>
+				<div class="col l5 offset-l2 s12">
+					<h3>Links</h3>
+					<div class="row">
+						<div class="col s4 m6 l4">
+							<p>Ethan :</p>
+							<ul>
+								<li><a href="https://www.linkedin.com/in/ethan-joachim-gabin-a32199226/" target="blank" rel="nofollow"><i class="fa fa-linkedin"></i> My LinkedIn</a></li>
+								<li><a href="https://github.com/joachim-gabin" target="blank" rel="nofollow"><i class="fa fa-github"></i> My GitHub</a></li>
+							</ul>
+						</div>
+						<div class="col s4 m6 l4">
+							<p>Noah :</p>
+							<ul>
+								<li><a href="https://www.linkedin.com/in/noah-wiart-182a6a221/" target="blank" rel="nofollow"><i class="fa fa-linkedin"></i> My LinkedIn</a></li>
+								<li><a href="https://github.com/nwiart" target="blank" rel="nofollow"><i class="fa fa-github"></i> My GitHub</a></li>
+							</ul>
+						</div>
+						<div class="col s4 m12 l4">
+							<p>Gaming Campus :</p>
+							<a href="https://gamingcampus.fr/" target="blank" rel="nofollow">Official Website</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer-copyright grey lighten-2">
+		<div class="container">
+			© 2021 Noah WIART & Ethan JOACHIM-GABIN
+		</div>
+	</div>
 </footer>
 
 <!-- "Contact us" modal. -->

@@ -23,18 +23,17 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	</head>
 
-	<body>
+	<body class="grey">
 		<?php
 			require "php/menu.php";
 			require_once "php/functions.php";
 		?>
 
-		<h2 class="grey darken-2 center white-text title-block">Admin Panel</h2>
+		<h1 class="grey darken-2 center white-text title-block">Admin Panel</h1>
 
-		<div class="container">
+		<div class="container white" id="admin-container">
+			<h2>Registered Users</h2>
 			<div class="section">
-				<h3>Registered Users</h3>
-
 				<!-- Search bar (uses URL parameters). -->
 				<form method="get" action="admin-panel.php">
 					<div class="row">
@@ -48,7 +47,7 @@
 				</form>
 
 				<!-- List users in a table. -->
-				<table id="admin-user-table">
+				<table id="admin-user-table" class="striped">
 					<thead>
 						<tr>
 							<th>Modify</th>
@@ -79,15 +78,18 @@
 				</table>
 			</div>
 
+			<div class="divider"></div>
+
 			<!-- Projects table. -->
+			<h2>Projects</h2>
 			<div class="section">
-				<h3>Projects</h3>
 				<a href="#modal-new-project" class="btn waves-effect waves-light modal-trigger">New Project</a>
-				<table>
+				<table class="striped">
 					<thead>
 						<tr>
 							<th>Modify</th>
-							<th>Name (id)</th>
+							<th>Name</th>
+							<th>ID</th>
 						</tr>
 					</thead>
 
@@ -99,7 +101,8 @@
 							{?>
 								<tr>
 								<td><a href="admin-modif-project.php?pr=<?php echo $p["id"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
-								<td><?php echo $p["name"] . " (" . $p["id"] . ")"; ?></td>
+								<td><?php echo $p["name"]; ?></td>
+								<td><?php echo $p["id"]; ?></td>
 								</tr>
 							<?php
 							}
