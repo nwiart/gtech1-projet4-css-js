@@ -90,7 +90,7 @@
                     </div>
 
                     <div class="center">
-                        <button type="submit" class="btn waves-effect waves-light red darken-2">Sign In</button>
+                        <button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons prefix left">login</i>Sign In</button>
                     </div>
                 </div>
                 <div class="col l2 m1 hide-on-small-only"></div>
@@ -139,7 +139,8 @@
 
 								</div>
 								<div class="center">
-										<button type="submit" class="btn waves-effect waves-light red darken-2">Sign Up</button>
+
+										<button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons prefix left">login</i>Sign Up</button>
 								</div>
 
 						</div>
