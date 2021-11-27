@@ -57,8 +57,8 @@
 			}
 			else
 			{?>
-				<li><a href="#modal-signup" class="modal-trigger teal-text">Sign Up</a></li>
-				<li><a href="#modal-signin" class="modal-trigger teal-text">Sign In</a></li>
+				<li><a href="#modal-signin" class="modal-trigger teal-text">Login</a></li>
+				<li><a href="#modal-signup" class="modal-trigger teal-text">Register</a></li>
 		<?php
 			}
 		?>
@@ -76,99 +76,79 @@
 <!-- Sign In form. -->
 <div id="modal-signin" class="modal">
 	<div class="modal-content">
-		<h3>Sign In</h3>
+		<h3>Log in</h3>
 		<p>
 			Sign in to your account on our website.
 		</p>
 
 		<!-- Contact form. -->
 		<form method="post" action="signin.php" class="col s12">
-			<div class="row" id="contact-block">
+			<div class="container" id="contact-block">
 
-				<!-- Form layout. A certain number of columns are taken on either side depending on the screen width. -->
-				<div class="col l2 m1 hide-on-small-only"></div>
-				<div class="col s12 m10 l8">
+				<!-- Login. -->
+				<div class="input-field">
+					<i class="material-icons prefix red-text text-darken-2">account_circle</i>
+					<input name="login" id="login" type="text" required="" aria-required="true" />
+					<label for="login">Login</label>
+				</div>
 
-					<!-- Login. -->
-					<div class="input-field">
-						<i class="material-icons prefix red-text text-darken-2">account_circle</i>
-						<input name="login" id="login" type="text" required="" aria-required="true" />
-						<label for="login">Login</label>
-					</div>
+				<!-- Password. -->
+				<div class="input-field">
+					<i class="material-icons prefix red-text text-darken-2">lock</i>
+					<input name="password" id="password" type="password" required="" aria-required="true" />
+					<label for="password">Password</label>
+				</div>
 
-					<!-- Password. -->
-					<div class="input-field">
-						<i class="material-icons prefix red-text text-darken-2">lock</i>
-						<input name="password" id="password" type="password" required="" aria-required="true" />
-						<label for="password">Password</label>
-					</div>
-
-      		<div class="center">
-          	<button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons prefix left">login</i>Sign In</button>
-          </div>
-        </div>
-        <div class="col l2 m1 hide-on-small-only"></div>
-
+				<div class="center">
+					<button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons prefix left">login</i>Login</button>
+				</div>
 			</div>
 		</form>
 	</div>
 	<div class="modal-footer">
-		<a href="#!" class="modal-close btn waves-effect waves-green red darken-2">Close</a>
+		<a href="#!" class="modal-close btn waves-effect waves-green red darken-2">Cancel</a>
 	</div>
 </div>
 
 <!-- Sign Up form. -->
-
 <div id="modal-signup" class="modal">
+	<div class="modal-content">
+		<h3>Register</h3>
+		<p>
+			All fields below must be filled. Login can only contain lowercase letters, numbers and dashes.
+		</p>
 
-		<div class="modal-content">
-	  		<h4>Crée un compte</h4>
-	  		<p>Merci de remplire l'intégralité des cases, en respectant le nombre de caractères maximal comme indiqué :</p>
+		<form method="post" action="signup.php" class="col s12">
+			<div class="container" id="contact-block">
 
-    		<form method="post" action="signup.php" class="col s12">
-				<div class="row" id="contact-block">
-
-
-						<div class="col l2 m1 hide-on-small-only"></div>
-						<div class="col s12 m10 l8">
-								<div class="input-field">
-
-										<i class="material-icons prefix red-text text-darken-2">account_circle</i>
-										<input name="login" id="login_up" type="text" required="" aria-required="true" />
-										<label for="login_up">Login</label>
-
-								</div>
-								<div class="input-field">
-
-										<i class="material-icons prefix red-text text-darken-2">alternate_email</i>
-										<input name="email" id="email_up" type="email" required="" aria-required="true" />
-										<label for="email_up">Email</label>
-
-								</div>
-								<div class="input-field">
-
-										<i class="material-icons prefix red-text text-darken-2">lock</i>
-										<input name="password" id="password_up" type="password" required="" aria-required="true" />
-										<label for="password_up">Password</label>
-
-								</div>
-								<div class="center">
-
-										<button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons prefix left">login</i>Sign Up</button>
-								</div>
-
-						</div>
-
+				<!-- Login. -->
+				<div class="input-field">
+					<i class="material-icons prefix red-text text-darken-2">account_circle</i>
+					<input name="login" id="login_up" type="text" required="" aria-required="true" />
+					<label for="login_up">Login</label>
 				</div>
-			</form>
-		</div>
 
+				<!-- Email address. -->
+				<div class="input-field">
+					<i class="material-icons prefix red-text text-darken-2">alternate_email</i>
+					<input name="email" id="email_up" type="email" required="" aria-required="true" />
+					<label for="email_up">Email</label>
+				</div>
 
+				<!-- Password. -->
+				<div class="input-field">
+					<i class="material-icons prefix red-text text-darken-2">lock</i>
+					<input name="password" id="password_up" type="password" required="" aria-required="true" />
+					<label for="password_up">Password</label>
+				</div>
 
-
-
-		<div class="modal-footer">
-	  	<a href="#!" class="modal-close btn waves-effect waves-green red darken-2">Cancel</a>
-		</div>
-
+				<div class="center">
+					<button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons prefix left">login</i>Register</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<a href="#!" class="modal-close btn waves-effect waves-green red darken-2">Cancel</a>
+	</div>
 </div>
