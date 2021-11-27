@@ -13,8 +13,25 @@
 	</div>
 </nav>
 
-<!-- Projects dropdown menu. -->
-<ul id="dropdown-projects" class="dropdown-content">
+<!-- Mobile menu. -->
+<ul class="sidenav grey darken-3" id="mobile-demo">
+
+	<li><a href="#dropdown-projects-mobile" class="white-text red darken-2 dropdown-trigger">
+		Projects<i class="material-icons right white-text">chevron_right</i>
+	</a></li>
+
+	<li><a href="#dropdown-users-mobile" class="white-text teal lighten-2 dropdown-trigger">
+		User<i class="material-icons right white-text">chevron_right</i>
+	</a></li>
+</ul>
+
+
+<?php
+	function createDropdown($mobile)
+	{
+?>
+	<!-- Projects dropdown menu. -->
+	<ul id="dropdown-projects<?php if($mobile) echo "-mobile"; ?>" class="dropdown-content">
 	<?php
 		require_once "php/functions.php";
 		$projects = getProjects();
@@ -28,36 +45,31 @@
 	<?php
 		}
 	?>
-</ul>
+	</ul>
 
-<!-- User dropdown menu. -->
-<ul id="dropdown-users" class="dropdown-content">
-	<?php
-		if (isset($_SESSION["user"]))
-		{?>
-			<li><a href="disconnect.php">Disconnect</a></li>
-	<?php
-		}
-		else
-		{?>
-			<li><a href="#modal-signup" class="modal-trigger">Sign Up</a></li>
-			<li><a href="#modal-signin" class="modal-trigger">Sign In</a></li>
-	<?php
-		}
-	?>
-</ul>
+	<!-- User dropdown menu. -->
+	<ul id="dropdown-users<?php if($mobile) echo "-mobile"; ?>" class="dropdown-content">
+		<?php
+			if (isset($_SESSION["user"]))
+			{?>
+				<li><a href="disconnect.php" class="teal-text">Disconnect</a></li>
+		<?php
+			}
+			else
+			{?>
+				<li><a href="#modal-signup" class="modal-trigger teal-text">Sign Up</a></li>
+				<li><a href="#modal-signin" class="modal-trigger teal-text">Sign In</a></li>
+		<?php
+			}
+		?>
+	</ul>
 
-<!-- Mobile menu. -->
-<ul class="sidenav grey darken-3" id="mobile-demo">
+<?php
+	}
 
-	<li><a href="#dropdown-projects" class="white-text red darken-2 dropdown-trigger">
-		Projects<i class="material-icons right white-text">chevron_right</i>
-	</a></li>
-
-	<li><a href="#dropdown-users" class="white-text teal lighten-2 dropdown-trigger">
-		User<i class="material-icons right white-text">chevron_right</i>
-	</a></li>
-</ul>
+	createDropdown(false);
+	createDropdown(true);
+?>
 
 
 
