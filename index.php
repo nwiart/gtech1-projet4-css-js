@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<title>Portfolio Ethan & Noah</title>
-
-		<meta name="description" content="Welcome to Ethan and Noah's portfolio! This website is a project from Gaming Campus whose goal is to help us learn about website development. Here we present ourselves, as well as various other projects we have made personally or within the Gaming Campus." />
-
-		<!--Import Google Icon Font-->
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-		<!--Import materialize.css-->
-		<link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
-		<link rel="stylesheet" href="css/style.css" />
-
-		<!--Let browser know website is optimized for mobile-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<?php
+			$pageTitle = "Presentation";
+			$pageDesc  = "Welcome to Ethan and Noah's portfolio! This website is a project from Gaming Campus whose goal is to help us learn about website development. Here we present ourselves, as well as various other projects we have made personally or within the Gaming Campus.";
+			require "php/head.php";
+		?>
 	</head>
 
 	<body>
@@ -43,43 +33,55 @@
 			<div class="parallax"><img src="img/banner1.jpg" alt="Ultra Games Banner" /></div>
 		</div>
 
-		<div class="z-depth-5">
-			<h2 class="center grey darken-2 white-text title-block">PRESENTATION</h2>
-			<div class="section white row">
+		<div class="z-depth-5 grey">
+			<h1 class="center grey darken-2 white-text title-block">PRESENTATION</h1>
+			<div class="container section row">
 
 				<!-- Ethan presentation. -->
-				<div class="col l6 m6 s12 white center presentation-box" id="presentation-ethan">
+				<div class="col l5 m12 s12 white card presentation-box" id="presentation-ethan">
 					<div class="row">
-						<div class="col s1"></div>
-						<div class="col s10">
-							<div class="presentation-name">Ethan</div>
-							<img src="img/bg.jpg" alt="Photo du BG en personne" class="presentation-image" />
-
-							<p>
-								My name is Ethan Joachim Gabin and in this year 2021 I turned 18 years old.<br>
-								After having passed my first and terminal classes with mathematics and NSI specialties, I left high school with a minimum of computer knowledge.<br>
-								I am currently in Lyon in a specialized school in video games, the Gaming Campus, to train as a video game developer.<br>
-								This web page is a presentation of joint or personal projects. This website itself is also a project.<br>
-							</p>
+						<div class="valign-wrapper">
+							<div class="col l5 m12 s12 card-image">
+								<img src="img/bg.jpg" alt="Photo du BG en personne" class="presentation-image left" />
+							</div>
+							<div class="col l7 m12 s12 card-stacked">
+								<div class="card-content">
+									<h2 class="presentation-name">JOACHIM-GABIN<br>Ethan</h2>
+								</div>
+							</div>
 						</div>
-						<div class="col s1"></div>
+						<div class="col s12 card-stacked">
+							<div class="card-content">
+								<p>My name is Ethan Joachim Gabin and in this year 2021 I turned 18 years old.</p> <br>
+								<p>After having passed my first and terminal classes with mathematics and NSI specialties, I left high school with a minimum of computer knowledge.</p> <br>
+								<p>I am currently in Lyon in a specialized school in video games, the Gaming Campus, to train as a video game developer.</p> <br>
+								<p>This web page is a presentation of joint or personal projects. This website itself is also a project.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 
 				<!-- Noah presentation. -->
-				<div class="col l6 m6 s12 white center presentation-box" id="presentation-noah">
+				<div class="col l5 offset-l2 m12 s12 white card presentation-box" id="presentation-noah">
 					<div class="row">
-						<div class="col s1"></div>
-						<div class="col s10">
-							<div class="presentation-name">Noah</div>
-							<img src="img/bg2.jpg" alt="Photo du second BG" class="presentation-image" />
-
-							<p>
-								My name is WIART Noah. I am currently 18 years old and I am studying at Gaming Campus in Lyon. I discovered computer programming when I was 11, and since then, I have learned C++ by myself.<br />
-								I worked on several personal projects while I was in school, notably on the game "Roll-A-Ball!". This game also runs using a custom game engine that I have made myself as well. These personal projects have allowed me to discover game programming and improve my knowledge on the used softwares and languages. I have also gained experience on the versioning software Git and on Unreal Engine 4.<br />
-							</p>
+						<div class="valign-wrapper">
+							<div class="col l5 m12 s12 card-image">
+								<img src="img/bg2.jpg" alt="Photo du second BG" class="responsive-img presentation-image left" />
+							</div>
+							<div class="col l7 m12 s12 card-stacked">
+								<div class="card-content">
+									<h2 class="presentation-name">WIART<br>Noah</h2>
+								</div>
+							</div>
 						</div>
-						<div class="col s1"></div>
+						<div class="col s12 card-stacked">
+							<div class="card-content">
+								<p>My name is WIART Noah. I am currently 18 years old and I am studying at Gaming Campus in Lyon.</p> <br>
+								<p>I discovered computer programming when I was 11, and since then, I have learned C++ by myself.</p> <br>
+								<p>I worked on several personal projects while I was in school, notably on the game "Roll-A-Ball!". This game also runs using a custom game engine that I have made myself as well.</p> <br>
+								<p>These personal projects have allowed me to discover game programming and improve my knowledge on the used softwares and languages. I have also gained experience on the versioning software Git and on Unreal Engine 4.</p>
+							</div>
+						</div>
 					</div>
 				</div>
 

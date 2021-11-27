@@ -2,7 +2,7 @@
 	require_once "php/functions.php";
 	checkCurrentUserAdmin();
 
-	deleteUserByLogin($_GET["login"]);
+	deleteProjectById($_GET["pr"]);
 
 	header("Location: admin-panel.php");
 	exit();
