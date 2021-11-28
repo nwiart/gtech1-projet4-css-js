@@ -29,11 +29,14 @@
 			require_once "php/functions.php";
 		?>
 
-		<h1 class="grey darken-2 center white-text title-block">Admin Panel</h1>
+		<div class="title-block">
+			<h1 class="grey darken-2 center white-text">Admin Panel</h1>
+		</div>
 
 		<div class="container white" id="admin-container">
-			<h2>Registered Users</h2>
 			<div class="section">
+				<h2>Registered Users</h2>
+
 				<!-- Search bar (uses URL parameters). -->
 				<form method="get" action="admin-panel.php">
 					<div class="row">
@@ -47,7 +50,7 @@
 				</form>
 
 				<!-- List users in a table. -->
-				<table id="admin-user-table" class="striped">
+				<table class="striped">
 					<thead>
 						<tr>
 							<th>Modify</th>
@@ -78,11 +81,10 @@
 				</table>
 			</div>
 
-			<div class="divider"></div>
-
 			<!-- Projects table. -->
-			<h2>Projects</h2>
 			<div class="section">
+				<h2>Projects</h2>
+
 				<a href="#modal-new-project" class="btn waves-effect waves-light modal-trigger">New Project</a>
 				<table class="striped">
 					<thead>

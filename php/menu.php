@@ -31,7 +31,7 @@
 	{
 ?>
 	<!-- Projects dropdown menu. -->
-	<ul id="dropdown-projects<?php if($mobile) echo "-mobile"; ?>" class="dropdown-content">
+	<ul id="dropdown-projects<?php if($mobile) echo "-mobile"; ?>" class="dropdown-projects dropdown-content">
 	<?php
 		require_once "php/functions.php";
 		$projects = getProjects();

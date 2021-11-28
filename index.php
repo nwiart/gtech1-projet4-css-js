@@ -34,7 +34,9 @@
 		</div>
 
 		<div class="z-depth-5 grey">
-			<h1 class="center grey darken-2 white-text title-block">PRESENTATION</h1>
+			<div class="title-block">
+				<h1 class="center grey darken-2 white-text">PRESENTATION</h1>
+			</div>
 			<div class="container section row">
 
 				<!-- Ethan presentation. -->
