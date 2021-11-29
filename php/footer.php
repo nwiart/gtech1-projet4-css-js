@@ -57,28 +57,28 @@
 		</p>
 
 		<!-- Contact form. -->
-		<form class="col s12">
+		<form class="col s12" method="post" action="php/email.php">
 			<div class="row" id="contact-block">
-				
+
 				<!-- Form layout. A certain number of columns are taken on either side depending on the screen width. -->
 				<div class="col l2 m1 hide-on-small-only"></div>
 				<div class="col s12 m10 l8">
 					<div class="row">
 						<div class="col s12 m6 l6 input-field">
 							<i class="material-icons prefix red-text text-darken-2">account_circle</i>
-							<input id="first-name" type="text" class="validate" />
+							<input id="first-name" name="first-name" type="text" class="validate" />
 							<label for="first-name">First name (optional)</label>
 						</div>
 						<div class="col s12 m6 l6 input-field">
 							<i class="material-icons prefix red-text text-darken-2">account_circle</i>
-							<input id="last-name" type="text" class="validate" />
+							<input id="last-name" name="last-name" type="text" class="validate" />
 							<label for="last-name">Last name (optional)</label>
 						</div>
 					</div>
 
 					<div class="input-field">
 						<i class="material-icons prefix red-text text-darken-2">alternate_email</i>
-						<input id="email" type="email" required="" aria-required="true" />
+						<input id="email" name="email" type="email" required="" aria-required="true" />
 						<label for="email">Email</label>
 						<span class="helper-text" data-error="wrong" data-success="right"></span>
 					</div>
@@ -93,12 +93,13 @@
 
 					<div class="input-field">
 						<i class="material-icons prefix red-text text-darken-2">chat</i>
-						<textarea id="message" class="materialize-textarea" data-length="450" required="" aria-required="true"></textarea>
+						<textarea id="message" name="message" class="materialize-textarea" data-length="450" required="" aria-required="true"></textarea>
 						<label for="message">Message</label>
 					</div>
 
 					<div class="center">
 						<button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">send</i>Send</button>
+						<p>(No working)</p>
 					</div>
 				</div>
 				<div class="col l2 m1 hide-on-small-only"></div>
