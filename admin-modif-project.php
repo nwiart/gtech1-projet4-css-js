@@ -21,14 +21,16 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	</head>
 
-	<body>
+	<body class="grey">
 		<?php
 			require "php/menu.php";
 		?>
 
-		<h2 class="grey darken-2 center white-text title-block">Admin Panel - Project Modification</h2>
+		<div class="title-block">
+			<h1 class="grey darken-2 center white-text">Admin Panel - Project Modification</h1>
+		</div>
 
-		<div class="container">
+		<div class="container white" id="admin-container">
 
 			<!-- Record information about requested user for later use in the page. -->
 			<?php
@@ -39,14 +41,16 @@
 				$project_exists = (sizeof($project) != 0);
 			?>
 
-			<h3>Editing Project : <?php if ($project_exists) echo $project[0]["name"]; else echo "Unknown"; ?></h3>
-			<a href="admin-panel.php">Go back to Admin Panel</a>
+			<div class="section">
+				<h2>Editing Project : <?php if ($project_exists) echo $project[0]["name"]; else echo "Unknown"; ?></h2>
+				<a href="admin-panel.php">Go back to Admin Panel</a>
+			</div>
 
-		</div>
+			<div class="section">
+				<!-- Display form ONLY if user actually exists. -->
+				<?php if ($project_exists) { ?>
 
-		<div class="container">
-			<!-- Display form ONLY if user actually exists. -->
-			<?php if ($project_exists) { ?>
+
 
 				<!-- Carousel. -->
 				<div class="section">
@@ -120,11 +124,14 @@
 					</div>
 				</div>
 
-			<?php } else {
-					echo "<p>Project with ID \"" . $projectId . "\" does not exist.</p>";
-				}
-			?>
+				
 
+				<?php } else {
+						echo "<p>Project with ID \"" . $projectId . "\" does not exist.</p>";
+					}
+				?>
+
+			</div>
 		</div>
 
 

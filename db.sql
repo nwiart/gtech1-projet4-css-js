@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 27, 2021 at 02:47 PM
+-- Generation Time: Nov 29, 2021 at 01:31 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -20,28 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `projet5-db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `deleted_users`
---
-
-DROP TABLE IF EXISTS `deleted_users`;
-CREATE TABLE IF NOT EXISTS `deleted_users` (
-  `login` varchar(64) NOT NULL,
-  `email` varchar(256) NOT NULL,
-  `password` varchar(256) NOT NULL,
-  `is_admin` tinyint(4) NOT NULL,
-  PRIMARY KEY (`login`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `deleted_users`
---
-
-INSERT INTO `deleted_users` (`login`, `email`, `password`, `is_admin`) VALUES
-('ducon', 'du@con.fr', 'd9089f056712e0471d5338a63710330b3958920d', 0);
 
 -- --------------------------------------------------------
 
@@ -142,6 +120,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(256) NOT NULL,
   `password` varchar(256) NOT NULL,
   `is_admin` tinyint(4) NOT NULL,
+  `is_disabled` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`login`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -149,9 +128,9 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`login`, `email`, `password`, `is_admin`) VALUES
-('admin', 'random.dude@example.com', 'b80ac32edc1a3cdc9483d522be3f010f0e3f5b2f', 1),
-('david73', 'nwiart@gaming.tech', '85f8e5ee55ed8f4ecab2fe9ba99109a1ae5ec4dd', 0);
+INSERT INTO `user` (`login`, `email`, `password`, `is_admin`, `is_disabled`) VALUES
+('admin', 'random.dude@example.com', 'b80ac32edc1a3cdc9483d522be3f010f0e3f5b2f', 1, 0),
+('david73', 'nwiart@gaming.tech', '85f8e5ee55ed8f4ecab2fe9ba99109a1ae5ec4dd', 0, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
