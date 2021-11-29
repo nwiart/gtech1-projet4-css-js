@@ -126,10 +126,12 @@
 					<h3>First parallax image</h3>
 				
 					<div class="row">
-						<div class="col s5"><img src="img/banner1.jpg" class="responsive-img" /></div>
-						<div class="col s7">
-							<input type="text" value="img/banner1.jpg"/>
-							<button class="btn">Update image</button>
+						<div class="col s4"><img src="img/banner1.jpg" class="responsive-img" /></div>
+						<div class="col s8">
+							<form method="post" action="action-update-mainpage-parallax.php?id=0">
+								<input name="img-path" type="text" value="img/banner1.jpg"/>
+								<button type="submit" class="btn">Update image</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -138,10 +140,12 @@
 					<h3>Second parallax image</h3>
 
 					<div class="row">
-						<div class="col s5"><img src="img/banner2.jpg" class="responsive-img" /></div>
-						<div class="col s7">
-							<input type="text" value="img/banner2.jpg"/>
-							<button class="btn">Update image</button>
+						<div class="col s4"><img src="img/banner2.jpg" class="responsive-img" /></div>
+						<div class="col s8">
+							<form method="post" action="action-update-mainpage-parallax.php?id=1">
+								<input name="img-path" type="text" value="img/banner2.jpg"/>
+								<button type="submit" class="btn">Update image</button>
+							</form>
 						</div>
 					</div>
 				</div>

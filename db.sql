@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 29, 2021 at 01:31 PM
+-- Generation Time: Nov 29, 2021 at 04:10 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `projet5-db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `main_page`
+--
+
+DROP TABLE IF EXISTS `main_page`;
+CREATE TABLE IF NOT EXISTS `main_page` (
+  `parallax_path_0` varchar(64) NOT NULL,
+  `parallax_path_1` varchar(64) NOT NULL,
+  `ethan_description` text NOT NULL,
+  `noah_description` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `main_page`
+--
+
+INSERT INTO `main_page` (`parallax_path_0`, `parallax_path_1`, `ethan_description`, `noah_description`) VALUES
+('img/', 'img/', '<p>My name is Ethan Joachim Gabin and in this year 2021 I turned 18 years old.</p> <br><p>After having passed my first and terminal classes with mathematics and NSI specialties, I left high school with a minimum of computer knowledge.</p> <br><p>I am currently in Lyon in a specialized school in video games, the Gaming Campus, to train as a video game developer.</p> <br><p>This web page is a presentation of joint or personal projects. This website itself is also a project.</p>', '<p>My name is WIART Noah. I am currently 18 years old and I am studying at Gaming Campus in Lyon.</p> <br><p>I discovered computer programming when I was 11, and since then, I have learned C++ by myself.</p> <br><p>I worked on several personal projects while I was in school, notably on the game \"Roll-A-Ball!\". This game also runs using a custom game engine that I have made myself as well.</p> <br><p>These personal projects have allowed me to discover game programming and improve my knowledge on the used softwares and languages. I have also gained experience on the versioning software Git and on Unreal Engine 4.</p>');
 
 -- --------------------------------------------------------
 
@@ -130,7 +151,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`login`, `email`, `password`, `is_admin`, `is_disabled`) VALUES
 ('admin', 'random.dude@example.com', 'b80ac32edc1a3cdc9483d522be3f010f0e3f5b2f', 1, 0),
-('david73', 'nwiart@gaming.tech', '85f8e5ee55ed8f4ecab2fe9ba99109a1ae5ec4dd', 0, 0);
+('david73', 'nwiart@gaming.tech', '85f8e5ee55ed8f4ecab2fe9ba99109a1ae5ec4dd', 0, 0),
+('zbie', 'zzz@truc.muche', '403731b1addabb637b60c0c60707212af0523866', 0, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

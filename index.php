@@ -26,6 +26,9 @@
 					echo "<p class=\"center\">Incorrect login or password.</p>";
 				}
 			}
+
+			$pdo = createPDO();
+			$main_page_content = executeSQL($pdo, "SELECT * FROM main_page", array())[0];
 		?>
 
 		<!-- Presentation section. -->
@@ -54,10 +57,7 @@
 						</div>
 						<div class="col s12 card-stacked">
 							<div class="card-content">
-								<p>My name is Ethan Joachim Gabin and in this year 2021 I turned 18 years old.</p> <br>
-								<p>After having passed my first and terminal classes with mathematics and NSI specialties, I left high school with a minimum of computer knowledge.</p> <br>
-								<p>I am currently in Lyon in a specialized school in video games, the Gaming Campus, to train as a video game developer.</p> <br>
-								<p>This web page is a presentation of joint or personal projects. This website itself is also a project.</p>
+								<?php echo $main_page_content["ethan_description"]; ?>
 							</div>
 						</div>
 					</div>
@@ -78,10 +78,7 @@
 						</div>
 						<div class="col s12 card-stacked">
 							<div class="card-content">
-								<p>My name is WIART Noah. I am currently 18 years old and I am studying at Gaming Campus in Lyon.</p> <br>
-								<p>I discovered computer programming when I was 11, and since then, I have learned C++ by myself.</p> <br>
-								<p>I worked on several personal projects while I was in school, notably on the game "Roll-A-Ball!". This game also runs using a custom game engine that I have made myself as well.</p> <br>
-								<p>These personal projects have allowed me to discover game programming and improve my knowledge on the used softwares and languages. I have also gained experience on the versioning software Git and on Unreal Engine 4.</p>
+								<?php echo $main_page_content["noah_description"]; ?>
 							</div>
 						</div>
 					</div>
