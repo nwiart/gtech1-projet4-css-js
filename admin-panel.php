@@ -56,7 +56,7 @@
 								<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
 							</div>
 							<div class="col s1">
-								<button type="submit" class="btn right"><i class="material-icons">search</i></button>
+								<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
 							</div>
 						</div>
 					</form>
@@ -84,7 +84,7 @@
 									<?php if ($user["is_disabled"] == 0)
 									{ ?>
 										<tr>
-											<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">settings</i></a></td>
+											<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">manage_accounts</i></a></td>
 											<td><?php echo $user["login"]; ?></td>
 											<td><?php echo $user["email"]; ?></td>
 										</tr>
@@ -101,7 +101,7 @@
 				<div id="projects" class="section col s12">
 					<h2>Projects</h2>
 
-					<a href="#modal-new-project" class="btn waves-effect waves-light modal-trigger">New Project</a>
+					<a href="#modal-new-project" class="btn waves-effect waves-light red darken-2 modal-trigger">New Project</a>
 					<table class="striped">
 						<thead>
 							<tr>
@@ -147,7 +147,7 @@
 							<div class="col s8">
 								<form method="post" action="action-update-mainpage-parallax.php?id=0">
 									<input name="img-path" type="text" value="<?php echo $main_page_content["parallax_path_0"]; ?>"/>
-									<button type="submit" class="btn">Update image</button>
+									<button type="submit" class="btn"><i class="material-icons left">image</i>Update image</button>
 								</form>
 							</div>
 						</div>
@@ -161,7 +161,7 @@
 							<div class="col s8">
 								<form method="post" action="action-update-mainpage-parallax.php?id=1">
 									<input name="img-path" type="text" value="<?php echo $main_page_content["parallax_path_1"]; ?>"/>
-									<button type="submit" class="btn">Update image</button>
+									<button type="submit" class="btn"><i class="material-icons left">image</i>Update image</button>
 								</form>
 							</div>
 						</div>
