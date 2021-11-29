@@ -62,7 +62,7 @@
 	/*
 	 * Delete the user with the specified login.
 	 * Does nothing if user does not exist.
-	 * 
+	 *
 	 * Actually does not delete the user, but moves their data to a "deleted_users" table.
 	 */
 	function deleteUserByLogin($login)
@@ -74,19 +74,19 @@
 		if (sizeof($userToDelete) == 0) {
 			return;
 		}
+		executeSQL($pdo, "UPDATE user SET is_disabled = 1 WHERE login = :login", array(":login" => ($login)) );
+	}
 
-		// Move user data to "deleted_users" table.
-		executeSQL($pdo, "INSERT INTO deleted_users VALUES (:login, :email, :password, :is_admin);", array(
-			":login" => $login,
-			":email" => $userToDelete[0]["email"],
-			":password" => $userToDelete[0]["password"],
-			":is_admin" => $userToDelete[0]["is_admin"]
-		) );
+	function activateUserByLogin($login)
+	{
+		$pdo = createPDO();
 
-		// Delete record from "user" table.
-		executeSQL($pso, "DELETE FROM user WHERE login = :login", array(
-			":login" => $login
-		) );
+		// Get user data.
+		$userToDelete = getUserByLogin($login);
+		if (sizeof($userToDelete) == 0) {
+			return;
+		}
+		executeSQL($pdo, "UPDATE user SET is_disabled = 0 WHERE login = :login", array(":login" => ($login)) );
 	}
 
 
@@ -98,7 +98,7 @@
 	}
 
 	/*
-	 * 
+	 *
 	 */
 	function getProjectById($id)
 	{

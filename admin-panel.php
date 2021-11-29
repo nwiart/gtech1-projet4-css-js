@@ -69,11 +69,15 @@
 
 							foreach ($result as $user)
 							{?>
-								<tr>
-								<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
-								<td><?php echo $user["login"]; ?></td>
-								<td><?php echo $user["email"]; ?></td>
-								</tr>
+								<?php if ($user["is_disabled"] == 0)
+								{ ?>
+									<tr>
+										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
+										<td><?php echo $user["login"]; ?></td>
+										<td><?php echo $user["email"]; ?></td>
+									</tr>
+							<?php
+								} ?>
 							<?php
 							}
 						?>
@@ -180,6 +184,73 @@
 				<a href="#!" class="modal-close btn waves-effect waves-light red darken-2">Close</a>
 			</div>
 		</div>
+
+
+
+
+
+
+
+
+
+
+		<!-- Desable account -->
+
+		<div class="container white" id="admin-container">
+			<div class="section">
+				<h2>Desables accounts</h2>
+
+				<!-- Search bar (uses URL parameters). -->
+				<form method="get" action="admin-panel.php">
+					<div class="row">
+						<div class="col s11">
+							<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
+						</div>
+						<div class="col s1">
+							<button type="submit" class="btn right"><i class="material-icons">search</i></button>
+						</div>
+					</div>
+				</form>
+
+				<!-- List users in a table. -->
+				<table class="striped">
+					<thead>
+						<tr>
+							<th>Modify</th>
+							<th>Login / Name</th>
+							<th>Email Address</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<?php
+							// Get user list.
+							if (isset($_GET["search-users"]))
+								$result = searchUsers($_GET["search-users"]);
+							else
+								$result = getUsers();
+
+							foreach ($result as $user)
+							{?>
+
+								<?php if ($user["is_disabled"] > 0)
+								{ ?>
+									<tr>
+										<td><a href="admin-reactivate-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
+										<td><?php echo $user["login"]; ?></td>
+										<td><?php echo $user["email"]; ?></td>
+									</tr>
+								<?php
+								} ?>
+							<?php
+							}
+						?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
 
 		<?php /*require "php/footer.php";*/ ?>
 
