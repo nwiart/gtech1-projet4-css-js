@@ -160,6 +160,7 @@ footer .footer-copyright {
 
 #admin-container {
 	padding: 0px 4%;
+	min-height: 100vh;
 }
 
 #admin-container .section {
