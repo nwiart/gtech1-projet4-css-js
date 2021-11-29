@@ -88,7 +88,7 @@
 				<!-- Login. -->
 				<div class="input-field">
 					<i class="material-icons prefix red-text text-darken-2">account_circle</i>
-					<input name="login" id="login" type="text" required="" aria-required="true" />
+					<input name="login" id="login" type="text" required="" aria-required="true" onkeypress="return loginKeypressHandler(event)" />
 					<label for="login">Login</label>
 				</div>
 
@@ -115,7 +115,7 @@
 	<div class="modal-content">
 		<h3>Register</h3>
 		<p>
-			All fields below must be filled. Login can only contain lowercase letters, numbers and dashes.
+			All fields below must be filled. Login can only contain lowercase letters, numbers and underscores.
 		</p>
 
 		<form method="post" action="signup.php" class="col s12">
@@ -124,7 +124,7 @@
 				<!-- Login. -->
 				<div class="input-field">
 					<i class="material-icons prefix red-text text-darken-2">account_circle</i>
-					<input name="login" id="login_up" type="text" required="" aria-required="true" />
+					<input name="login" id="login_up" type="text" required="" aria-required="true" onkeypress="return loginKeypressHandler(event)" />
 					<label for="login_up">Login</label>
 				</div>
 

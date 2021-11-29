@@ -83,3 +83,9 @@ function sendbtn() {
 	if (newLocation != "")
 		window.location.href = newLocation;
 }
+
+function loginKeypressHandler(event)
+{
+	let c = event.key;
+	return (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || (c == '_');
+}
