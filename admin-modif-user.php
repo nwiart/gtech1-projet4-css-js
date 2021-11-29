@@ -73,21 +73,37 @@
 
 				<div class="section">
 					<h3 class="red-text"><i class="material-icons">warning</i> DANGER ZONE <i class="material-icons">warning</i></h3>
-					<a href="#modal-user-delete" class="btn waves-effect waves-light red darken-2 modal-trigger">Deactivate User</a>
+					<a href="#modal-user-delete" class="btn waves-effect waves-light red darken-2 modal-trigger">
+						<?php echo ($usr[0]["is_disabled"] == 0) ? "Deactivate User" : "Reactivate User"; ?>
+					</a>
 				</div>
 
-				<!-- Delete user modal. -->
-				<div id="modal-user-delete" class="modal">
-					<div class="modal-content">
-						<h3>Deactivate User Account</h3>
-						<p>Do you REALLY want to deactivate the user "<?php echo $_GET["login"]; ?>"?</p>
-					</div>
+				<!-- Delete / reactivate user modal. -->
+				<?php if ($usr[0]["is_disabled"] == 0) { ?>
+					<div id="modal-user-delete" class="modal">
+						<div class="modal-content">
+							<h3>Deactivate User Account</h3>
+							<p>Do you REALLY want to deactivate the user "<?php echo $_GET["login"]; ?>"?</p>
+						</div>
 
-					<div class="modal-footer">
-						<a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
-						<a href="admin-delete-user.php?login=<?php echo $_GET["login"]; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Wave "Bye bye"!</a>
+						<div class="modal-footer">
+							<a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
+							<a href="admin-enable-user.php?login=<?php echo $_GET["login"]; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Wave "Bye bye"!</a>
+						</div>
 					</div>
-				</div>
+				<?php } else { ?>
+					<div id="modal-user-delete" class="modal">
+						<div class="modal-content">
+							<h3>Reactivate User Account</h3>
+							<p>Do you REALLY want to reactivate the user "<?php echo $_GET["login"]; ?>"?</p>
+						</div>
+
+						<div class="modal-footer">
+							<a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
+							<a href="admin-enable-user.php?login=<?php echo $_GET["login"]; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Yes my boy !!!</a>
+						</div>
+					</div>
+				<?php } ?>
 
 			<?php } else {
 					echo "<p>User \"" . $_GET["login"] . "\" does not exist.</p>";
