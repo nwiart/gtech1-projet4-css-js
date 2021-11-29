@@ -120,7 +120,7 @@
 			<div class="section">
 				<h2>Main Page Content</h2>
 
-				<a href="admin-modif-mainpage.php" class="btn waves-effect waves-light modal-trigger">Edit contents here</a>
+				<!--a href="admin-modif-mainpage.php" class="btn waves-effect waves-light modal-trigger">Edit contents here</a-->
 
 				<div class="section">
 					<h3>First parallax image</h3>
@@ -145,6 +145,59 @@
 						</div>
 					</div>
 				</div>
+			</div>
+
+			<!-- Disabled accounts. -->
+			<div class="section">
+				<h2>Disabled Accounts</h2>
+
+				<!-- Search bar (uses URL parameters). -->
+				<form method="get" action="admin-panel.php">
+					<div class="row">
+						<div class="col s11">
+							<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
+						</div>
+						<div class="col s1">
+							<button type="submit" class="btn right"><i class="material-icons">search</i></button>
+						</div>
+					</div>
+				</form>
+
+				<!-- List users in a table. -->
+				<table class="striped">
+					<thead>
+						<tr>
+							<th>Modify</th>
+							<th>Login / Name</th>
+							<th>Email Address</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<?php
+							// Get user list.
+							if (isset($_GET["search-users"]))
+								$result = searchUsers($_GET["search-users"]);
+							else
+								$result = getUsers();
+
+							foreach ($result as $user)
+							{?>
+
+								<?php if ($user["is_disabled"] > 0)
+								{ ?>
+									<tr>
+										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
+										<td><?php echo $user["login"]; ?></td>
+										<td><?php echo $user["email"]; ?></td>
+									</tr>
+								<?php
+								} ?>
+							<?php
+							}
+						?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 
@@ -185,6 +238,7 @@
 			</div>
 		</div>
 
+<<<<<<< HEAD
 
 
 
@@ -252,6 +306,8 @@
 
 
 
+=======
+>>>>>>> 12550514af12651420277fcc6d71c305fd1cc58e
 		<?php /*require "php/footer.php";*/ ?>
 
 

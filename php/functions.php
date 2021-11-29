@@ -65,7 +65,7 @@
 	 *
 	 * Actually does not delete the user, but moves their data to a "deleted_users" table.
 	 */
-	function deleteUserByLogin($login)
+	function toggleUserEnableByLogin($login)
 	{
 		$pdo = createPDO();
 
@@ -74,19 +74,13 @@
 		if (sizeof($userToDelete) == 0) {
 			return;
 		}
-		executeSQL($pdo, "UPDATE user SET is_disabled = 1 WHERE login = :login", array(":login" => ($login)) );
-	}
 
-	function activateUserByLogin($login)
-	{
-		$pdo = createPDO();
+		$disabled = ($userToDelete[0]["is_disabled"]) == "0" ? 1 : 0;
 
-		// Get user data.
-		$userToDelete = getUserByLogin($login);
-		if (sizeof($userToDelete) == 0) {
-			return;
-		}
-		executeSQL($pdo, "UPDATE user SET is_disabled = 0 WHERE login = :login", array(":login" => ($login)) );
+		executeSQL($pdo, "UPDATE user SET is_disabled = :dis WHERE login = :login", array(
+			":login" => $login,
+			":dis" => $disabled
+		) );
 	}
 
 
