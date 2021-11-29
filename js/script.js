@@ -35,6 +35,7 @@ $(document).ready(function() {
 	$('.parallax').parallax();
 	$('.modal').modal();
 	$('.dropdown-trigger').dropdown({coverTrigger: false});
+	$('.tabs').tabs();
 	$('#message').characterCounter();
 	$('.carousel').carousel({
 		dist: 0,

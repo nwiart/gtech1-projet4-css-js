@@ -174,3 +174,21 @@ footer .footer-copyright {
 #admin-container table td {
 	padding: 4px 0px;
 }
+
+.tabs .tab a{
+	color:#000;
+} /*Black color to the text*/
+
+.tabs .tab a:hover {
+	background-color:#ddd;
+	color:#800;
+} /*Text color on hover*/
+
+.tabs .tab a.active {
+	background-color:#ddd !important;
+	color:#D00;
+} /*Background and text color when a tab is active*/
+
+.tabs .indicator {
+	background-color:#D00;
+} /*Color of underline*/
