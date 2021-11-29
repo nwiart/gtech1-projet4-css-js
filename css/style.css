@@ -20,12 +20,10 @@ h1 {
 	/*background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));*/
 }
 
-h2 {
+h2, h3 {
 	font-size: 2rem;
-}
-
-h3 {
-	font-size: 2rem;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 /*
@@ -168,7 +166,8 @@ footer .footer-copyright {
 	padding: 3rem 0px;
 }
 
-#admin-container .section h2 {
+#admin-container .section h2,
+#admin-container .section h3 {
 	padding-bottom: 1rem;
 }
 

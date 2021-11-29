@@ -16,6 +16,12 @@
 		return $pdo;
 	}
 
+	function launchSQL($pdo, $request, $data)
+	{
+		$pre = $pdo->prepare($request);
+		$pre->execute($data);
+	}
+
 	function executeSQL($pdo, $request, $data)
 	{
 		$pre = $pdo->prepare($request);
