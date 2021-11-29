@@ -34,170 +34,192 @@
 		</div>
 
 		<div class="container white" id="admin-container">
-			<div class="section">
-				<h2>Registered Users</h2>
 
-				<!-- Search bar (uses URL parameters). -->
-				<form method="get" action="admin-panel.php">
-					<div class="row">
-						<div class="col s11">
-							<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
-						</div>
-						<div class="col s1">
-							<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
-						</div>
-					</div>
-				</form>
-
-				<!-- List users in a table. -->
-				<table class="striped">
-					<thead>
-						<tr>
-							<th>Modify</th>
-							<th>Login / Name</th>
-							<th>Email Address</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<?php
-							// Get user list.
-							if (isset($_GET["search-users"]))
-								$result = searchUsers($_GET["search-users"]);
-							else
-								$result = getUsers();
-
-							foreach ($result as $user)
-							{?>
-								<?php if ($user["is_disabled"] == 0)
-								{ ?>
-									<tr>
-										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">manage_accounts</i></a></td>
-										<td><?php echo $user["login"]; ?></td>
-										<td><?php echo $user["email"]; ?></td>
-									</tr>
-							<?php
-								} ?>
-							<?php
-							}
-						?>
-					</tbody>
-				</table>
-			</div>
-
-			<!-- Projects table. -->
-			<div class="section">
-				<h2>Projects</h2>
-
-				<a href="#modal-new-project" class="btn waves-effect waves-light red darken-2">New Project</a>
-				<table class="striped">
-					<thead>
-						<tr>
-							<th>Modify</th>
-							<th>Name</th>
-							<th>ID</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<?php
-							$projects = getProjects();
-
-							foreach ($projects as $p)
-							{?>
-								<tr>
-								<td><a href="admin-modif-project.php?pr=<?php echo $p["id"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
-								<td><?php echo $p["name"]; ?></td>
-								<td><?php echo $p["id"]; ?></td>
-								</tr>
-							<?php
-							}
-						?>
-					</tbody>
-				</table>
-			</div>
-
-			<div class="section">
-				<h2>Main Page Content</h2>
-
-				<!--a href="admin-modif-mainpage.php" class="btn waves-effect waves-light modal-trigger">Edit contents here</a-->
-
-				<div class="section">
-					<h3>First parallax image</h3>
-
-					<div class="row">
-						<div class="col s5"><img src="img/banner1.jpg" class="responsive-img" /></div>
-						<div class="col s7">
-							<input type="text" value="img/banner1.jpg"/>
-							<button class="btn"><i class="material-icons left">image</i>Update image</button>
-						</div>
-					</div>
+			<!-- Tab view. -->
+			<div class="row">
+				<div class="col s12">
+					<ul class="tabs">
+						<li class="tab col s3"><a href="#users" class="active">Registered Users</a></li>
+						<li class="tab col s3"><a href="#projects">Projects</a></li>
+						<li class="tab col s3"><a href="#main-page">Main Page Content</a></li>
+						<li class="tab col s3"><a href="#disabled-users">Disabled Users</a></li>
+					</ul>
 				</div>
 
-				<div class="section">
-					<h3>Second parallax image</h3>
+				<div id="users" class="section col s12">
+					<h2>Registered Users</h2>
 
-					<div class="row">
-						<div class="col s5"><img src="img/banner2.jpg" class="responsive-img" /></div>
-						<div class="col s7">
-							<input type="text" value="img/banner2.jpg"/>
-							<button class="btn"><i class="material-icons left">image</i>Update image</button>
+					<!-- Search bar (uses URL parameters). -->
+					<form method="get" action="admin-panel.php">
+						<div class="row">
+							<div class="col s11">
+								<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
+							</div>
+							<div class="col s1">
+								<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
+							</div>
 						</div>
-					</div>
+					</form>
+
+					<!-- List users in a table. -->
+					<table class="striped">
+						<thead>
+							<tr>
+								<th>Modify</th>
+								<th>Login / Name</th>
+								<th>Email Address</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<?php
+								// Get user list.
+								if (isset($_GET["search-users"]))
+									$result = searchUsers($_GET["search-users"]);
+								else
+									$result = getUsers();
+
+								foreach ($result as $user)
+								{?>
+									<?php if ($user["is_disabled"] == 0)
+									{ ?>
+										<tr>
+											<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">manage_accounts</i></a></td>
+											<td><?php echo $user["login"]; ?></td>
+											<td><?php echo $user["email"]; ?></td>
+										</tr>
+								<?php
+									} ?>
+								<?php
+								}
+							?>
+						</tbody>
+					</table>
 				</div>
-			</div>
 
-			<!-- Disabled accounts. -->
-			<div class="section">
-				<h2>Disabled Accounts</h2>
+				<!-- Projects table. -->
+				<div id="projects" class="section col s12">
+					<h2>Projects</h2>
 
-				<!-- Search bar (uses URL parameters). -->
-				<form method="get" action="admin-panel.php">
-					<div class="row">
-						<div class="col s11">
-							<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
-						</div>
-						<div class="col s1">
-							<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
-						</div>
-					</div>
-				</form>
+					<a href="#modal-new-project" class="btn waves-effect waves-light red darken-2 modal-trigger">New Project</a>
+					<table class="striped">
+						<thead>
+							<tr>
+								<th>Modify</th>
+								<th>Name</th>
+								<th>ID</th>
+							</tr>
+						</thead>
 
-				<!-- List users in a table. -->
-				<table class="striped">
-					<thead>
-						<tr>
-							<th>Modify</th>
-							<th>Login / Name</th>
-							<th>Email Address</th>
-						</tr>
-					</thead>
+						<tbody>
+							<?php
+								$projects = getProjects();
 
-					<tbody>
-						<?php
-							// Get user list.
-							if (isset($_GET["search-users"]))
-								$result = searchUsers($_GET["search-users"]);
-							else
-								$result = getUsers();
-
-							foreach ($result as $user)
-							{?>
-
-								<?php if ($user["is_disabled"] > 0)
-								{ ?>
+								foreach ($projects as $p)
+								{?>
 									<tr>
-										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">manage_accounts</i></a></td>
-										<td><?php echo $user["login"]; ?></td>
-										<td><?php echo $user["email"]; ?></td>
+									<td><a href="admin-modif-project.php?pr=<?php echo $p["id"]; ?>" class="btn"><i class="material-icons">edit</i></a></td>
+									<td><?php echo $p["name"]; ?></td>
+									<td><?php echo $p["id"]; ?></td>
 									</tr>
 								<?php
-								} ?>
+								}
+							?>
+						</tbody>
+					</table>
+				</div>
+
+				<div id="main-page" class="section col s12">
+					<h2>Main Page Content</h2>
+
+					<!--a href="admin-modif-mainpage.php" class="btn waves-effect waves-light modal-trigger">Edit contents here</a-->
+
+					<?php
+						$pdo = createPDO();
+						$main_page_content = executeSQL($pdo, "SELECT * FROM main_page", array())[0];
+					?>
+
+					<div class="section">
+						<h3>First parallax image</h3>
+
+						<div class="row">
+							<div class="col s4"><img src="<?php echo $main_page_content["parallax_path_0"]; ?>" class="responsive-img" /></div>
+							<div class="col s8">
+								<form method="post" action="action-update-mainpage-parallax.php?id=0">
+									<input name="img-path" type="text" value="<?php echo $main_page_content["parallax_path_0"]; ?>"/>
+									<button type="submit" class="btn"><i class="material-icons left">image</i>Update image</button>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="section">
+						<h3>Second parallax image</h3>
+
+						<div class="row">
+							<div class="col s4"><img src="<?php echo $main_page_content["parallax_path_1"]; ?>" class="responsive-img" /></div>
+							<div class="col s8">
+								<form method="post" action="action-update-mainpage-parallax.php?id=1">
+									<input name="img-path" type="text" value="<?php echo $main_page_content["parallax_path_1"]; ?>"/>
+									<button type="submit" class="btn"><i class="material-icons left">image</i>Update image</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Disabled accounts. -->
+				<div id="disabled-users" class="section col s12">
+					<h2>Disabled Accounts</h2>
+
+					<!-- Search bar (uses URL parameters). -->
+					<form method="get" action="admin-panel.php">
+						<div class="row">
+							<div class="col s11">
+								<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
+							</div>
+							<div class="col s1">
+								<button type="submit" class="btn right"><i class="material-icons">search</i></button>
+							</div>
+						</div>
+					</form>
+
+					<!-- List users in a table. -->
+					<table class="striped">
+						<thead>
+							<tr>
+								<th>Modify</th>
+								<th>Login / Name</th>
+								<th>Email Address</th>
+							</tr>
+						</thead>
+
+						<tbody>
 							<?php
-							}
-						?>
-					</tbody>
-				</table>
+								// Get user list.
+								if (isset($_GET["search-users"]))
+									$result = searchUsers($_GET["search-users"]);
+								else
+									$result = getUsers();
+
+								foreach ($result as $user)
+								{?>
+
+									<?php if ($user["is_disabled"] > 0)
+									{ ?>
+										<tr>
+											<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
+											<td><?php echo $user["login"]; ?></td>
+											<td><?php echo $user["email"]; ?></td>
+										</tr>
+									<?php
+									} ?>
+								<?php
+								}
+							?>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 
