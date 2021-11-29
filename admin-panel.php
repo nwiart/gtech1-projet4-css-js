@@ -44,7 +44,7 @@
 							<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
 						</div>
 						<div class="col s1">
-							<button type="submit" class="btn right"><i class="material-icons">search</i></button>
+							<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
 						</div>
 					</div>
 				</form>
@@ -72,7 +72,7 @@
 								<?php if ($user["is_disabled"] == 0)
 								{ ?>
 									<tr>
-										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">settings</i></a></td>
+										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">manage_accounts</i></a></td>
 										<td><?php echo $user["login"]; ?></td>
 										<td><?php echo $user["email"]; ?></td>
 									</tr>
@@ -89,7 +89,7 @@
 			<div class="section">
 				<h2>Projects</h2>
 
-				<a href="#modal-new-project" class="btn waves-effect waves-light modal-trigger">New Project</a>
+				<a href="#modal-new-project" class="btn waves-effect waves-light red darken-2">New Project</a>
 				<table class="striped">
 					<thead>
 						<tr>
@@ -129,7 +129,7 @@
 						<div class="col s5"><img src="img/banner1.jpg" class="responsive-img" /></div>
 						<div class="col s7">
 							<input type="text" value="img/banner1.jpg"/>
-							<button class="btn">Update image</button>
+							<button class="btn"><i class="material-icons left">image</i>Update image</button>
 						</div>
 					</div>
 				</div>
@@ -141,7 +141,7 @@
 						<div class="col s5"><img src="img/banner2.jpg" class="responsive-img" /></div>
 						<div class="col s7">
 							<input type="text" value="img/banner2.jpg"/>
-							<button class="btn">Update image</button>
+							<button class="btn"><i class="material-icons left">image</i>Update image</button>
 						</div>
 					</div>
 				</div>
@@ -158,7 +158,7 @@
 							<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
 						</div>
 						<div class="col s1">
-							<button type="submit" class="btn right"><i class="material-icons">search</i></button>
+							<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
 						</div>
 					</div>
 				</form>
@@ -187,7 +187,7 @@
 								<?php if ($user["is_disabled"] > 0)
 								{ ?>
 									<tr>
-										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
+										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">manage_accounts</i></a></td>
 										<td><?php echo $user["login"]; ?></td>
 										<td><?php echo $user["email"]; ?></td>
 									</tr>
@@ -238,76 +238,6 @@
 			</div>
 		</div>
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-		<!-- Desable account -->
-
-		<div class="container white" id="admin-container">
-			<div class="section">
-				<h2>Desables accounts</h2>
-
-				<!-- Search bar (uses URL parameters). -->
-				<form method="get" action="admin-panel.php">
-					<div class="row">
-						<div class="col s11">
-							<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
-						</div>
-						<div class="col s1">
-							<button type="submit" class="btn right"><i class="material-icons">search</i></button>
-						</div>
-					</div>
-				</form>
-
-				<!-- List users in a table. -->
-				<table class="striped">
-					<thead>
-						<tr>
-							<th>Modify</th>
-							<th>Login / Name</th>
-							<th>Email Address</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<?php
-							// Get user list.
-							if (isset($_GET["search-users"]))
-								$result = searchUsers($_GET["search-users"]);
-							else
-								$result = getUsers();
-
-							foreach ($result as $user)
-							{?>
-
-								<?php if ($user["is_disabled"] > 0)
-								{ ?>
-									<tr>
-										<td><a href="admin-reactivate-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">settings</i></a></td>
-										<td><?php echo $user["login"]; ?></td>
-										<td><?php echo $user["email"]; ?></td>
-									</tr>
-								<?php
-								} ?>
-							<?php
-							}
-						?>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-
-
-=======
->>>>>>> 12550514af12651420277fcc6d71c305fd1cc58e
 		<?php /*require "php/footer.php";*/ ?>
 
 
