@@ -33,7 +33,7 @@
 
 		<!-- Presentation section. -->
 		<div class="parallax-container">
-			<div class="parallax"><img src="img/banner1.jpg" alt="Ultra Games Banner" /></div>
+			<div class="parallax"><img src="<?php echo $main_page_content["parallax_path_0"]; ?>" alt="Ultra Games Banner" /></div>
 		</div>
 
 		<div class="z-depth-5 grey">
@@ -91,7 +91,7 @@
 
 		
 		<div class="parallax-container">
-			<div class="parallax"><img src="img/banner2.jpg" alt="Pong" /></div>
+			<div class="parallax"><img src="<?php echo $main_page_content["parallax_path_1"]; ?>" alt="Parallax Image" /></div>
 		</div>
 
 		<?php require "php/footer.php"; ?>
