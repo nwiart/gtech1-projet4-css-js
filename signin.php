@@ -1,23 +1,13 @@
 <?php
+	require_once "php/functions.php";
+
 	session_start();
 
-	$pdo = new PDO(
-		'mysql:host=localhost;dbname=projet5-db;',
-		'root',
-		'',
-		array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
-	);
-	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
-
-	$maRequete = "SELECT * FROM user WHERE login = :login AND password = SHA1(:password)";
-	$data = array(
+	$pdo = createPDO();
+	$result = executeSQL($pdo, "SELECT * FROM user WHERE login = :login AND password = SHA1(:password)", array(
 		":login"    => $_POST["login"],
 		":password" => $_POST["password"]
-	);
-	$pre = $pdo->prepare($maRequete);
-	$pre->execute($data);
-
-	$result = $pre->fetchAll(PDO::FETCH_ASSOC);
+	));
 
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 29, 2021 at 04:10 PM
+-- Generation Time: Nov 29, 2021 at 07:24 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `main_page` (
 --
 
 INSERT INTO `main_page` (`parallax_path_0`, `parallax_path_1`, `ethan_description`, `noah_description`) VALUES
-('img/', 'img/', '<p>My name is Ethan Joachim Gabin and in this year 2021 I turned 18 years old.</p> <br><p>After having passed my first and terminal classes with mathematics and NSI specialties, I left high school with a minimum of computer knowledge.</p> <br><p>I am currently in Lyon in a specialized school in video games, the Gaming Campus, to train as a video game developer.</p> <br><p>This web page is a presentation of joint or personal projects. This website itself is also a project.</p>', '<p>My name is WIART Noah. I am currently 18 years old and I am studying at Gaming Campus in Lyon.</p> <br><p>I discovered computer programming when I was 11, and since then, I have learned C++ by myself.</p> <br><p>I worked on several personal projects while I was in school, notably on the game \"Roll-A-Ball!\". This game also runs using a custom game engine that I have made myself as well.</p> <br><p>These personal projects have allowed me to discover game programming and improve my knowledge on the used softwares and languages. I have also gained experience on the versioning software Git and on Unreal Engine 4.</p>');
+('img/banner1.jpg', 'img/banner2.jpg', '<p>My name is Ethan Joachim Gabin and in this year 2021 I turned 18 years old.</p> <br><p>After having passed my first and terminal classes with mathematics and NSI specialties, I left high school with a minimum of computer knowledge.</p> <br><p>I am currently in Lyon in a specialized school in video games, the Gaming Campus, to train as a video game developer.</p> <br><p>This web page is a presentation of joint or personal projects. This website itself is also a project.</p>', '<p>My name is WIART Noah. I am currently 18 years old and I am studying at Gaming Campus in Lyon.</p> <br><p>I discovered computer programming when I was 11, and since then, I have learned C++ by myself.</p> <br><p>I worked on several personal projects while I was in school, notably on the game \"Roll-A-Ball!\". This game also runs using a custom game engine that I have made myself as well.</p> <br><p>These personal projects have allowed me to discover game programming and improve my knowledge on the used softwares and languages. I have also gained experience on the versioning software Git and on Unreal Engine 4.</p>');
 
 -- --------------------------------------------------------
 
@@ -113,21 +113,6 @@ CREATE TABLE IF NOT EXISTS `project_paragraphs` (
 INSERT INTO `project_paragraphs` (`id`, `project_id`, `title`, `content`, `square_image`, `parallax_image`, `placement`) VALUES
 ('desc', 'rb', 'Description', '<p>Roll-A-Ball! is a 3D platformer game driven by one crucial gameplay rule : you control a ball with your mouse. The faster you move your mouse, the faster the ball will roll.</p><p>The game is divided into many levels, each with a finish zone. The only goal is to complete all levels as quickly as possible.</p><p>This project was made by Noah during highschool.</p>', '', '', 0),
 ('history', 'rb', 'Development phases', '<p>The first version of Roll-A-Ball! Alpha was released in 2019. The game included basic levels made out of platforms, custom levels, challenges, etc...</p><p>Beta\'s major change was supposed to be the addition of a multiplayer mode, but the development of a correct networking API struggled for a long time. The last Beta version has not made it past the \"work-in-progress\" state and was originally scheduled for July 2020.</p><p>Past this date, development was abandoned.</p>', '', '', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `team_members`
---
-
-DROP TABLE IF EXISTS `team_members`;
-CREATE TABLE IF NOT EXISTS `team_members` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(32) NOT NULL,
-  `picture_path` varchar(64) NOT NULL,
-  `description` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
