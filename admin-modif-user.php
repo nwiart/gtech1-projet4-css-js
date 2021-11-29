@@ -47,11 +47,11 @@
 				<a href="admin-panel.php">Go back to Admin Panel</a>
 			</div>
 
-			<div class="section">
-				<!-- Display form ONLY if user actually exists. -->
-				<?php if ($user_exists) { ?>
+			<!-- Display form ONLY if user actually exists. -->
+			<?php if ($user_exists) { ?>
 
-					<form method="post" action="">
+				<div class="section">
+					<form method="post" action="admin-update-user.php?login=<?php echo $_GET["login"]; ?>">
 						<div class="input-field">
 							<input id="login" name="login" type="text" value="<?php echo $_GET["login"] ?>" />
 							<label for="login">Login</label>
@@ -66,32 +66,33 @@
 							<input id="password" name="password" type="password" />
 							<label for="password">New Password</label>
 						</div>
+
+						<button type="submit" class="btn waves-effect waves-light">Update user info</button>
 					</form>
+				</div>
 
-					<div class="section">
-						<h3 class="red-text"><i class="material-icons">warning</i> DANGER ZONE <i class="material-icons">warning</i></h3>
-						<a href="#modal-user-delete" class="btn waves-effect waves-light red darken-2 modal-trigger">Deactivate User</a>
+				<div class="section">
+					<h3 class="red-text"><i class="material-icons">warning</i> DANGER ZONE <i class="material-icons">warning</i></h3>
+					<a href="#modal-user-delete" class="btn waves-effect waves-light red darken-2 modal-trigger">Deactivate User</a>
+				</div>
+
+				<!-- Delete user modal. -->
+				<div id="modal-user-delete" class="modal">
+					<div class="modal-content">
+						<h3>Deactivate User Account</h3>
+						<p>Do you REALLY want to deactivate the user "<?php echo $_GET["login"]; ?>"?</p>
 					</div>
 
-					<!-- Delete user modal. -->
-					<div id="modal-user-delete" class="modal">
-						<div class="modal-content">
-							<h3>Deactivate User Account</h3>
-							<p>Do you REALLY want to deactivate the user "<?php echo $_GET["login"]; ?>"?</p>
-						</div>
-
-						<div class="modal-footer">
-							<a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
-							<a href="admin-delete-user.php?login=<?php echo $_GET["login"]; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Wave "Bye bye"!</a>
-						</div>
+					<div class="modal-footer">
+						<a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
+						<a href="admin-delete-user.php?login=<?php echo $_GET["login"]; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Wave "Bye bye"!</a>
 					</div>
+				</div>
 
-				<?php } else {
-						echo "<p>User \"" . $_GET["login"] . "\" does not exist.</p>";
-					}
-				?>
-
-			</div>
+			<?php } else {
+					echo "<p>User \"" . $_GET["login"] . "\" does not exist.</p>";
+				}
+			?>
 		</div>
 
 		<?php /*require "php/footer.php";*/ ?>
