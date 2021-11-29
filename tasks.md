@@ -13,7 +13,7 @@ Revision 1.0
   - [ ] Gérer les projets : insertion, modification, suppression
   - [x] Voir/Modifier/Supprimer les utilisateurs
   - [ ] Modifier le contenu (textes et images) de la page d'accueil (pas le positionnement des éléments)
-  - [ ] Voir et réactiver les comptes désactivés.
+  - [x] Voir et réactiver les comptes désactivés.
 - [ ] La page d'accueil doit être entièrement automatisée et gérable via le panel admin
 - [ ] Envoi de mail à la validation du formulaire de contact
 - [ ] Vous devez également me fournir le MCD de votre base de données.

@@ -112,6 +112,36 @@
 					</tbody>
 				</table>
 			</div>
+
+			<div class="section">
+				<h2>Main Page Content</h2>
+
+				<a href="admin-modif-mainpage.php" class="btn waves-effect waves-light modal-trigger">Edit contents here</a>
+
+				<div class="section">
+					<h3>First parallax image</h3>
+				
+					<div class="row">
+						<div class="col s5"><img src="img/banner1.jpg" class="responsive-img" /></div>
+						<div class="col s7">
+							<input type="text" value="img/banner1.jpg"/>
+							<button class="btn">Update image</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="section">
+					<h3>Second parallax image</h3>
+
+					<div class="row">
+						<div class="col s5"><img src="img/banner2.jpg" class="responsive-img" /></div>
+						<div class="col s7">
+							<input type="text" value="img/banner2.jpg"/>
+							<button class="btn">Update image</button>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 
