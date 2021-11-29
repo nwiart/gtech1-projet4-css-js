@@ -72,7 +72,7 @@
 								<?php if ($user["is_disabled"] == 0)
 								{ ?>
 									<tr>
-										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
+										<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">settings</i></a></td>
 										<td><?php echo $user["login"]; ?></td>
 										<td><?php echo $user["email"]; ?></td>
 									</tr>
@@ -124,7 +124,7 @@
 
 				<div class="section">
 					<h3>First parallax image</h3>
-				
+
 					<div class="row">
 						<div class="col s5"><img src="img/banner1.jpg" class="responsive-img" /></div>
 						<div class="col s7">
@@ -236,7 +236,7 @@
 								<?php if ($user["is_disabled"] > 0)
 								{ ?>
 									<tr>
-										<td><a href="admin-reactivate-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
+										<td><a href="admin-reactivate-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">settings</i></a></td>
 										<td><?php echo $user["login"]; ?></td>
 										<td><?php echo $user["email"]; ?></td>
 									</tr>
