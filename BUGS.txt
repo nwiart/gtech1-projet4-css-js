@@ -1,4 +1,3 @@
-- It is possible to login to a deactivated account.
 - Registering a new account does not make the user login automatically.
 - User search bar does not work.
 - Carousel image descriptions system out of date (either remove it, or rework it).
