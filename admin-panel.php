@@ -166,7 +166,48 @@
 							</div>
 						</div>
 					</div>
+
+
+				<h2>Self description Content</h2>
+
+					<!--a href="admin-modif-mainpage.php" class="btn waves-effect waves-light modal-trigger">Edit contents here</a-->
+
+				<?php
+					$pdo = createPDO();
+					$main_page_content = executeSQL($pdo, "SELECT * FROM main_page", array())[0];
+				?>
+
+				<div class="section">
+					<h3>First self decription text</h3>
+
+						<div class="row">
+							<div class="col s4"><img src="img/bg.jpg" class="center responsive-img" /></div>
+							<div class="col s8">
+								<form method="post" action="action-update-mainpage-parallax.php?id=0">
+									<input name="img-path" type="text" value="<?php echo $main_page_content["ethan_description"]; ?>"/>
+									<button type="submit" class="btn"><i class="material-icons left">description</i>Update text</button>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<div class="section">
+						<h3>Second self description text</h3>
+
+						<div class="row">
+							<div class="col s4"><img src="img/bg2.jpg" class=" center responsive-img" /></div>
+							<div class="col s8">
+								<form method="post" action="action-update-mainpage-parallax.php?id=1">
+									<input name="img-path" type="text" value="<?php echo $main_page_content["noah_description"]; ?>"/>
+									<button type="submit" class="btn"><i class="material-icons left">description</i>Update image</button>
+								</form>
+							</div>
+						</div>
+					</div>
 				</div>
+
+
+
 
 				<!-- Disabled accounts. -->
 				<div id="disabled-users" class="section col s12">
@@ -179,7 +220,7 @@
 								<input id="search-disabled-users" name="search-disabled-users" type="search" placeholder="Search" class="search-field" value="<?php if (isset($_GET["search-disabled-users"])) echo $_GET["search-disabled-users"]; ?>" />
 							</div>
 							<div class="col s1">
-								<button type="submit" class="btn right"><i class="material-icons">search</i></button>
+								<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
 							</div>
 						</div>
 					</form>
@@ -208,7 +249,7 @@
 									<?php if ($user["is_disabled"] > 0)
 									{ ?>
 										<tr>
-											<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">edit</i></a></td>
+											<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">manage_accounts</i></a></td>
 											<td><?php echo $user["login"]; ?></td>
 											<td><?php echo $user["email"]; ?></td>
 										</tr>
