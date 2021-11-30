@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 30, 2021 at 11:05 AM
+-- Generation Time: Nov 30, 2021 at 11:25 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `project_images` (
   `description` text NOT NULL,
   `placement` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `project_images`
@@ -86,7 +86,17 @@ CREATE TABLE IF NOT EXISTS `project_images` (
 
 INSERT INTO `project_images` (`id`, `project_id`, `path`, `description`, `placement`) VALUES
 (1, 'rb', 'img/rb/rb_splash.jpg', 'Something', 0),
-(2, 'rb', 'img/rb/rb_mainmenu.jpg', '', 1);
+(2, 'rb', 'img/rb/rb_mainmenu.jpg', '', 1),
+(3, 'rb', 'img/rb/rb_levels.jpg', '', 2),
+(4, 'rb', 'img/rb/rb_island.jpg', '', 3),
+(5, 'rb', 'img/rb/rb_lava.jpg', '', 4),
+(6, 'rb', 'img/rb/rb_freakout.jpg', '', 5),
+(7, 'ug-editor', 'img/ug-editor/ed_mainwindow.png', '', 0),
+(8, 'ug-editor', 'img/ug-editor/ed_openproject.png', '', 1),
+(9, 'ug-editor', 'img/ug-editor/ed_aboutwindow.png', '', 2),
+(10, 'pong', 'img/pong/pongtitle.png', '', 0),
+(11, 'pong', 'img/pong/pong_zero.png', '', 1),
+(12, 'pong', 'img/pong/pong_highscores.png', '', 2);
 
 -- --------------------------------------------------------
 
