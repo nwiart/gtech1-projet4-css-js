@@ -38,7 +38,7 @@
 	function getUsers()
 	{
 		$pdo = createPDO();
-		return executeSQL($pdo, "SELECT * FROM user", array());
+		return executeSQL($pdo, "SELECT * FROM user ORDER BY login", array());
 	}
 
 	/*
@@ -47,7 +47,7 @@
 	function getUserByLogin($login)
 	{
 		$pdo = createPDO();
-		return executeSQL($pdo, "SELECT * FROM user WHERE login = :login", array( ":login" => $login ));
+		return executeSQL($pdo, "SELECT * FROM user WHERE login = :login ORDER BY login", array( ":login" => $login ));
 	}
 
 	/*
@@ -56,7 +56,7 @@
 	function searchUsers($loginBeginsWith)
 	{
 		$pdo = createPDO();
-		return executeSQL($pdo, "SELECT login, email FROM user WHERE login LIKE :log", array( ":log" => ($loginBeginsWith . "%") ) );
+		return executeSQL($pdo, "SELECT * FROM user WHERE login LIKE :log ORDER BY login", array( ":log" => ($loginBeginsWith . "%") ) );
 	}
 
 	/*
@@ -91,9 +91,6 @@
 		return executeSQL($pdo, "SELECT * FROM projects", array());
 	}
 
-	/*
-	 *
-	 */
 	function getProjectById($id)
 	{
 		$pdo = createPDO();

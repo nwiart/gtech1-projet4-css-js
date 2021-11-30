@@ -53,7 +53,7 @@
 					<form method="get" action="admin-panel.php">
 						<div class="row">
 							<div class="col s11">
-								<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
+								<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" value="<?php if (isset($_GET["search-users"])) echo $_GET["search-users"]; ?>" />
 							</div>
 							<div class="col s1">
 								<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
@@ -176,7 +176,7 @@
 					<form method="get" action="admin-panel.php">
 						<div class="row">
 							<div class="col s11">
-								<input id="search-users" name="search-users" type="search" placeholder="Search" class="search-field" />
+								<input id="search-disabled-users" name="search-disabled-users" type="search" placeholder="Search" class="search-field" value="<?php if (isset($_GET["search-disabled-users"])) echo $_GET["search-disabled-users"]; ?>" />
 							</div>
 							<div class="col s1">
 								<button type="submit" class="btn right"><i class="material-icons">search</i></button>
@@ -197,8 +197,8 @@
 						<tbody>
 							<?php
 								// Get user list.
-								if (isset($_GET["search-users"]))
-									$result = searchUsers($_GET["search-users"]);
+								if (isset($_GET["search-disabled-users"]))
+									$result = searchUsers($_GET["search-disabled-users"]);
 								else
 									$result = getUsers();
 
