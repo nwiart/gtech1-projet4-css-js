@@ -184,7 +184,7 @@
 							<div class="col s4"><img src="img/bg.jpg" class="center responsive-img" /></div>
 							<div class="col s8">
 								<form method="post" action="action-update-mainpage-selfdescription.php?id=0">
-									<input name="desc" type="text" value="<?php echo $main_page_content["ethan_description"]; ?>"/>
+									<textarea  name="desc" type="text" class="materialize-textarea"> <?php echo $main_page_content["ethan_description"]; ?></textarea>
 									<button type="submit" class="btn"><i class="material-icons left">description</i>Update text</button>
 								</form>
 							</div>
@@ -198,8 +198,8 @@
 							<div class="col s4"><img src="img/bg2.jpg" class=" center responsive-img" /></div>
 							<div class="col s8">
 								<form method="post" action="action-update-mainpage-selfdescription.php?id=1">
-									<input name="desc" type="text" value="<?php echo $main_page_content["noah_description"]; ?>"/>
-									<button type="submit" class="btn"><i class="material-icons left">description</i>Update image</button>
+									<textarea name="desc" type="text" class="materialize-textarea"><?php echo $main_page_content["noah_description"]; ?></textarea>
+									<button type="submit" class="btn"><i class="material-icons left">description</i>Update text</button>
 								</form>
 							</div>
 						</div>
