@@ -52,6 +52,7 @@
 		<?php
 			if (isset($_SESSION["user"]))
 			{?>
+				<li><a href="settings.php" class="teal-text">Settings</a></li>
 				<li><a href="disconnect.php" class="teal-text">Disconnect</a></li>
 		<?php
 			}

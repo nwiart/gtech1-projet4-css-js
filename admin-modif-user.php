@@ -51,7 +51,7 @@
 			<?php if ($user_exists) { ?>
 
 				<div class="section">
-					<form method="post" action="admin-update-user.php?login=<?php echo $_GET["login"]; ?>">
+					<form method="post" action="action-admin-update-user.php?login=<?php echo $_GET["login"]; ?>">
 						<div class="input-field">
 							<input id="login" name="login" type="text" value="<?php echo $_GET["login"] ?>" />
 							<label for="login">Login</label>

@@ -1,6 +1,8 @@
 <?php
 	require_once "php/functions.php";
+	checkCurrentUserAdmin();
 
+	$oldLogin = $_GET["login"];
 	$newLogin = $_POST["login"];
 	$newEmail = $_POST["email"];
 	$newPass  = $_POST["password"];
@@ -11,7 +13,7 @@
 	if (strlen($newPass) != 0) {
 		launchSQL($pdo, "UPDATE user SET password = SHA1( :pwd ) WHERE login = :login", array(
 			":pwd" => $newPass,
-			":login" => $_GET["login"]
+			":login" => $oldLogin
 		));
 	}
 
@@ -19,7 +21,7 @@
 	launchSQL($pdo, "UPDATE user SET login = :login, email = :email WHERE login = :oldlogin", array(
 		":login" => $newLogin,
 		":email" => $newEmail,
-		":oldlogin" => $_GET["login"]
+		":oldlogin" => $oldLogin
 	));
 
 	header("Location: admin-modif-user.php?login=" . $newLogin);

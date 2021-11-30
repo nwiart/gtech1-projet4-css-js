@@ -56,14 +56,15 @@
 
 							<div class="divider"></div>
 							<div class="section">
-								<h3>Development</h3>
+								<h3>Development & Gameplay</h3>
 								<p>Our version of Pong was made to run on Linux. It was programmed using the C language and with the help of the SDL2 windowing library.</p>
+								<p>A ball moves across the screen and bounces off the top and bottom edges. The two players control a racket, represented by a vertical line at the left and right sides of the court. The players move their racket vertically by using the assigned keyboard controls. If the ball hits the racket, it bounces back to the other player. If it misses the racket, the opponent scores a point.</p>
 							</div>
 
 							<div class="divider"></div>
 							<div class="section">
 								<h3>Gameplay</h3>
-								<p>A ball moves across the screen and bounces off the top and bottom edges. The two players control a racket, represented by a vertical line at the left and right sides of the court. The players move their racket vertically by using the assigned keyboard controls. If the ball hits the racket, it bounces back to the other player. If it misses the racket, the opponent scores a point.</p>
+								
 							</div>
 						</div>
 						<div class="col s1"></div>

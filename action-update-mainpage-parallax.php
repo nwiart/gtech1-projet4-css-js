@@ -1,5 +1,6 @@
 <?php
 	require_once "php/functions.php";
+	checkCurrentUserAdmin();
 
 	echo $_GET["id"];
 

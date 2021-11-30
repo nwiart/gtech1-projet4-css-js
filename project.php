@@ -43,7 +43,7 @@
 								<div class="section row valign-wrapper">
 									<?php if ($b) { ?>
 										<div class="col s4 m4 l3">
-											<img src="img/<?php echo $projectId . "/" . $para["id"] . ".jpg"; ?>" class="left responsive-img paragraph-image" />
+											<img src="img/<?php echo $projectId . "/" . $para["paragraph_id"] . ".jpg"; ?>" class="left responsive-img paragraph-image" />
 										</div>
 									<?php } ?>
 
@@ -54,7 +54,7 @@
 
 									<?php if (!$b) { ?>
 										<div class="col s4 m4 l3">
-											<img src="img/<?php echo $projectId . "/" . $para["id"] . ".jpg"; ?>" class="right responsive-img paragraph-image" />
+											<img src="img/<?php echo $projectId . "/" . $para["paragraph_id"] . ".jpg"; ?>" class="right responsive-img paragraph-image" />
 										</div>
 									<?php } ?>
 								</div>
