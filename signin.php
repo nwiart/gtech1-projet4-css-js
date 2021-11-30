@@ -4,7 +4,7 @@
 	session_start();
 
 	$pdo = createPDO();
-	$result = executeSQL($pdo, "SELECT * FROM user WHERE login = :login AND password = SHA1(:password)", array(
+	$result = executeSQL($pdo, "SELECT * FROM user WHERE is_disabled = 0 AND login = :login AND password = SHA1(:password)", array(
 		":login"    => $_POST["login"],
 		":password" => $_POST["password"]
 	));
