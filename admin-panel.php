@@ -199,59 +199,59 @@
 							</div>
 						</div>
 					</div>
+				</div>
 
-					<!-- Disabled accounts. -->
-					<div id="disabled-users" class="section col s12">
-						<h2>Disabled Accounts</h2>
+				<!-- Disabled accounts. -->
+				<div id="disabled-users" class="section col s12">
+					<h2>Disabled Accounts</h2>
 
-						<!-- Search bar (uses URL parameters). -->
-						<form method="get" action="admin-panel.php">
-							<div class="row">
-								<div class="col s11">
-									<input id="search-disabled-users" name="search-disabled-users" type="search" placeholder="Search" class="search-field" value="<?php if (isset($_GET["search-disabled-users"])) echo $_GET["search-disabled-users"]; ?>" />
-								</div>
-								<div class="col s1">
-									<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
-								</div>
+					<!-- Search bar (uses URL parameters). -->
+					<form method="get" action="admin-panel.php">
+						<div class="row">
+							<div class="col s11">
+								<input id="search-disabled-users" name="search-disabled-users" type="search" placeholder="Search" class="search-field" value="<?php if (isset($_GET["search-disabled-users"])) echo $_GET["search-disabled-users"]; ?>" />
 							</div>
-						</form>
+							<div class="col s1">
+								<button type="submit" class="btn waves-effect waves-light red darken-2 right"><i class="material-icons">search</i></button>
+							</div>
+						</div>
+					</form>
 
-						<!-- List users in a table. -->
-						<table class="striped">
-							<thead>
-								<tr>
-									<th>Modify</th>
-									<th>Login / Name</th>
-									<th>Email Address</th>
-								</tr>
-							</thead>
+					<!-- List users in a table. -->
+					<table class="striped">
+						<thead>
+							<tr>
+								<th>Modify</th>
+								<th>Login / Name</th>
+								<th>Email Address</th>
+							</tr>
+						</thead>
 
-							<tbody>
-								<?php
-									// Get user list.
-									if (isset($_GET["search-disabled-users"]))
-										$result = searchUsers($_GET["search-disabled-users"]);
-									else
-										$result = getUsers();
+						<tbody>
+							<?php
+								// Get user list.
+								if (isset($_GET["search-disabled-users"]))
+									$result = searchUsers($_GET["search-disabled-users"]);
+								else
+									$result = getUsers();
 
-									foreach ($result as $user)
-									{?>
+								foreach ($result as $user)
+								{?>
 
-										<?php if ($user["is_disabled"] > 0)
-										{ ?>
-											<tr>
-												<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">manage_accounts</i></a></td>
-												<td><?php echo $user["login"]; ?></td>
-												<td><?php echo $user["email"]; ?></td>
-											</tr>
-										<?php
-										} ?>
+									<?php if ($user["is_disabled"] > 0)
+									{ ?>
+										<tr>
+											<td><a href="admin-modif-user.php?login=<?php echo $user["login"]; ?>" class="btn btn-small"><i class="material-icons">manage_accounts</i></a></td>
+											<td><?php echo $user["login"]; ?></td>
+											<td><?php echo $user["email"]; ?></td>
+										</tr>
 									<?php
-									}
-								?>
-							</tbody>
-						</table>
-					</div>
+									} ?>
+								<?php
+								}
+							?>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
