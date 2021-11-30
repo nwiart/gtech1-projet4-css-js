@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Nov 29, 2021 at 07:24 PM
+-- Generation Time: Nov 30, 2021 at 11:05 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -96,7 +96,8 @@ INSERT INTO `project_images` (`id`, `project_id`, `path`, `description`, `placem
 
 DROP TABLE IF EXISTS `project_paragraphs`;
 CREATE TABLE IF NOT EXISTS `project_paragraphs` (
-  `id` varchar(32) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `paragraph_id` varchar(32) NOT NULL,
   `project_id` varchar(32) NOT NULL,
   `title` varchar(64) NOT NULL,
   `content` text NOT NULL,
@@ -104,15 +105,19 @@ CREATE TABLE IF NOT EXISTS `project_paragraphs` (
   `parallax_image` varchar(64) NOT NULL COMMENT 'This is the path to the parallax image that will be shown under the paragraph block.',
   `placement` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `project_paragraphs`
 --
 
-INSERT INTO `project_paragraphs` (`id`, `project_id`, `title`, `content`, `square_image`, `parallax_image`, `placement`) VALUES
-('desc', 'rb', 'Description', '<p>Roll-A-Ball! is a 3D platformer game driven by one crucial gameplay rule : you control a ball with your mouse. The faster you move your mouse, the faster the ball will roll.</p><p>The game is divided into many levels, each with a finish zone. The only goal is to complete all levels as quickly as possible.</p><p>This project was made by Noah during highschool.</p>', '', '', 0),
-('history', 'rb', 'Development phases', '<p>The first version of Roll-A-Ball! Alpha was released in 2019. The game included basic levels made out of platforms, custom levels, challenges, etc...</p><p>Beta\'s major change was supposed to be the addition of a multiplayer mode, but the development of a correct networking API struggled for a long time. The last Beta version has not made it past the \"work-in-progress\" state and was originally scheduled for July 2020.</p><p>Past this date, development was abandoned.</p>', '', '', 1);
+INSERT INTO `project_paragraphs` (`id`, `paragraph_id`, `project_id`, `title`, `content`, `square_image`, `parallax_image`, `placement`) VALUES
+(3, 'desc', 'rb', 'Description', '<p>Roll-A-Ball! is a 3D platformer game driven by one crucial gameplay rule : you control a ball with your mouse. The faster you move your mouse, the faster the ball will roll.</p><p>The game is divided into many levels, each with a finish zone. The only goal is to complete all levels as quickly as possible.</p><p>This project was made by Noah during highschool.</p>', '', '', 0),
+(1, 'history', 'rb', 'Development phases', '<p>The first version of Roll-A-Ball! Alpha was released in 2019. The game included basic levels made out of platforms, custom levels, challenges, etc...</p><p>Beta\'s major change was supposed to be the addition of a multiplayer mode, but the development of a correct networking API struggled for a long time. The last Beta version has not made it past the \"work-in-progress\" state and was originally scheduled for July 2020.</p><p>Past this date, development was abandoned.</p>', '', '', 1),
+(4, 'desc', 'ug-editor', 'Description', '<p>UGE Editor is a level designer for the Ultra Game Engine (UGE). It is currently in alpha and only bares the minimum of what a typical level editor can do.</p><p>UGE (or the \"Ultra Game Engine\") is a game engine project made by me (Noah). This project began near the end of middle school, and since, it kept growing with new features being added, slowly but surely.</p><p>The engine currently supports a world / entity / component system, a Direct3D 9 rendering engine, a physics engine relying on Havok Physics 2014, a sound system, as well as a class reflection system coupled with serialization.</p>', '', '', 0),
+(5, 'features', 'ug-editor', 'Features', '<p>The current available features are listed below :</p><ul class=\"custom-list\"><li>A \"main\" window acting as the level editor, containing a viewport, an asset view and a list of all the entities in the current scene.</li><li>General level editing actions, such as placing, moving, renaming and deleting entities from the world.</li><li>A mesh \"importer\", which is able to convert FBX files to a proprietary 3D mesh format being UGM (UGE Mesh).</li><li>A \"Entity properties\" panel allowing to modify an entity\'s values. This uses UGE\'s reflection system.</li></ul>', '', '', 1),
+(6, 'history', 'pong', 'History', '<p>Created by Allan Alcorn in 1972, Pong revolutionized the era of video games. During a project at Gaming Campus, we had to create our copy of the world\'s first arcade game. To find out how and what felt Allan Alcorn during the development, my teammate and me decided to recreate this famous game while adding our personal touch of course. So we recreated the original pong game with just new colors : a gray background, blue elements (racket, middle line), and a red ball.</p>', '', '', 0),
+(7, 'dev_gameplay', 'pong', 'Development & Gameplay', '<p>Our version of Pong was made to run on Linux. It was programmed using the C language and with the help of the SDL2 windowing library.</p><p>A ball moves across the screen and bounces off the top and bottom edges. The two players control a racket, represented by a vertical line at the left and right sides of the court. The players move their racket vertically by using the assigned keyboard controls. If the ball hits the racket, it bounces back to the other player. If it misses the racket, the opponent scores a point.</p>', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -137,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`login`, `email`, `password`, `is_admin`, `is_disabled`) VALUES
 ('admin', 'random.dude@example.com', 'b80ac32edc1a3cdc9483d522be3f010f0e3f5b2f', 1, 0),
 ('david73', 'nwiart@gaming.tech', '85f8e5ee55ed8f4ecab2fe9ba99109a1ae5ec4dd', 0, 0),
-('zbie', 'zzz@truc.muche', '403731b1addabb637b60c0c60707212af0523866', 0, 1);
+('lgdsh', 'pfdpng@foindf.com', 'f12da8c2e4b05997897c91a54c062f3b5ce6e508', 0, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
