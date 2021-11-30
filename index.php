@@ -84,12 +84,12 @@
 					</div>
 				</div>
 
-				<a href="#contact-us" onclick="reveal()" id="hiddenbtn" class="grey-text text-lighten-2">Click here!</a>
+				<a href="#contact-us" onclick="reveal()" id="hiddenbtn" class="grey-text text-lighten-2"><i class = "material-icons">visibility</i></a>
 			</div>
 		</div>
 
 
-		
+
 		<div class="parallax-container">
 			<div class="parallax"><img src="<?php echo $main_page_content["parallax_path_1"]; ?>" alt="Parallax Image" /></div>
 		</div>
@@ -97,7 +97,7 @@
 		<?php require "php/footer.php"; ?>
 
 
-		
+
 		<!--JavaScript at end of body for optimized loading-->
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/materialize.min.js"></script>

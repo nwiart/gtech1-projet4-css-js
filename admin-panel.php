@@ -183,8 +183,8 @@
 						<div class="row">
 							<div class="col s4"><img src="img/bg.jpg" class="center responsive-img" /></div>
 							<div class="col s8">
-								<form method="post" action="action-update-mainpage-parallax.php?id=0">
-									<input name="img-path" type="text" value="<?php echo $main_page_content["ethan_description"]; ?>"/>
+								<form method="post" action="action-update-mainpage-selfdescription.php?id=0">
+									<input name="desc" type="text" value="<?php echo $main_page_content["ethan_description"]; ?>"/>
 									<button type="submit" class="btn"><i class="material-icons left">description</i>Update text</button>
 								</form>
 							</div>
@@ -197,8 +197,8 @@
 						<div class="row">
 							<div class="col s4"><img src="img/bg2.jpg" class=" center responsive-img" /></div>
 							<div class="col s8">
-								<form method="post" action="action-update-mainpage-parallax.php?id=1">
-									<input name="img-path" type="text" value="<?php echo $main_page_content["noah_description"]; ?>"/>
+								<form method="post" action="action-update-mainpage-selfdescription.php?id=1">
+									<input name="desc" type="text" value="<?php echo $main_page_content["noah_description"]; ?>"/>
 									<button type="submit" class="btn"><i class="material-icons left">description</i>Update image</button>
 								</form>
 							</div>
