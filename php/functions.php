@@ -113,16 +113,18 @@
 	{
 		$pdo = createPDO();
 
-		// Get project data.
+		// Does project exist?
 		$projectToDelete = getProjectById($id);
 		if (sizeof($projectToDelete) == 0) {
 			return;
 		}
 
+		// Destroy all paragraphs and carousel images.
+		launchSQL($pdo, "DELETE FROM project_paragraphs WHERE project_id = :id", array( ":id" => $id ) );
+		launchSQL($pdo, "DELETE FROM project_images WHERE project_id = :id", array( ":id" => $id ) );
+
 		// Delete record from "projects" table.
-		executeSQL($pdo, "DELETE FROM projects WHERE id = :id", array(
-			":id" => $id
-		) );
+		launchSQL($pdo, "DELETE FROM projects WHERE id = :id", array( ":id" => $id ) );
 	}
 
 

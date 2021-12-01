@@ -268,7 +268,7 @@
 				<div class="row">
 					<div class="col l2 m1 hide-on-small-only"></div>
 					<div class="col s12 m10 l8">
-						<form method="post" action="admin-new-project.php">
+						<form method="post" action="action-project.php?action=new">
 							<div class="input-field">
 								<input name="id" id="id" type="text" required="" aria-required="true" />
 								<label for="id">ID</id>

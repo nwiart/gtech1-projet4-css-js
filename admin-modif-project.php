@@ -123,7 +123,7 @@
 						<h3>New Paragraph</h3>
 
 						<div class="container">
-							<form method="post" action="action-new-project-paragraph.php?pr=<?php echo $projectId; ?>">
+							<form method="post" action="action-project-paragraph.php?action=new&pr=<?php echo $projectId; ?>">
 								<div class="input-field">
 									<input name="title" id="title" type="text" required="" aria-required="true" />
 									<label for="title">Title</label>
@@ -151,7 +151,7 @@
 					<div class="modal-content">
 						<h3>Rename project</h3>
 
-						<form method="post" action="admin-rename-project.php?pr=<?php echo $projectId; ?>">
+						<form method="post" action="action-project.php?action=rename&pr=<?php echo $projectId; ?>">
 							<div class="input-field">
 								<input name="new-name" id="new-name" type="text" required="" aria-required="true" value="<?php echo $project[0]["name"]; ?>" />
 								<label for="new-name">Name</label>
@@ -173,10 +173,11 @@
 					<div class="modal-content">
 						<h3>Delete project</h3>
 						<p>Are you sure you want to delete project "<?php echo $project[0]["name"]; ?>"?</p>
+						<p>All associated paragraphs will also be wiped.</p>
 						<p>THIS ACTION CANNOT BE UNDONE.</p>
 
 						<div class="center">
-							<a href="admin-delete-project?pr=<?php echo $projectId; ?>" class="btn waves-effect waves-light red darken-2">DESTROY IT</a>
+							<a href="action-project?action=delete&pr=<?php echo $projectId; ?>" class="btn waves-effect waves-light red darken-2">DESTROY IT</a>
 						</div>
 					</div>
 
