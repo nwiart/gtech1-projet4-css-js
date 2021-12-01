@@ -1,8 +1,19 @@
 <?php
 	require_once "php/functions.php";
-	session_start();
+	if (!isset($_SESSION))
+		session_start();
 
-	$oldLogin = $_SESSION["user"]["name"];
+	if ($_GET["login"] != $_SESSION["user"]["name"])
+	{
+		checkCurrentUserAdmin();
+		$redirectLocation = "Location: admin-modif-user.php?login=" . $_POST["login"];
+	}
+	else
+	{
+		$redirectLocation = "Location: settings.php";
+	}
+
+	$oldLogin = $_GET["login"];
 	$newLogin = $_POST["login"];
 	$newEmail = $_POST["email"];
 	$newPass  = $_POST["password"];
@@ -33,13 +44,14 @@
 	));
 
 	// Update current user login.
-	$_SESSION["user"]["name"] = $newLogin;
+	if ($oldLogin == $_SESSION["user"]["name"])
+		$_SESSION["user"]["name"] = $newLogin;
 
 	$returnCode = 0;
 
 _done:
 	$_SESSION["update-user-return"] = $returnCode;
 
-	header("Location: settings.php");
+	header($redirectLocation);
 	exit();
 ?>

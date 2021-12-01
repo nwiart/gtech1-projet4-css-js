@@ -51,7 +51,7 @@
 			<?php if ($user_exists) { ?>
 
 				<div class="section">
-					<form method="post" action="action-admin-update-user.php?login=<?php echo $_GET["login"]; ?>">
+					<form method="post" action="action-update-user.php?login=<?php echo $_GET["login"]; ?>">
 						<div class="input-field">
 							<input id="login" name="login" type="text" value="<?php echo $_GET["login"] ?>" />
 							<label for="login">Login</label>
@@ -94,7 +94,7 @@
 
 						<div class="modal-footer">
 							<a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
-							<a href="admin-enable-user.php?login=<?php echo $_GET["login"]; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Wave "Bye bye"!</a>
+							<a href="action-enable-user.php?login=<?php echo $_GET["login"]; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Wave "Bye bye"!</a>
 						</div>
 					</div>
 				<?php } else { ?>
@@ -106,7 +106,7 @@
 
 						<div class="modal-footer">
 							<a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
-							<a href="admin-enable-user.php?login=<?php echo $_GET["login"]; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Yes my boy !!!</a>
+							<a href="action-enable-user.php?login=<?php echo $_GET["login"]; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Yes my boy !!!</a>
 						</div>
 					</div>
 

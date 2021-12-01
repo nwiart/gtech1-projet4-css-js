@@ -42,7 +42,7 @@
 				?>
 
 				<!-- User info form. -->
-				<form method="post" action="action-update-user.php">
+				<form method="post" action="action-update-user.php?login=<?php echo $_SESSION["user"]["name"]; ?>">
 					<div class="input-field">
 						<input id="login" name="login" type="text" value="<?php echo $login ?>" />
 						<label for="login">Login</label>
