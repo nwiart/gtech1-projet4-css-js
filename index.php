@@ -12,30 +12,33 @@
 
 		<?php require "php/menu.php"; ?>
 
-		<!-- Login response. -->
+		<!-- Getting main page content from database. -->
 		<?php
-			if (isset($_SESSION["signin-result"]))
-			{
-				if ($_SESSION["signin-result"]) {
-					echo "<p class=\"center\">Welcome back, " . $_SESSION["user"]["name"] . "!</p>";
-					if ($_SESSION["user"]["isAdmin"]) {
-						echo "<p class=\"center\">You have <a href=\"admin-panel.php\">administrator rights</a> on this website.</p>";
-					}
-				}
-				else {
-					echo "<p class=\"center\">Incorrect login or password.</p>";
-				}
-			}
-
 			$pdo = createPDO();
 			$main_page_content = executeSQL($pdo, "SELECT * FROM main_page", array())[0];
 		?>
 
-		<!-- Presentation section. -->
 		<div class="parallax-container">
+
+			<!-- Login response. -->
+			<?php
+				if (isset($_SESSION["signin-result"]))
+				{
+					if ($_SESSION["signin-result"]) {
+						echo "<p class=\"white-text center\">Welcome back, " . $_SESSION["user"]["name"] . "!</p>";
+						if ($_SESSION["user"]["isAdmin"]) {
+							echo "<p class=\"white-text center\">You have administrator rights on this website.</p>";
+						}
+					}
+					else {
+						echo "<p class=\"white-text center\">Incorrect login or password.</p>";
+					}
+				}
+			?>
 			<div class="parallax"><img src="<?php echo $main_page_content["parallax_path_0"]; ?>" alt="Ultra Games Banner" /></div>
 		</div>
 
+		<!-- Presentation section. -->
 		<div class="z-depth-5 grey">
 			<div class="title-block">
 				<h1 class="center grey darken-2 white-text">PRESENTATION</h1>

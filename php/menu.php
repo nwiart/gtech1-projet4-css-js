@@ -7,6 +7,9 @@
 		<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
 		<ul class="right hide-on-med-and-down">
+			<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["isAdmin"]) { ?>
+				<li><a href="admin-panel.php" class="btn waves-effect waves-light red darken-2"><i class="material-icons right">settings</i>Admin Panel</a></li>
+			<?php } ?>
 			<li><a href="#dropdown-projects" class="btn waves-effect waves-light red darken-2 dropdown-trigger"><i class="material-icons right">expand_more</i>Projects</a></li>
 			<li><a href="#dropdown-users"    class="btn waves-effect waves-light dropdown-trigger"><i class="material-icons right">expand_more</i>User <?php if (isset($_SESSION["user"])) echo "(".$_SESSION["user"]["name"].")"; ?></a></li>
 		</ul>

@@ -1,3 +1,7 @@
+nav .brand-logo {
+	font-size: larger;
+}
+
 .dropdown-content {
 	min-width: 300px !important;
 	text-transform: uppercase;
@@ -21,13 +25,13 @@ h1 {
 }
 
 h2, h3 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
 h4 {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 
 /*
@@ -44,7 +48,7 @@ h4 {
 .title-block h1, .title-block h2, .title-block h3 {
 
 	font-weight: bold;
-	font-size: 24pt;
+	font-size: 1.5rem;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
