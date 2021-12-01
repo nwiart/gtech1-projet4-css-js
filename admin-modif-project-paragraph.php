@@ -58,7 +58,7 @@
 							<div class="col s3">
 								<h3>Square Image</h3>
 
-								<img src="<?php echo $para["square_image"]; ?>" alt="Paragraph square image" class="responsive-img" />
+								<img src="<?php echo $para["square_image"]; ?>" alt="Paragraph square image" class="responsive-img grey" />
 								<input name="square-image-path" type="text" value="<?php echo $para["square_image"]; ?>" />	
 							</div>
 							<div class="col s9">

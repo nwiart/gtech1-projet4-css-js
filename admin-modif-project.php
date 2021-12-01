@@ -120,16 +120,23 @@
 					<div class="modal-content">
 						<h3>New Paragraph</h3>
 
-						<form method="post" action="admin-new-project-paragraph.php?pr=<?php echo $projectId; ?>">
-							<div class="input-field">
-								<input name="title" id="title" type="text" required="" aria-required="true" />
-								<label for="title">Title</label>
-							</div>
+						<div class="container">
+							<form method="post" action="action-new-project-paragraph.php?pr=<?php echo $projectId; ?>">
+								<div class="input-field">
+									<input name="title" id="title" type="text" required="" aria-required="true" />
+									<label for="title">Title</label>
+								</div>
 
-							<div class="center">
-								<button type="submit" class="btn waves-effect waves-light red darken-2">Create</button>
-							</div>
-						</form>
+								<div class="input-field">
+									<textarea name="content" id="content" type="text" class="materialize-textarea" required="" aria-required="true"></textarea>
+									<label for="content">Content</label>
+								</div>
+
+								<div class="center">
+									<button type="submit" class="btn waves-effect waves-light red darken-2">Create</button>
+								</div>
+							</form>
+						</div>
 					</div>
 
 					<div class="modal-footer">
