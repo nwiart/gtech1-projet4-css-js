@@ -43,137 +43,137 @@
 
 			<div class="section">
 				<h2>Editing Project : <?php if ($project_exists) echo $project[0]["name"]; else echo "Unknown"; ?></h2>
-				<a href="admin-panel.php">Go back to Admin Panel</a>
+				<a href="admin-panel.php">Go back to Admin Panel.</a>
 			</div>
 
 			<!-- Display form ONLY if user actually exists. -->
 			<?php if ($project_exists) { ?>
 
+				<!-- Edit project paragraphs. -->
+				<div class="section">
+					<h3>Paragraphs</h3>
 
+					<a href="#modal-new-paragraph" class="btn waves-effect waves-light red darken-2 modal-trigger">New Paragraph</a>
+					<table class="striped">
+						<thead>
+							<tr>
+								<th>Modify</th>
+								<th>Title</th>
+							</tr>
+						</thead>
 
-			<div class="section">
-				<!-- Carousel. -->
-				<h3>Carousel Images</h3>
-				<div class="container">
-					<div class="carousel carousel-slider">
-						<!-- Carousel left and right buttons. -->
-						<div class="carousel-fixed-item center carousel-arrow-btn">
-							<div class="left"><button class="btn-floating btn-large waves-effect waves-light carousel-move-prev"><i class="material-icons left white-text red darken-2">chevron_left</i></button></div>
-							<div class="right"><button class="btn-floating btn-large waves-effect waves-light carousel-move-next"><i class="material-icons right white-text red darken-2">chevron_right</i></button></div>
+						<tbody>
+							<?php $paragraphs = getProjectParagraphs($projectId); ?>
+							<?php foreach ($paragraphs as $para) { ?>
+								<tr>
+								<td><a href="admin-modif-project-paragraph.php?id=<?php echo $para["id"] ?>" class="btn"><i class="material-icons">edit</i></a></td>
+								<td><?php echo $para["title"] ?></td>
+								</tr>
+							<?php } ?>
+						</tbody>
+					</table>
+				</div>
+
+				<!-- Edit carousel images. -->
+				<div class="section">
+					<!-- Carousel. -->
+					<h3>Carousel Images</h3>
+					<div class="container">
+						<div class="carousel carousel-slider">
+							<!-- Carousel left and right buttons. -->
+							<div class="carousel-fixed-item center carousel-arrow-btn">
+								<div class="left"><button class="btn-floating btn-large waves-effect waves-light carousel-move-prev"><i class="material-icons left white-text red darken-2">chevron_left</i></button></div>
+								<div class="right"><button class="btn-floating btn-large waves-effect waves-light carousel-move-next"><i class="material-icons right white-text red darken-2">chevron_right</i></button></div>
+							</div>
+
+							<!-- Create images. -->
+							<?php
+								$images = getProjectCarouselImages($projectId);
+								foreach ($images as $img) {
+							?>
+									<a class="carousel-item" href="#one!"><img src="<?php echo $img["path"] ?>" alt="<?php echo $img["description"]; ?>"></a>
+							<?php
+								}
+							?>
 						</div>
-
-						<!-- Create images. -->
-						<?php
-							$images = getProjectCarouselImages($projectId);
-							foreach ($images as $img) {
-						?>
-								<a class="carousel-item" href="#one!"><img src="<?php echo $img["path"] ?>" alt="<?php echo $img["description"]; ?>"></a>
-						<?php
-							}
-						?>
+					</div>
+					<div class="center">
+						<a href="#" class="btn waves-effect waves-light modal-trigger">New image</a>
 					</div>
 				</div>
-				<div class="center">
-					<a href="#" class="btn waves-effect waves-light modal-trigger">New image</a>
-				</div>
-			</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<?php
-					$pdo = createPDO();
-					$title_project = executeSQL($pdo, "SELECT * FROM project_paragraphs WHERE project_id = :title_id", array(':title_id' => $projectId));
-					/*$project_text_content = executeSQL($pdo, "SELECT * FROM project_paragraphs", array())[0];*/
-			?>
-
-
-			<!-- Modify project text -->
-			<div id="modal-text-project" class="center">
-
-				<h2>Title project</h2>
-
-					<?php
-					foreach ($title_project as $title)
-
-					{?>
-						<h3><?php echo $title["title"] ?><h3>
-						<a href="admin-text-project.php?id=<?php echo $title["id"] ?>" class="btn waves-effect waves-light red darken-2 modal-trigger">Modify</a><?php
-					} ?>
-
-				</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+				<!-- Rename & delete operations. -->
 				<div class="section">
 					<h3 class="red-text"><i class="material-icons">warning</i> DANGER ZONE <i class="material-icons">warning</i></h3>
 					<a href="#modal-rename-project" class="btn waves-effect waves-light orange darken-2 modal-trigger">Rename project</a>
 					<a href="#modal-delete-project" class="btn waves-effect waves-light red darken-2 modal-trigger">Delete project</a>
 				</div>
 
-			<!-- Project rename modal. -->
-			<div id="modal-rename-project" class="modal">
-				<div class="modal-content">
-					<h3>Rename project</h3>
 
-					<form method="post" action="admin-rename-project.php?pr=<?php echo $projectId; ?>">
-						<div class="input-field">
-							<input name="new-name" id="new-name" type="text" required="" aria-required="true" value="<?php echo $project[0]["name"]; ?>" />
-							<label for="new-name">Name</label>
-						</div>
 
-						<div class="center">
-							<button type="submit" class="btn waves-effect waves-light red darken-2">Rename</button>
-						</div>
-					</form>
-				</div>
+				<!--
+					MODALS
+				-->
 
-				<div class="modal-footer">
-					<a href="#!" class="modal-close btn waves-effect waves-light red darken-2">Cancel</a>
-				</div>
-			</div>
+				<!-- New paragraph modal. -->
+				<div id="modal-new-paragraph" class="modal">
+					<div class="modal-content">
+						<h3>New Paragraph</h3>
 
-			<!-- Project delete modal. -->
-			<div id="modal-delete-project" class="modal">
-				<div class="modal-content">
-					<h3>Delete project</h3>
-					<p>Are you sure you want to delete project "<?php echo $project[0]["name"]; ?>"?</p>
-					<p>THIS ACTION CANNOT BE UNDONE.</p>
+						<form method="post" action="admin-new-project-paragraph.php?pr=<?php echo $projectId; ?>">
+							<div class="input-field">
+								<input name="title" id="title" type="text" required="" aria-required="true" />
+								<label for="title">Title</label>
+							</div>
 
-					<div class="center">
-						<a href="admin-delete-project?pr=<?php echo $projectId; ?>" class="btn waves-effect waves-light red darken-2">DESTROY IT</a>
+							<div class="center">
+								<button type="submit" class="btn waves-effect waves-light red darken-2">Create</button>
+							</div>
+						</form>
+					</div>
+
+					<div class="modal-footer">
+						<a href="#!" class="modal-close btn waves-effect waves-light red darken-2">Cancel</a>
 					</div>
 				</div>
 
-				<div class="modal-footer">
+				<!-- Project rename modal. -->
+				<div id="modal-rename-project" class="modal">
+					<div class="modal-content">
+						<h3>Rename project</h3>
+
+						<form method="post" action="admin-rename-project.php?pr=<?php echo $projectId; ?>">
+							<div class="input-field">
+								<input name="new-name" id="new-name" type="text" required="" aria-required="true" value="<?php echo $project[0]["name"]; ?>" />
+								<label for="new-name">Name</label>
+							</div>
+
+							<div class="center">
+								<button type="submit" class="btn waves-effect waves-light red darken-2">Rename</button>
+							</div>
+						</form>
+					</div>
+
+					<div class="modal-footer">
+						<a href="#!" class="modal-close btn waves-effect waves-light red darken-2">Cancel</a>
+					</div>
 				</div>
-			</div>
+
+				<!-- Project delete modal. -->
+				<div id="modal-delete-project" class="modal">
+					<div class="modal-content">
+						<h3>Delete project</h3>
+						<p>Are you sure you want to delete project "<?php echo $project[0]["name"]; ?>"?</p>
+						<p>THIS ACTION CANNOT BE UNDONE.</p>
+
+						<div class="center">
+							<a href="admin-delete-project?pr=<?php echo $projectId; ?>" class="btn waves-effect waves-light red darken-2">DESTROY IT</a>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+					</div>
+				</div>
 
 
 

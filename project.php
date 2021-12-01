@@ -2,8 +2,8 @@
 <html lang="en">
 	<head>
 		<?php
-			$pageTitle = "";
-			$pageDesc  = "";
+			$pageTitle = "Project";
+			$pageDesc  = "Discover our projects over here!";
 			require "php/head.php";
 		?>
 	</head>
@@ -43,7 +43,7 @@
 								<div class="section row valign-wrapper">
 									<?php if ($b) { ?>
 										<div class="col s4 m4 l3">
-											<img src="img/<?php echo $projectId . "/" . $para["paragraph_id"] . ".jpg"; ?>" class="left responsive-img paragraph-image" />
+											<img src="<?php echo $para["square_image"]; ?>" class="left responsive-img paragraph-image" />
 										</div>
 									<?php } ?>
 
@@ -54,29 +54,16 @@
 
 									<?php if (!$b) { ?>
 										<div class="col s4 m4 l3">
-											<img src="img/<?php echo $projectId . "/" . $para["paragraph_id"] . ".jpg"; ?>" class="right responsive-img paragraph-image" />
+											<img src="<?php echo $para["square_image"]; ?>" class="right responsive-img paragraph-image" />
 										</div>
 									<?php } ?>
 								</div>
 							</div>
 						</div>
-
-						<!-- Optional parallax image below the paragraph. -->
-						<?php
-							if (strlen($para["parallax_image"]) != 0) {
-						?>
-								<div class="parallax-container">
-									<div class="parallax"><img></div>
-								</div>
-						<?php
-							}
-							else {
-						?>
-								<br/>
-						<?php
-							}
-						?>
-				<?php
+						
+						<!-- Dirty way of spacing paragraphs. -->
+						<br/>
+					<?php
 						$b = !$b;
 					}
 				?>
