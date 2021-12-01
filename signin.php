@@ -1,12 +1,13 @@
 <?php
 	require_once "php/functions.php";
-
 	session_start();
 
+	$hash = hashPassword($_POST["password"]);
+
 	$pdo = createPDO();
-	$result = executeSQL($pdo, "SELECT * FROM user WHERE is_disabled = 0 AND login = :login AND password = SHA1(:password)", array(
+	$result = executeSQL($pdo, "SELECT * FROM user WHERE is_disabled = 0 AND login = :login AND password = :password", array(
 		":login"    => $_POST["login"],
-		":password" => $_POST["password"]
+		":password" => $hash
 	));
 
 

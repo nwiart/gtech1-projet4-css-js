@@ -35,6 +35,25 @@
 					}
 				}
 			?>
+
+			<!-- Register response. -->
+			<?php
+				if (isset($_SESSION["signup-result"]))
+				{
+					if ($_SESSION["signup-result"] == 0) {
+						echo "<p class=\"green-text center\">You account \"" . $_SESSION["user"]["name"] . "\" has been successfully created!</p>";
+					}
+					else if ($_SESSION["signup-result"] == 1) {
+						echo "<p class=\"red-text center\">This login is already taken.</p>";
+					}
+					else if ($_SESSION["signup-result"] == 2) {
+						echo "<p class=\"red-text center\">This email is already taken.</p>";
+					}
+
+					unset($_SESSION["signup-result"]);
+				}
+			?>
+
 			<div class="parallax"><img src="<?php echo $main_page_content["parallax_path_0"]; ?>" alt="Ultra Games Banner" /></div>
 		</div>
 

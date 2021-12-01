@@ -11,8 +11,9 @@
 
 	// Password is set.
 	if (strlen($newPass) != 0) {
-		launchSQL($pdo, "UPDATE user SET password = SHA1( :pwd ) WHERE login = :login", array(
-			":pwd" => $newPass,
+		$hash = hashPassword($newPass);
+		launchSQL($pdo, "UPDATE user SET password = :pwd WHERE login = :login", array(
+			":pwd" => $hash,
 			":login" => $oldLogin
 		));
 	}
