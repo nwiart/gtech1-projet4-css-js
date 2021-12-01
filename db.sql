@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Dec 01, 2021 at 02:54 PM
+-- Generation Time: Dec 01, 2021 at 07:44 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `main_page` (
 --
 
 INSERT INTO `main_page` (`parallax_path_0`, `parallax_path_1`, `ethan_description`, `noah_description`) VALUES
-('img/banner1.jpg', 'img/banner2.jpg', '<p>My name is Ethan Joachim Gabin and in this year 2021 I turned 18 years old.</p> <br><p>After having passed my first and terminal classes with mathematics and NSI specialties, I left high school with a minimum of computer knowledge.</p> <br><p>I am currently in Lyon in a specialized school in video games, the Gaming Campus, to train as a video game developer.</p> <br><p>This web page is a presentation of joint or personal projects. This website itself is also a project.</p>', '<p>My name is WIART Noah. I am currently 18 years old and I am studying at Gaming Campus in Lyon.</p> <br><p>I discovered computer programming when I was 11, and since then, I have learned C++ by myself.</p> <br><p>I worked on several personal projects while I was in school, notably on the game \"Roll-A-Ball!\". This game also runs using a custom game engine that I have made myself as well.</p> <br><p>These personal projects have allowed me to discover game programming and improve my knowledge on the used softwares and languages. I have also gained experience on the versioning software Git and on Unreal Engine 4.</p>');
+('img/banner1.jpg', 'img/banner2.jpg', '<p>My name is Ethan Joachim Gabin and in this year 2021 I turned 18 years old.</p><br>\r\n\r\n<p>After having passed my first and terminal classes with mathematics and NSI specialties, I left high school with a minimum of computer knowledge.</p><br>\r\n\r\n<p>I am currently in Lyon in a specialized school in video games, the Gaming Campus, to train as a video game developer.</p><br>\r\n\r\n<p>This web page is a presentation of joint or personal projects. This website itself is also a project.</p>', '<p>My name is WIART Noah. I am currently 18 years old and I am studying at Gaming Campus in Lyon.</p><br>\r\n\r\n<p>I discovered computer programming when I was 11, and since then, I have learned C++ by myself.</p><br>\r\n\r\n<p>I worked on several personal projects while I was in school, notably on the game \"Roll-A-Ball!\". This game also runs using a custom game engine that I have made myself as well.</p><br>\r\n\r\n<p>These personal projects have allowed me to discover game programming and improve my knowledge on the used softwares and languages. I have also gained experience on the versioning software Git and on Unreal Engine 4.</p>');
 
 -- --------------------------------------------------------
 
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `project_paragraphs` (
   `square_image` varchar(64) NOT NULL COMMENT 'This is the path of the square image that will show next to the paragraph.',
   `placement` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `project_paragraphs`
@@ -148,8 +148,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`login`, `email`, `password`, `is_admin`, `is_disabled`) VALUES
-('admin', 'random.dude@example.com', 'b80ac32edc1a3cdc9483d522be3f010f0e3f5b2f', 1, 0),
-('david73', 'nwiart@gaming.tech', '85f8e5ee55ed8f4ecab2fe9ba99109a1ae5ec4dd', 0, 0);
+('admin', 'random.dude@example.com', 'f4ced7f10fedec0218412bdb36a769877f325eb3', 1, 0),
+('david73', 'nwiart@gaming.tech', '459632e5dfafa1f9282af9732911f9b4d9b4f3d0', 0, 0);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

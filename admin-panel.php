@@ -138,67 +138,61 @@
 						$main_page_content = executeSQL($pdo, "SELECT * FROM main_page", array())[0];
 					?>
 
-					<div class="section">
-						<h3>Parallax Images</h3>
+					<form method="post" action="action-update-mainpage.php">
+						<div class="section">
+							<h3>Parallax Images</h3>
 
-						<h4>First parallax image</h4>
+							<h4>First parallax image</h4>
 
-						<div class="row">
-							<div class="col s4"><img src="<?php echo $main_page_content["parallax_path_0"]; ?>" class="responsive-img" /></div>
-							<div class="col s8">
-								<form method="post" action="action-update-mainpage-parallax.php?id=0">
-									<input name="img-path" type="text" value="<?php echo $main_page_content["parallax_path_0"]; ?>"/>
-									<button type="submit" class="btn"><i class="material-icons left">image</i>Update image</button>
-								</form>
+							<div class="row">
+								<div class="col s4"><img src="<?php echo $main_page_content["parallax_path_0"]; ?>" class="responsive-img" /></div>
+								<div class="col s8">
+									<input name="ppath0" type="text" value="<?php echo $main_page_content["parallax_path_0"]; ?>"/>
+								</div>
+							</div>
+
+							<h4>Second parallax image</h4>
+
+							<div class="row">
+								<div class="col s4"><img src="<?php echo $main_page_content["parallax_path_1"]; ?>" class="responsive-img" /></div>
+								<div class="col s8">
+									<input name="ppath1" type="text" value="<?php echo $main_page_content["parallax_path_1"]; ?>"/>
+								</div>
 							</div>
 						</div>
-
-						<h4>Second parallax image</h4>
-
-						<div class="row">
-							<div class="col s4"><img src="<?php echo $main_page_content["parallax_path_1"]; ?>" class="responsive-img" /></div>
-							<div class="col s8">
-								<form method="post" action="action-update-mainpage-parallax.php?id=1">
-									<input name="img-path" type="text" value="<?php echo $main_page_content["parallax_path_1"]; ?>"/>
-									<button type="submit" class="btn"><i class="material-icons left">image</i>Update image</button>
-								</form>
-							</div>
-						</div>
-					</div>
-
-					<div class="section">
-						<h3>Self Descriptions</h3>
 
 						<div class="section">
-							<h4>Ethan's self description</h4>
+							<h3>Self Descriptions</h3>
 
-							<div class="row">
-								<div class="col s4 center grey">
-									<img src="img/bg.jpg" class="responsive-img" />
-								</div>
-								<div class="col s8">
-									<form method="post" action="action-update-mainpage-selfdescription.php?id=0">
-										<textarea name="desc" type="text" class="materialize-textarea"><?php echo $main_page_content["ethan_description"]; ?></textarea>
-										<button type="submit" class="btn"><i class="material-icons left">description</i>Update text</button>
-									</form>
-								</div>
-							</div>
+							<div class="section">
+								<h4>Ethan's self description</h4>
 
-							<h4>Noah's self description</h4>
-
-							<div class="row">
-								<div class="col s4 center grey">
-									<img src="img/bg2.jpg" class="responsive-img" />
+								<div class="row">
+									<div class="col s4 center grey">
+										<img src="img/bg.jpg" class="responsive-img" />
+									</div>
+									<div class="col s8">
+										<textarea name="edesc" type="text" class="materialize-textarea"><?php echo $main_page_content["ethan_description"]; ?></textarea>
+									</div>
 								</div>
-								<div class="col s8">
-									<form method="post" action="action-update-mainpage-selfdescription.php?id=1">
-										<textarea name="desc" type="text" class="materialize-textarea"><?php echo $main_page_content["noah_description"]; ?></textarea>
-										<button type="submit" class="btn"><i class="material-icons left">description</i>Update text</button>
-									</form>
+
+								<h4>Noah's self description</h4>
+
+								<div class="row">
+									<div class="col s4 center grey">
+										<img src="img/bg2.jpg" class="responsive-img" />
+									</div>
+									<div class="col s8">
+										<textarea name="ndesc" type="text" class="materialize-textarea"><?php echo $main_page_content["noah_description"]; ?></textarea>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+
+						<div class="center">
+							<button type="submit" class="btn"><i class="material-icons left">description</i>Save Contents</button>
+						</div>
+					</form>
 				</div>
 
 				<!-- Disabled accounts. -->
