@@ -23,11 +23,14 @@
 		<!-- Project name + icon. -->
 		<div class="title-block grey darken-2 white-text center">
 			<div class="container row">
-				<div class="col s1">
-				<img src="img/<?php echo $projectId . "/icon.png"; ?>" alt="Project Icon" class="grey lighten-2 left" />
+				<div class="col s2 valign-wrapper">
+					<img src="img/<?php echo $projectId . "/icon.png"; ?>" alt="Project Icon" class="grey lighten-2 left" />
+					<?php if (isset($_SESSION["user"]) && $_SESSION["user"]["isAdmin"]) { ?>
+						<a href="admin-modif-project.php?pr=<?php echo $projectId; ?>" class="btn red darken-2"><i class="material-icons">edit</i></a>
+					<?php } ?>
 				</div>
-				<div class="col s10">
-				<h1><?php echo $prj[0]["name"]; ?></h1>
+				<div class="col s8">
+					<h1><?php echo $prj[0]["name"]; ?></h1>
 				</div>
 			</div>
 		</div>

@@ -52,7 +52,7 @@
 					}
 				?>
 
-				<form method="post" action="admin-update-project-paragraph.php?id=<?php echo $paraId; ?>">
+				<form method="post" action="action-project-paragraph.php?action=update&id=<?php echo $paraId; ?>">
 					<div class="section">
 						<div class="row">
 							<div class="col s3">
@@ -73,8 +73,28 @@
 						<button type="submit" class="btn"><i class="material-icons left">description</i>Update Info</button>
 					</div>
 				</form>
+
+				<a href="#modal-paragraph-delete" class="btn red darken-2 modal-trigger">Delete Paragraph</a>
 			</div>
 		</div>
+
+
+
+		<!-- Delete paragraph modal. -->
+		<div id="modal-paragraph-delete" class="modal">
+			<div class="modal-content">
+				<h3>Delete Paragraph</h3>
+				<p>Do you REALLY want to delete this paragraph?</p>
+				<p>THIS CANNOT BE UNDONE.</p>
+			</div>
+
+			<div class="modal-footer">
+				<a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
+				<a href="action-project-paragraph.php?action=delete&id=<?php echo $paraId; ?>" class="modal-close waves-effect waves-light red darken-2 btn">Delete</a>
+			</div>
+		</div>
+
+
 
 		<!--JavaScript at end of body for optimized loading-->
 		<script type="text/javascript" src="js/jquery.js"></script>

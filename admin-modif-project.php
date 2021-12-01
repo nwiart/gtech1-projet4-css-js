@@ -59,6 +59,7 @@
 							<tr>
 								<th>Modify</th>
 								<th>Title</th>
+								<th>Order</th>
 							</tr>
 						</thead>
 
@@ -68,6 +69,7 @@
 								<tr>
 								<td><a href="admin-modif-project-paragraph.php?id=<?php echo $para["id"] ?>" class="btn"><i class="material-icons">edit</i></a></td>
 								<td><?php echo $para["title"] ?></td>
+								<td>Not available.</td>
 								</tr>
 							<?php } ?>
 						</tbody>
