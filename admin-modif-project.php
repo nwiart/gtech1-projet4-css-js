@@ -73,17 +73,69 @@
 						?>
 					</div>
 				</div>
-
-				<a href="#" class="btn waves-effect waves-light modal-trigger">New image</a>
-			</div>
-
-			<div class="section">
-				<h3 class="red-text"><i class="material-icons">warning</i> DANGER ZONE <i class="material-icons">warning</i></h3>
-				<a href="#modal-rename-project" class="btn waves-effect waves-light orange darken-2 modal-trigger">Rename project</a>
-				<a href="#modal-delete-project" class="btn waves-effect waves-light red darken-2 modal-trigger">Delete project</a>
+				<div class="center">
+					<a href="#" class="btn waves-effect waves-light modal-trigger">New image</a>
+				</div>
 			</div>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<?php
+					$pdo = createPDO();
+					$title_project = executeSQL($pdo, "SELECT * FROM project_paragraphs WHERE project_id = :title_id", array(':title_id' => $projectId));
+					/*$project_text_content = executeSQL($pdo, "SELECT * FROM project_paragraphs", array())[0];*/
+			?>
+
+
+			<!-- Modify project text -->
+			<div id="modal-text-project" class="center">
+
+				<h2>Title project</h2>
+
+					<?php
+					foreach ($title_project as $title)
+
+					{?>
+						<h3><?php echo $title["title"] ?><h3>
+						<a href="admin-text-project.php?id=<?php echo $title["id"] ?>" class="btn waves-effect waves-light red darken-2 modal-trigger">Modify</a><?php
+					} ?>
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<div class="section">
+					<h3 class="red-text"><i class="material-icons">warning</i> DANGER ZONE <i class="material-icons">warning</i></h3>
+					<a href="#modal-rename-project" class="btn waves-effect waves-light orange darken-2 modal-trigger">Rename project</a>
+					<a href="#modal-delete-project" class="btn waves-effect waves-light red darken-2 modal-trigger">Delete project</a>
+				</div>
 
 			<!-- Project rename modal. -->
 			<div id="modal-rename-project" class="modal">
