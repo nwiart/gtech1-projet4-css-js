@@ -150,4 +150,9 @@
 			}
 		}
 	}
+
+	function hashPassword($password)
+	{
+		return SHA1("mbzxrtA+kX9+AnL?8-DQ@vMp9g" . $password);
+	}
 ?>

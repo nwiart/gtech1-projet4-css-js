@@ -1,5 +1,7 @@
 <?php
 	require "php/functions.php";
+	session_start();
+
 	$pdo = createPDO();
 
 
@@ -24,11 +26,14 @@
 
 
 
+	// Hash password.
+	$hash = hashPassword($_POST["password"]);
+
 	// Everything is clear, register user.
-	executeSQL($pdo, "INSERT INTO user (login, email, password, is_admin) VALUES (:login, :email, SHA1(:password), 0)", array(
+	executeSQL($pdo, "INSERT INTO user (login, email, password, is_admin) VALUES (:login, :email, :password, 0)", array(
 		":login"    => $_POST["login"],
 		":email"    => $_POST["email"],
-		":password" => $_POST["password"]
+		":password" => $hash
 	));
 
 	// Make them logged in.
@@ -37,6 +42,8 @@
 		"name" => $_POST["login"],
 		"isAdmin" => 0
 	);
+
+	$returnCode = 0;
 
 _done:
 	$_SESSION["signup-result"] = $returnCode;

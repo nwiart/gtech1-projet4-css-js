@@ -163,7 +163,7 @@
 			<div id="modal-delete-project" class="modal">
 				<div class="modal-content">
 					<h3>Delete project</h3>
-					<p>Are you sure you want to delete project \"<?php echo $project[0]["name"]; ?>\"?</p>
+					<p>Are you sure you want to delete project "<?php echo $project[0]["name"]; ?>"?</p>
 					<p>THIS ACTION CANNOT BE UNDONE.</p>
 
 					<div class="center">

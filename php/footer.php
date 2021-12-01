@@ -8,12 +8,12 @@
 	<div id="footer-content">
 		<div class="row">
 			<div class="container">
-				<div class="col l5 s12">
+				<div class="section col l5 s12">
 					<h3>Contact Us</h3>
 					<p>If you wish to leave us a message, use the contact form by clicking on the button below :</p>
 					<a href="#modal-contact-us" class="btn waves-effect waves-light modal-trigger red darken-2">Open contact form</a>
 				</div>
-				<div class="col l5 offset-l2 s12">
+				<div class="section col l5 offset-l2 s12">
 					<h3>Links</h3>
 					<div class="row">
 						<div class="col s4 m6 l4">
