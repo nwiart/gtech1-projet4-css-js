@@ -15,7 +15,7 @@
 
 		// Add project to the database.
 		$pdo = createPDO();
-		executeSQL($pdo, "INSERT INTO projects VALUES (:id, :name)", array(
+		executeSQL($pdo, "INSERT INTO projects (id, name) VALUES (:id, :name)", array(
 			":id" => $_POST["id"],
 			":name" => $_POST["name"]
 		));
