@@ -1,1 +1,0 @@
-- Carousel image descriptions system out of date (either remove it, or rework it).

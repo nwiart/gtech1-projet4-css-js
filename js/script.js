@@ -90,3 +90,14 @@ function loginKeypressHandler(event)
 	let c = event.key;
 	return (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9') || (c == '_');
 }
+
+
+
+
+
+function serverAction(url)
+{
+	let req = new XMLHttpRequest();
+	req.open("GET", "localhost/gtech1-projet4-css-js/" + url);
+	req.send();
+}

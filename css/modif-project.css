@@ -1,0 +1,31 @@
+.container .section
+{
+	padding: 3rem 0;
+}
+
+.container .section h2
+{
+	padding-bottom: 1.5rem;
+}
+
+.project-presentation
+{
+	height: 100%;
+}
+
+.project-presentation .section
+{
+	padding: 32px;
+}
+
+.flex
+{
+	display: flex;
+	align-items: center;
+}
+
+.up-down-buttons .btn
+{
+	display: block;
+	margin: 60px 0;
+}

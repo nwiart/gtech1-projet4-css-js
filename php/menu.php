@@ -40,12 +40,14 @@
 		$projects = getProjects();
 
 		foreach ($projects as $prj) {
+			if ($prj["visible"]) {
 	?>
-			<li><a href="project.php?pr=<?php echo $prj["id"]; ?>" class="red-text text-darken-2 valign-wrapper">
-				<img src="img/<?php echo $prj["id"] ?>/icon.png" alt="Icon" class="left" width="32" height="32" />
-				<?php echo $prj["name"]; ?>
-			</a></li>
+				<li><a href="project.php?pr=<?php echo $prj["id"]; ?>" class="red-text text-darken-2 valign-wrapper">
+					<img src="img/<?php echo $prj["id"] ?>/icon.png" alt="Icon" class="left" width="32" height="32" />
+					<?php echo $prj["name"]; ?>
+				</a></li>
 	<?php
+			}
 		}
 	?>
 	</ul>

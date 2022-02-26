@@ -1,6 +1,6 @@
 <?php
 	require_once "php/functions.php";
-	checkCurrentUserAdmin();
+	//checkCurrentUserAdmin();
 
 	$pdo = createPDO();
 
@@ -9,11 +9,11 @@
 	{
 		launchSQL($pdo, "INSERT INTO project_paragraphs (project_id, title, content, square_image) VALUES (:prid, :title, :content, \"\")", array(
 			":prid"    => $_GET["pr"],
-			":title"   => $_POST["title"],
-			":content" => $_POST["content"]
+			":title"   => isset($_POST["title"])   ? $_POST["title"]   : "New paragraph",
+			":content" => isset($_POST["content"]) ? $_POST["content"] : "Lorem ipsum dolor sit amet."
 		));
 	
-		header("Location: admin-modif-project-paragraph.php?id=" . $pdo->lastInsertId());
+		//header("Location: admin-modif-project-paragraph.php?id=" . $pdo->lastInsertId());
 		exit();
 	}
 
