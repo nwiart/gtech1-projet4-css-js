@@ -1,27 +1,3 @@
-// Roll-A-Ball screenshot descriptions for carousel.
-rb_desc = [
-	"Splashscreen",
-	"The game's main menu",
-	"Level select menu, with a simplified 3D representation of the selected level",
-	"The floating island level",
-	"The fire-themed level, with flying enemies",
-	"Speed display turning red and field of view increasing at high speeds"
-];
-
-// UGE Editor screenshot descriptions.
-ed_desc = [
-	"The main window with the level editor",
-	"Open project dialog",
-	"About window featuring a banner showing a scene from Roll-A-Ball"
-];
-
-// Pong screenshot descriptions.
-pong_desc = [
-	"Pong window",
-	"Pong on launch (scores are initialized at 0)",
-	"Score display can hold 2 digits"
-];
-
 let revealSound = new Audio("sound/20.wav");
 
 $(document).ready(function() {
@@ -37,17 +13,6 @@ $(document).ready(function() {
 	$('.dropdown-trigger').dropdown({coverTrigger: false});
 	$('.tabs').tabs();
 	$('#message').characterCounter();
-	$('.carousel').carousel({
-		dist: 0,
-		padding: 0,
-		fullWidth: true,
-		indicators: true,
-		onCycleTo: function(data) {
-			$('#rbdesc').html(rb_desc[$(data).index() - 1]);
-			$('#eddesc').html(ed_desc[$(data).index() - 1]);
-			$('#pongdesc').html(pong_desc[$(data).index() - 1]);
-		}
-	});
 
 	// Carousel left & right arrows.
 	$('.carousel-move-prev').click(function() {

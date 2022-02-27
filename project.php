@@ -88,7 +88,6 @@
 
 						<!-- Carousel images. -->
 						<?php
-							$materializeThings = array("#one!", "#two!", "#three!", "#four!", "#five!", "#six!");
 							$index = 0;
 							foreach ($prjImgs as $image) {
 						?>
@@ -111,5 +110,28 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/materialize.min.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
+
+		<!-- Array of carousel image descriptions. -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				let descs = [
+					<?php
+					foreach ($prjImgs as $image) {
+						echo '"' . $image["description"] . '"' . ',';
+					}
+					?>
+				];
+
+				$('.carousel').carousel({
+					dist: 0,
+					padding: 0,
+					fullWidth: true,
+					indicators: true,
+					onCycleTo: function(data) {
+						$('#rbdesc').html(descs[$(data).index() - 1]);
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
