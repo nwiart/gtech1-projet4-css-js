@@ -60,9 +60,11 @@ function loginKeypressHandler(event)
 
 
 
-function serverAction(url)
+function serverAction(url, callback = null)
 {
 	let req = new XMLHttpRequest();
-	req.open("GET", "localhost/gtech1-projet4-css-js/" + url);
+	if (callback != null)
+		req.addEventListener("load", callback);
+	req.open("GET", url);
 	req.send();
 }

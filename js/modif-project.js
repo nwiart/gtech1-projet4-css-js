@@ -17,10 +17,10 @@ $(document).ready(function() {
 	});
 
 	$("#add-paragraph").click(function() {
-		let req = new XMLHttpRequest();
-		req.open("GET", "action-project-paragraph.php?action=new&pr=" + project);
-		req.send();
-		reload();
+		// Ask PHP to add a new paragraph, then reload when done.
+		serverAction("action-project-paragraph.php?action=new&pr=" + project, function() {
+			reload();
+		});
 	});
 
 
@@ -31,26 +31,33 @@ $(document).ready(function() {
 
 
 
-function deleteProject(id)
+function changeVisibility(id, visible)
+{
+	if (!confirm("Change the visibility to " + (visible ? "visible?" : "hidden?")))
+		return;
+
+	let v = visible ? 1 : 0;
+	serverAction("action-project.php?action=visible&pr=" + id + "&v=" + v, function() {
+		location.reload();
+	});
+}
+
+function deleteParagraph(id)
 {
 	if (!confirm("Do you want to delete this paragraph?\nThis cannot be undone!"))
 		return;
 
-	let req = new XMLHttpRequest();
-	req.open("GET", "action-project-paragraph.php?action=delete&id=" + id);
-	req.send();
-	reload();
+	serverAction("action-project-paragraph.php?action=delete&id=" + id, function() {
+		reload();
+	});
 }
 
 function reload()
 {
 	let block = $(".project-presentation");
 
-	let req = new XMLHttpRequest();
-	req.addEventListener("load", function() {
+	serverAction("modif-project-list.php?pr=" + project, function() {
 		block.empty();
 		block.append(this.responseText);
 	});
-	req.open("GET", "modif-project-list.php?pr=" + project);
-	req.send();
 }

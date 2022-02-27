@@ -94,7 +94,7 @@
 					<div class="container">
 						<div class="section grid" grid-s="20px">
 							<h3 class="red-text"><i class="material-icons">warning</i> DANGER ZONE <i class="material-icons">warning</i></h3>
-							<div><a href="#modal-rename-project" class="btn waves-effect waves-light orange darken-2 modal-trigger">Change Visibility</a> (Current visibility : <?php echo $project[0]["visible"] ? "Visible" : "Hidden"; ?>)</div>
+							<div><a id="change-visibility" class="btn waves-effect waves-light orange darken-2">Change Visibility</a> (Current visibility : <?php echo $project[0]["visible"] ? "Visible" : "Hidden"; ?>)</div>
 							<div><a href="#modal-rename-project" class="btn waves-effect waves-light orange darken-2 modal-trigger">Rename project</a></div>
 							<div><a href="#modal-delete-project" class="btn waves-effect waves-light red darken-2 modal-trigger">Delete project</a></div>
 						</div>
@@ -197,6 +197,12 @@
 		<script>
 			let project = "<?php echo $projectId; ?>";
 			reload();
+
+			$(document).ready(function() {
+				$("#change-visibility").click(function() {
+					changeVisibility("<?php echo $projectId; ?>", <?php echo ($project[0]["visible"] ? "false" : "true") ?>);
+				});
+			});
 		</script>
 	</body>
 </html>

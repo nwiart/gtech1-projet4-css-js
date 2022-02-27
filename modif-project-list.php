@@ -42,7 +42,7 @@
 						</div>
 					</div>
 					<div class="col s6">
-						<button onclick="deleteProject(<?php echo $para["id"]; ?>)" class="btn red darken-2"><i class="material-icons">delete</i></button>
+						<button onclick="deleteParagraph(<?php echo $para["id"]; ?>)" class="btn red darken-2"><i class="material-icons">delete</i></button>
 					</div>
 				</div>
 			</div>

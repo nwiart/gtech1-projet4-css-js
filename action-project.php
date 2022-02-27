@@ -42,6 +42,18 @@ _done:
 		exit();
 	}
 
+	// Change visibility.
+	else if ($_GET["action"] == "visible")
+	{
+		$pdo = createPDO();
+		launchSQL($pdo, "UPDATE projects SET visible = :v WHERE id = :id", array(
+			":v" => $_GET["v"],
+			":id" => $_GET["pr"]
+		));
+
+		exit();
+	}
+
 	// Delete project.
 	else if ($_GET["action"] == "delete")
 	{
