@@ -1,6 +1,6 @@
 <?php
 	require_once "php/functions.php";
-	//checkCurrentUserAdmin();
+	checkCurrentUserAdmin();
 
 	$pdo = createPDO();
 
@@ -20,15 +20,16 @@
 	// Update existing paragraph.
 	else if ($_GET["action"] == "update")
 	{
-		launchSQL($pdo, "UPDATE project_paragraphs SET content = :content, square_image = :img WHERE id = :id", array(
-			":content" => $_POST["para-content"],
-			":img"     => $_POST["square-image-path"],
+		launchSQL($pdo, "UPDATE project_paragraphs SET title = :title, content = :content WHERE id = :id", array(
+			":title"   => $_POST["title"],
+			":content" => $_POST["content"],
+			/*":img"     => $_POST["square-image-path"],*/
 			":id"      => $_GET["id"]
 		));
 
 		$_SESSION["update-para-result"] = 0;
 
-		header("Location: admin-modif-project-paragraph.php?id=" . $_GET["id"]);
+		//header("Location: admin-modif-project-paragraph.php?id=" . $_GET["id"]);
 		exit();
 	}
 

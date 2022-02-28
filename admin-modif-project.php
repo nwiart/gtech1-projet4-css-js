@@ -79,7 +79,7 @@
 									$images = getProjectCarouselImages($projectId);
 									foreach ($images as $img) {
 								?>
-										<a class="carousel-item" href="#one!"><img src="<?php echo $img["path"] ?>" alt="<?php echo $img["description"]; ?>"></a>
+										<a class="carousel-item" href="#"><img src="<?php echo $img["path"] ?>" alt="<?php echo $img["description"]; ?>"></a>
 								<?php
 									}
 								?>

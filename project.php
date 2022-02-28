@@ -88,12 +88,9 @@
 
 						<!-- Carousel images. -->
 						<?php
-							$index = 0;
-							foreach ($prjImgs as $image) {
-						?>
+							foreach ($prjImgs as $image) { ?>
 								<a class="carousel-item" href="#"><img src="<?php echo $image["path"] ?>" alt="<?php echo $image["description"]; ?>"></a>
 						<?php
-								$index++;
 							}
 						?>
 					</div>

@@ -42,6 +42,18 @@ function changeVisibility(id, visible)
 	});
 }
 
+function updateParagraph(id)
+{
+	let data = new FormData();
+	data.append("title",   $("input#para_title_" + id).val());
+	data.append("content", $("textarea#para_content_" + id).val());
+
+	let req = new XMLHttpRequest();
+	//req.addEventListener("load", callback);
+	req.open("POST", "action-project-paragraph.php?action=update&id=" + id);
+	req.send(data);
+}
+
 function deleteParagraph(id)
 {
 	if (!confirm("Do you want to delete this paragraph?\nThis cannot be undone!"))
@@ -59,5 +71,13 @@ function reload()
 	serverAction("modif-project-list.php?pr=" + project, function() {
 		block.empty();
 		block.append(this.responseText);
+
+		// Make save button visible when editing a paragraph.
+		const onChange = function() {
+			let id = $(this).attr("para-id");
+			$(".btn#para_save_" + id).css("display", "block");
+		}
+		$("input").change(onChange);
+		$("textarea").change(onChange);
 	});
 }

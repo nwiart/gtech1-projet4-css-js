@@ -1,5 +1,6 @@
 <?php
 	require "php/functions.php";
+	checkCurrentUserAdmin();
 
 	$projectId = $_GET["pr"];
 	$prjDesc = getProjectParagraphs($projectId);
@@ -26,8 +27,8 @@
 					<?php if ($b) paragraphImage($para); ?>
 
 					<div class="col s8 m8 l9">
-						<input type="text" value="<?php echo $para["title"]; ?>" />
-						<textarea type="text" class="materialize-textarea"><?php echo $para["content"]; ?></textarea>
+						<input type="text" class="para-title" id="para_title_<?php echo $para["id"]; ?>" para-id="<?php echo $para["id"]; ?>" value="<?php echo $para["title"]; ?>" />
+						<textarea type="text" class="para-desc materialize-textarea" id="para_content_<?php echo $para["id"]; ?>" para-id="<?php echo $para["id"]; ?>"><?php echo $para["content"]; ?></textarea>
 					</div>
 
 					<?php if (!$b) paragraphImage($para); ?>
@@ -41,8 +42,9 @@
 							<button class="btn <?php if ($i == sizeof($prjDesc) - 1) echo "disabled"; ?>"><i class="material-icons">arrow_downward</i></button>
 						</div>
 					</div>
-					<div class="col s6">
+					<div class="col s6 up-down-buttons">
 						<button onclick="deleteParagraph(<?php echo $para["id"]; ?>)" class="btn red darken-2"><i class="material-icons">delete</i></button>
+						<button onclick="updateParagraph(<?php echo $para["id"]; ?>)" class="btn indigo" id="para_save_<?php echo $para["id"]; ?>" style="display: none;"><i class="material-icons">save</i></button>
 					</div>
 				</div>
 			</div>
