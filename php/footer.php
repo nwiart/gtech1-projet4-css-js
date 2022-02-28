@@ -52,8 +52,7 @@
 	<div class="modal-content">
 		<h3>Contact Us</h3>
 		<p>
-			Please fill in the form below if you wish to send us a message. <br />
-			Note : Be on the lookout for any strange detail on the main page. If you find it, be sure to come back here!
+			Please fill in the form below if you wish to send us a message.
 		</p>
 
 		<!-- Contact form. -->
@@ -99,7 +98,6 @@
 
 					<div class="center">
 						<button type="submit" class="btn waves-effect waves-light red darken-2"><i class="material-icons left">send</i>Send</button>
-						<p>(No working)</p>
 					</div>
 				</div>
 				<div class="col l2 m1 hide-on-small-only"></div>
