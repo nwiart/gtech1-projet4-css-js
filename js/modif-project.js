@@ -52,6 +52,9 @@ function updateParagraph(id)
 	//req.addEventListener("load", callback);
 	req.open("POST", "action-project-paragraph.php?action=update&id=" + id);
 	req.send(data);
+
+	// Hide the save button.
+	$("button#para_save_" + id).css("display", "none");
 }
 
 function deleteParagraph(id)
