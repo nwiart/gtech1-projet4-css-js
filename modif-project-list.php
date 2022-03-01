@@ -44,7 +44,7 @@
 					</div>
 					<div class="col s6 up-down-buttons">
 						<button onclick="deleteParagraph(<?php echo $para["id"]; ?>)" class="btn red darken-2"><i class="material-icons">delete</i></button>
-						<button onclick="updateParagraph(<?php echo $para["id"]; ?>)" class="btn indigo" id="para_save_<?php echo $para["id"]; ?>" style="display: none;"><i class="material-icons">save</i></button>
+						<button onclick="updateParagraph(<?php echo $para["id"]; ?>)" class="btn save-btn indigo" id="para_save_<?php echo $para["id"]; ?>" style="display: none;"><i class="material-icons">save</i></button>
 					</div>
 				</div>
 			</div>

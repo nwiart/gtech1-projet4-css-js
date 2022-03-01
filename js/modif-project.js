@@ -17,6 +17,11 @@ $(document).ready(function() {
 	});
 
 	$("#add-paragraph").click(function() {
+
+		// Check for any unsaved paragraphs (reloading would kill changes).
+		if (!checkSaveStatus())
+			return;
+
 		// Ask PHP to add a new paragraph, then reload when done.
 		serverAction("action-project-paragraph.php?action=new&pr=" + project, function() {
 			reload();
@@ -30,6 +35,23 @@ $(document).ready(function() {
 });
 
 
+
+// Checks if all paragraphs have been saved.
+// Use this function in case you need to reload the paragraphs.
+// Returns true if all paragraphs have been saved, or false if there are unsaved changes.
+function checkSaveStatus()
+{
+	let saveStatus = true;
+	$(".save-btn").each(function(index) {
+		if ($(this).css("display") != "none") {
+			alert("You have unsaved changes.");
+			saveStatus = false;
+			return;
+		}
+	});
+
+	return saveStatus;
+}
 
 function changeVisibility(id, visible)
 {
@@ -59,6 +81,10 @@ function updateParagraph(id)
 
 function deleteParagraph(id)
 {
+	// We need reload, so check for changes.
+	if (!checkSaveStatus())
+		return;
+
 	if (!confirm("Do you want to delete this paragraph?\nThis cannot be undone!"))
 		return;
 
