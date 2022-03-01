@@ -74,7 +74,7 @@
 
 			<!-- Carousel section. -->
 			<div class="title-block">
-				<h2 class="white black-text center">In-Game Images</h2>
+				<h2 class="white black-text center">More Images</h2>
 			</div>
 			<div class="container z-depth-5">
 				<div class="container">
