@@ -77,23 +77,21 @@
 				<h2 class="white black-text center">More Images</h2>
 			</div>
 			<div class="container z-depth-5">
-				<div class="container">
-					<div class="carousel carousel-slider">
+				<div class="carousel carousel-slider">
 
-						<!-- Carousel left and right buttons. -->
-						<div class="carousel-fixed-item center carousel-arrow-btn">
-							<div class="left"><button class="btn-floating btn-large waves-effect waves-light carousel-move-prev"><i class="material-icons left white-text red darken-2">chevron_left</i></button></div>
-							<div class="right"><button class="btn-floating btn-large waves-effect waves-light carousel-move-next"><i class="material-icons right white-text red darken-2">chevron_right</i></button></div>
-						</div>
-
-						<!-- Carousel images. -->
-						<?php
-							foreach ($prjImgs as $image) { ?>
-								<a class="carousel-item" href="#"><img src="<?php echo $image["path"] ?>" alt="<?php echo $image["description"]; ?>"></a>
-						<?php
-							}
-						?>
+					<!-- Carousel left and right buttons. -->
+					<div class="carousel-fixed-item center carousel-arrow-btn">
+						<div class="left"><button class="btn-floating btn-large waves-effect waves-light carousel-move-prev"><i class="material-icons left white-text red darken-2">chevron_left</i></button></div>
+						<div class="right"><button class="btn-floating btn-large waves-effect waves-light carousel-move-next"><i class="material-icons right white-text red darken-2">chevron_right</i></button></div>
 					</div>
+
+					<!-- Carousel images. -->
+					<?php
+						foreach ($prjImgs as $image) { ?>
+							<a class="carousel-item" href="#"><img src="<?php echo $image["path"] ?>" alt="<?php echo $image["description"]; ?>"></a>
+					<?php
+						}
+					?>
 				</div>
 				<p class="screenshot-desc white-text" id="rbdesc"></p>
 			</div>
