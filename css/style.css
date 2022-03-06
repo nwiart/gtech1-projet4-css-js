@@ -59,6 +59,38 @@ h4 {
 	height: 56px;
 }
 
+.team-block {
+	background: linear-gradient(to bottom, #6660, #666F 50%, #666F);
+	margin-top: -50px;
+}
+
+#the-team {
+
+	font-weight: bold;
+	text-transform: uppercase;
+	display: block;
+	text-align: center;
+
+	padding: 0.5em 0;
+
+	background: linear-gradient(to left, #FF0, #B80 25%, #FF0 50%, #B80 75%, #FF0 100%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 48px;
+
+	margin: auto;
+	width: 300px;
+
+	animation: 5s linear infinite blyat;
+}
+
+@keyframes blyat {
+	from { background-position: 0px 0; }
+	to { background-position: 300px 0px; }
+}
+
+
+
 .presentation-name {
 
 	font-size: 20pt;
@@ -202,3 +234,16 @@ footer .footer-copyright {
 .tabs .indicator {
 	background-color:#D00;
 } /*Color of underline*/
+
+
+
+/*
+ * Additional classes.
+ */
+
+.noselect {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}

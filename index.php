@@ -58,11 +58,11 @@
 		</div>
 
 		<!-- Presentation section. -->
-		<div class="z-depth-5 grey">
-			<div class="title-block">
-				<h1 class="center grey darken-2 white-text">PRESENTATION</h1>
-			</div>
-			<div class="container section row">
+		<div class="title-block team-block">
+			<h1 id="the-team" class="noselect">The Team</h1>
+		</div>
+		<div class="grey section">
+			<div class="container row">
 
 				<!-- Ethan presentation. -->
 				<div class="col l5 m12 s12 white card presentation-box" id="presentation-ethan">

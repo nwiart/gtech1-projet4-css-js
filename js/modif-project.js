@@ -1,21 +1,5 @@
 $(document).ready(function() {
 
-	$(".paragraph-image").hover(
-		function() {
-			$(this).css("transition", "0.3s");
-			$(this).css("opacity", 0.5);
-		},
-
-		function() {
-			$(this).css("opacity", 1.0);
-		}
-	);
-
-	$(".paragraph-image").click(function() {
-		let id = $(this).attr("id");
-		$("#input-" + id).trigger("click");
-	});
-
 	$("#add-paragraph").click(function() {
 
 		// Check for any unsaved paragraphs (reloading would kill changes).
@@ -108,5 +92,22 @@ function reload()
 		}
 		$("input").change(onChange);
 		$("textarea").change(onChange);
+
+		// Paragraph image selection.
+		$(".paragraph-image").hover(
+			function() {
+				$(this).css("transition", "0.3s");
+				$(this).css("opacity", 0.5);
+			},
+
+			function() {
+				$(this).css("opacity", 1.0);
+			}
+		);
+
+		$(".paragraph-image").click(function() {
+			let id = $(this).attr("id");
+			$("#input-" + id).trigger("click");
+		});
 	});
 }
