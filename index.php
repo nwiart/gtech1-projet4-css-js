@@ -105,8 +105,6 @@
 						</div>
 					</div>
 				</div>
-
-				<a href="#contact-us" onclick="reveal()" id="hiddenbtn" class="grey-text text-lighten-2"><i class = "material-icons">visibility</i></a>
 			</div>
 		</div>
 
