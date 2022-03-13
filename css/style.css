@@ -75,6 +75,7 @@ h4 {
 
 	background: linear-gradient(to left, #FF0, #B80 25%, #FF0 50%, #B80 75%, #FF0 100%);
 	background-clip: text;
+	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: 48px;
 
